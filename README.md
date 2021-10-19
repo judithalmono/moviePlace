@@ -9,6 +9,6 @@
 - Developers:
 > - [Aoulad Belayachi Djillali, Sofian](mailto:sofian.aoulad.belayachi@estudiantat.upc.edu)
 > - [Almoño Gómez, Judith](mailto:judith.almono@estudiantat.upc.edu)
-> - [Bao Gassó Preixens, An](mailto:an.bao.gasso@estudiantat.upc.edu)
+> - [Gassó Preixens, An Bao](mailto:an.bao.gasso@estudiantat.upc.edu)
 > - [Gómez Rodríguez, Francisco Javier](mailto:francisco.javier.gomez.rodrigu@estudiantat.upc.edu)
 > - [Martín Tresànchez, Alex](mailto:alex.martin.tresanchez@estudiantat.upc.edu)
