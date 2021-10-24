@@ -1,7 +1,16 @@
 <resources>
     <string name="app_name">MoviePlace</string>
-    <string name="user">User</string>
+    <string name="user">Username</string>
     <string name="password">Password</string>
     <string name="signIn">Sing In</string>
-    <string name="register">Register</string>
+    <string name="register">DON`T HAVE AN ACCOUNT? <b>SIGN UP</b></string>
+    <string name="forgot">Forgot Password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="signUp">SIGN UP</string>
+    <string name="login">ALREADY HAVE AN ACCOUNT? <b>SIGN IN</b></string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_map">Map</string>
+    <string name="title_profile">Profile</string>
 </resources>
