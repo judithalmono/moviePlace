@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.Window
+import android.view.WindowManager
 import com.example.movieplace.R
 
 private const val  ARG_PARAM1 = "hOLA"
@@ -19,8 +21,8 @@ class Top : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-
     }
+
     // inflate the layout
     override fun onCreateView(
         inflater: LayoutInflater,
