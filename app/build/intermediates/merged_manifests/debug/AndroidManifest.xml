@@ -19,6 +19,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.MoviePlace" >
         <activity
+            android:name="com.example.movieplace.ChangePassword"
+            android:exported="false" />
+        <activity
             android:name="com.example.movieplace.Home"
             android:exported="true" >
             <intent-filter>

@@ -10,9 +10,9 @@ import com.example.movieplace.R
 
 class ProfileFragment : Fragment() {
 
-    companion object {
+    /*companion object {
         fun newInstance() = ProfileFragment()
-    }
+    }*/
 
     private lateinit var viewModel: ProfileViewModel
 

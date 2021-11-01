@@ -4,8 +4,7 @@ package com.example.movieplace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -21,16 +20,12 @@ public final class FragmentSearchBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ImageView imageView;
+  public final EditText editTextUser;
 
-  @NonNull
-  public final TextView textDashboard;
-
-  private FragmentSearchBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView imageView,
-      @NonNull TextView textDashboard) {
+  private FragmentSearchBinding(@NonNull ConstraintLayout rootView,
+      @NonNull EditText editTextUser) {
     this.rootView = rootView;
-    this.imageView = imageView;
-    this.textDashboard = textDashboard;
+    this.editTextUser = editTextUser;
   }
 
   @Override
@@ -60,19 +55,13 @@ public final class FragmentSearchBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.imageView;
-      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
-      if (imageView == null) {
+      id = R.id.editTextUser;
+      EditText editTextUser = ViewBindings.findChildViewById(rootView, id);
+      if (editTextUser == null) {
         break missingId;
       }
 
-      id = R.id.text_dashboard;
-      TextView textDashboard = ViewBindings.findChildViewById(rootView, id);
-      if (textDashboard == null) {
-        break missingId;
-      }
-
-      return new FragmentSearchBinding((ConstraintLayout) rootView, imageView, textDashboard);
+      return new FragmentSearchBinding((ConstraintLayout) rootView, editTextUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

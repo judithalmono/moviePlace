@@ -28,12 +28,20 @@
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xhdpi/background3.jpg"
     },
     {
-        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_userwhite.png.flat",
-        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxxhdpi/userwhite.png"
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xxhdpi_background6.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxhdpi/background6.jpg"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-hdpi_background8.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-hdpi/background8.jpg"
     },
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-mdpi_user.png.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-mdpi/user.png"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_userwhite.png.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxxhdpi/userwhite.png"
     },
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-mdpi_logo.png.flat",
@@ -42,6 +50,10 @@
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-anydpi_editwhite.xml.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-anydpi/editwhite.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_background6.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxxhdpi/background6.jpg"
     },
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/menu_bottom_nav_menu.xml.flat",
@@ -90,6 +102,10 @@
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_logo3.png.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/mipmap-xxhdpi/logo3.png"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xxhdpi_background5.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxhdpi/background5.jpg"
     },
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-mdpi_lock.png.flat",
@@ -204,6 +220,10 @@
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-hdpi/background.jpg"
     },
     {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-mdpi_background5.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-mdpi/background5.jpg"
+    },
+    {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
@@ -228,6 +248,10 @@
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxhdpi/logo4.png"
     },
     {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xhdpi_background9.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xhdpi/background9.jpg"
+    },
+    {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xhdpi_background.jpg.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xhdpi/background.jpg"
     },
@@ -238,6 +262,10 @@
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xxhdpi_homeicon.png.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxhdpi/homeicon.png"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_background5.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxxhdpi/background5.jpg"
     },
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-hdpi_editwhite.png.flat",
@@ -260,8 +288,16 @@
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/mipmap-mdpi/logo3.png"
     },
     {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-hdpi_background5.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-hdpi/background5.jpg"
+    },
+    {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xxhdpi_logo1.png.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxhdpi/logo1.png"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_background8.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxxhdpi/background8.jpg"
     },
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_round.webp.flat",
@@ -312,8 +348,20 @@
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-hdpi/logo2.png"
     },
     {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xhdpi_background6.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xhdpi/background6.jpg"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_background9.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxxhdpi/background9.jpg"
+    },
+    {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xxhdpi_background9.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxhdpi/background9.jpg"
     },
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable_btn_unselected.xml.flat",
@@ -350,6 +398,10 @@
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-hdpi_background4.jpg.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-hdpi/background4.jpg"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-mdpi_background8.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-mdpi/background8.jpg"
     },
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.webp.flat",
@@ -412,6 +464,10 @@
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-mdpi/sillas_cine.jpeg"
     },
     {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xxhdpi_background8.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxhdpi/background8.jpg"
+    },
+    {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-hdpi_background3.jpg.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-hdpi/background3.jpg"
     },
@@ -436,8 +492,16 @@
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxhdpi/logo3.png"
     },
     {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/layout_activity_change_password.xml.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/activity_change_password.xml"
+    },
+    {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/mipmap-xhdpi_logouser.png.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/mipmap-xhdpi/logouser.png"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-mdpi_background9.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-mdpi/background9.jpg"
     },
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xhdpi_searchicon.png.flat",
@@ -446,6 +510,14 @@
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-hdpi_background6.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-hdpi/background6.jpg"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xhdpi_background5.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xhdpi/background5.jpg"
     },
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.webp.flat",
@@ -476,6 +548,10 @@
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xhdpi_background8.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xhdpi/background8.jpg"
+    },
+    {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xxhdpi_logo2.png.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxhdpi/logo2.png"
     },
@@ -494,6 +570,10 @@
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xxhdpi_lock.png.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxhdpi/lock.png"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-hdpi_background9.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-hdpi/background9.jpg"
     },
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-xhdpi_userwhite.png.flat",
@@ -548,6 +628,10 @@
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fragment_home.xml"
     },
     {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-mdpi_background6.jpg.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-mdpi/background6.jpg"
+    },
+    {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
@@ -568,12 +652,12 @@
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-xxhdpi/background.jpg"
     },
     {
-        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-hdpi_usericon.png.flat",
-        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-hdpi/usericon.png"
-    },
-    {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-anydpi_homeicon.xml.flat",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-anydpi/homeicon.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-hdpi_usericon.png.flat",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/drawable-hdpi/usericon.png"
     },
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/merged_res/debug/drawable-hdpi_searchicon.png.flat",
