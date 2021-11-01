@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.34375" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/app/src/main/res/drawable/btn_style.xml" value="0.11666666666666667" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/app/src/main/res/drawable/edt_style.xml" value="0.264" />
@@ -32,6 +33,21 @@
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/tab_layout.xml" value="0.1" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/tab_layout1.xml" value="0.2" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20833333333333334" />
+        <entry key="app/src/main/res/drawable-anydpi/edit_white.xml" value="0.346875" />
+        <entry key="app/src/main/res/drawable-anydpi/editwhite.xml" value="0.346875" />
+        <entry key="app/src/main/res/drawable/btn_style.xml" value="0.36770833333333336" />
+        <entry key="app/src/main/res/drawable/btn_unselected.xml" value="0.21875" />
+        <entry key="app/src/main/res/drawable/edt_style.xml" value="0.21875" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.36770833333333336" />
+        <entry key="app/src/main/res/drawable/tab_selection.xml" value="0.36770833333333336" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.17889492753623187" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.271286231884058" />
+        <entry key="app/src/main/res/layout/fragment_for_you.xml" value="0.271286231884058" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.271286231884058" />
+        <entry key="app/src/main/res/layout/fragment_map.xml" value="0.271286231884058" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.271286231884058" />
+        <entry key="app/src/main/res/layout/fragment_top.xml" value="0.271286231884058" />
       </map>
     </option>
   </component>
