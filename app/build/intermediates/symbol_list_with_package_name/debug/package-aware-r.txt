@@ -1821,9 +1821,13 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable background
 drawable background1
+drawable background15
 drawable background2
 drawable background3
 drawable background4
+drawable background5
+drawable background6
+drawable background7
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2131,7 +2135,6 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageView
 id imageView2
 id imgbutton1
 id imgbutton2
@@ -2362,7 +2365,6 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
-id text_dashboard
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2708,6 +2710,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string personal_information
 string register
+string search
 string search_menu_title
 string signIn
 string signUp
