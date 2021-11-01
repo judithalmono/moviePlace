@@ -1821,13 +1821,13 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable background
 drawable background1
+drawable background15
 drawable background2
 drawable background3
 drawable background4
 drawable background5
 drawable background6
-drawable background8
-drawable background9
+drawable background7
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2086,7 +2086,6 @@ id editText2
 id editText3
 id editTextPassword
 id editTextPassword2
-id editTextPassword3
 id editTextUser
 id editTextUser2
 id editTextUser3
@@ -2256,7 +2255,6 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
-id password_change
 id password_toggle
 id path
 id pathRelative
@@ -2484,7 +2482,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_change_password
 layout activity_home
 layout activity_login
 layout activity_main
@@ -2634,6 +2631,7 @@ string chip_text
 string clear_text_end_icon_content_description
 string complete_name
 string confirmPassword
+string email
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -2642,7 +2640,9 @@ string forgot
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string icono_edit
 string item_view_role_description
+string log_out
 string login
 string material_clock_display_divider
 string material_clock_toggle_content_description
@@ -2699,6 +2699,7 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string my_likes
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string password
@@ -2707,7 +2708,9 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string personal_information
 string register
+string search
 string search_menu_title
 string signIn
 string signUp
