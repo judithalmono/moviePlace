@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -29,13 +30,13 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final CircleImageView circleImageView;
 
   @NonNull
-  public final EditText editText1;
+  public final TextView editText1;
 
   @NonNull
-  public final EditText editText2;
+  public final TextView editText2;
 
   @NonNull
-  public final EditText editText3;
+  public final TextView editText3;
 
   @NonNull
   public final EditText editTextUser2;
@@ -68,8 +69,8 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final ImageButton imgbutton6;
 
   private FragmentProfileBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonSignIn2,
-      @NonNull CircleImageView circleImageView, @NonNull EditText editText1,
-      @NonNull EditText editText2, @NonNull EditText editText3, @NonNull EditText editTextUser2,
+      @NonNull CircleImageView circleImageView, @NonNull TextView editText1,
+      @NonNull TextView editText2, @NonNull TextView editText3, @NonNull EditText editTextUser2,
       @NonNull EditText editTextUser3, @NonNull EditText editTextUser4,
       @NonNull ConstraintLayout fragmentProfile, @NonNull ImageButton imgbutton1,
       @NonNull ImageButton imgbutton2, @NonNull ImageButton imgbutton3,
@@ -133,19 +134,19 @@ public final class FragmentProfileBinding implements ViewBinding {
       }
 
       id = R.id.editText1;
-      EditText editText1 = ViewBindings.findChildViewById(rootView, id);
+      TextView editText1 = ViewBindings.findChildViewById(rootView, id);
       if (editText1 == null) {
         break missingId;
       }
 
       id = R.id.editText2;
-      EditText editText2 = ViewBindings.findChildViewById(rootView, id);
+      TextView editText2 = ViewBindings.findChildViewById(rootView, id);
       if (editText2 == null) {
         break missingId;
       }
 
       id = R.id.editText3;
-      EditText editText3 = ViewBindings.findChildViewById(rootView, id);
+      TextView editText3 = ViewBindings.findChildViewById(rootView, id);
       if (editText3 == null) {
         break missingId;
       }

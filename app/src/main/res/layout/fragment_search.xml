@@ -21,7 +21,7 @@
         android:drawablePadding="10dp"
 
         android:ems="10"
-        android:hint="@string/search"
+        android:hint="Search"
         android:inputType="textNoSuggestions"
         android:textColor="@color/white"
         android:textColorHint="#FFCCCCCC"
