@@ -1828,6 +1828,8 @@ drawable background4
 drawable background5
 drawable background6
 drawable background7
+drawable background8
+drawable background9
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2005,10 +2007,11 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id button
 id buttonPanel
 id buttonSignIn
 id buttonSignIn2
+id button_change_password
+id button_login
 id cache_measures
 id cancel_action
 id cancel_button
@@ -2086,6 +2089,7 @@ id editText2
 id editText3
 id editTextPassword
 id editTextPassword2
+id editTextPassword3
 id editTextUser
 id editTextUser2
 id editTextUser3
@@ -2140,7 +2144,6 @@ id imgbutton1
 id imgbutton2
 id imgbutton3
 id imgbutton4
-id imgbutton5
 id imgbutton6
 id immediateStop
 id included
@@ -2255,6 +2258,7 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id password_change
 id password_toggle
 id path
 id pathRelative
@@ -2482,6 +2486,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_change_password
 layout activity_home
 layout activity_login
 layout activity_main
