@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
+            "outputFile": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "/home/usuario/.gradle/caches/transforms-3/a41f65a1b182ec9e11a9bbe3d48996cb/transformed/appcompat-1.3.1/res/values-v26/values-v26.xml",
+                    "source": "C:\\Users\\judit\\.gradle\\caches\\transforms-3\\a41f65a1b182ec9e11a9bbe3d48996cb\\transformed\\appcompat-1.3.1\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

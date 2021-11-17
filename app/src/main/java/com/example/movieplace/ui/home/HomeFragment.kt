@@ -1,29 +1,25 @@
 package com.example.movieplace.ui.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import android.view.*
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavController
-import androidx.viewpager2.widget.ViewPager2
+import androidx.recyclerview.widget.RecyclerView
 import com.example.movieplace.R
 import com.example.movieplace.databinding.FragmentHomeBinding
-import com.example.movieplace.ui.home.tabFragments.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
+import com.example.movieplace.data.model.Movie
+import com.example.movieplace.data.Result
+
 
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
-    lateinit var navController: NavController
+    private lateinit var movieAdapter: MyMoviesRecyclesViewAdapter
     lateinit var toolbar: Toolbar
     private var _binding: FragmentHomeBinding? = null
+    private var movies: List<Movie> = ArrayList()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -42,22 +38,53 @@ class HomeFragment : Fragment() {
         homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val view = inflater.inflate(R.layout.fragment_movie, container, false)
         val root: View = binding.root
 
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+        movieAdapter = MyMoviesRecyclesViewAdapter(context)
+        toolbar = root.findViewById(R.id.toolbar)
+        val tabLayout = root.findViewById<TabLayout>(R.id.tab_layout)
+
+        if(view is RecyclerView) {
+            with(view) {
+                adapter = movieAdapter
+            }
+        }
+
+        tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+
+                movieAdapter.setData(ArrayList())
+
+                if (tab?.text == TAB_TITLES[0]) {
+                    homeViewModel.getTopMovies()
+                } else {
+                    homeViewModel.getRecommendMovies()
+                }
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
         })
 
-        toolbar = root.findViewById(R.id.toolbar)
+        homeViewModel.movies.observe(
+            viewLifecycleOwner,
+            {
+                if (it is Result.Success) {
+                    movies = it.data
+                    movieAdapter.setData(movies)
+                }
+            }
+        )
 
-        val tabLayout = root.findViewById<TabLayout>(R.id.tab_layout)
-        val viewPager = root.findViewById<ViewPager2>(R.id.pager)
+//        val viewPager = root.findViewById<ViewPager2>(R.id.pager)
 
-        viewPager.adapter = ViewPagerAdapter(activity as AppCompatActivity)
+//        viewPager.adapter = ViewPagerAdapter(activity as AppCompatActivity)
 
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = TAB_TITLES[position]
-        }.attach()
+//        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+//            tab.text = TAB_TITLES[position]
+//        }.attach()
 
         return root
     }
@@ -67,3 +94,4 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 }
+

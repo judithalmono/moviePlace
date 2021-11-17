@@ -25,7 +25,7 @@
             android:name=".Main"
             android:exported="false" />
         <activity
-            android:name=".Signup"
+            android:name="Signup"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

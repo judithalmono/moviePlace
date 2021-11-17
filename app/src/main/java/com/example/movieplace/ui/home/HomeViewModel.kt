@@ -1,13 +1,23 @@
 package com.example.movieplace.ui.home
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.movieplace.MovieRepository
+import com.example.movieplace.data.Result
+import com.example.movieplace.data.model.Movie
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel: ViewModel() {
+    private var repository: MovieRepository = MovieRepository()
+    lateinit var movies: MutableLiveData<Result<List<Movie>>>
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    /**
+     * gets the movies from the repository
+     */
+    fun getTopMovies() {
+        movies = repository.getTopMovies()
     }
-    val text: LiveData<String> = _text
+
+    fun getRecommendMovies() : MutableLiveData<Result<List<Movie>>> {
+        return repository.getRecommendMovies()
+    }
 }
