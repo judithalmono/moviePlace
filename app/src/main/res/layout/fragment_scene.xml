@@ -5,28 +5,25 @@
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewBackground"
+        android:id="@+id/cardViewBackground1"
         android:layout_width="380dp"
         android:layout_height="120dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:cardElevation="0dp">
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/textViewNameMovie"
+        android:id="@+id/textViewNameScene"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/cardViewBackground"
-        app:layout_constraintEnd_toEndOf="@+id/cardViewBackground"
-        app:layout_constraintStart_toStartOf="@+id/cardViewBackground"
-        app:layout_constraintTop_toTopOf="@+id/cardViewBackground" />
-
-
+        app:layout_constraintBottom_toBottomOf="@+id/cardViewBackground1"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewBackground1"
+        app:layout_constraintStart_toStartOf="@+id/cardViewBackground1"
+        app:layout_constraintTop_toTopOf="@+id/cardViewBackground1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

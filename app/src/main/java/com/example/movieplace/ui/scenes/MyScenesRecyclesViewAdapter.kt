@@ -1,18 +1,17 @@
-package com.example.movieplace.ui.home
-
+package com.example.movieplace.ui.scenes
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.movieplace.R
 import com.example.movieplace.data.model.Movie
+import com.example.movieplace.data.model.Scene
+import com.example.movieplace.ui.home.MyMoviesRecyclesViewAdapter
 
-class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.Adapter<MyMoviesRecyclesViewAdapter.ViewHolder>() {
+class MyScenesRecyclesViewAdapter(private val context: Context?) : RecyclerView.Adapter<MyScenesRecyclesViewAdapter.ViewHolder>() {
 
     /**
      * Onclick to item. Updated when activitiesList developed
@@ -23,17 +22,17 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
 //        intent.putExtra("movie", item.movie)
 //        context?.startActivity(intent)
 //    }
-    private var movies: List<Movie> = ArrayList()
+    private var scenes: List<Scene> = ArrayList()
 
     /**
-     * it inflates the view of each movie and sees the ViewHolder of the view
+     * it inflates the view of each scene and sees the ViewHolder of the view
      * @param parent is the parent viewGroup
      * @param viewType is the type of the View
      * @return the view holder of the view
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.fragment_movie, parent, false)
+            .inflate(R.layout.fragment_scene, parent, false)
         return ViewHolder(view)
     }
 
@@ -43,8 +42,8 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      * @param position is the position of the view to render
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = movies[position]
-        holder.textViewName.text = item.original_title
+        val item = scenes[position]
+        holder.textViewName.text = item.id
 //        if (context != null) {
 //            Glide.with(context).load(item.urlBackground).centerCrop().into(holder.imageViewBackground)
 //            Glide.with(context).load(item.urlIcon).centerCrop().into(holder.imageViewIcon)
@@ -59,14 +58,14 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      * gets the number of views
      * @return the number of views
      */
-    override fun getItemCount(): Int = movies.size
+    override fun getItemCount(): Int = scenes.size
 
     /**
      * sets the new data and notifies to the adapter to refresh if necessary
      * @param movies is the new list of movies to set
      */
     fun setData(movies: List<Movie>?) {
-        this.movies = movies!!
+        this.scenes = scenes!!
         notifyDataSetChanged()
     }
 
@@ -78,7 +77,7 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      * @property imageViewIcon is the icon of the category
      */
     inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
-        val textViewName: TextView = mView.findViewById(R.id.textViewNameMovie)
+        val textViewName: TextView = mView.findViewById(R.id.textViewNameScene)
 //        val imageViewBackground: ImageView = mView.findViewById(R.id.pinkBackground)
 //        val imageViewIcon: ImageView = mView.findViewById(R.id.imageViewIconCategory)
         /**

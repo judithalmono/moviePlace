@@ -1,7 +1,8 @@
 package com.example.movieplace.data.retrofit
 
-import android.transition.Scene
 import com.example.movieplace.data.model.Movie
+import com.example.movieplace.data.model.User
+import com.example.movieplace.data.model.Scene
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -41,7 +42,7 @@ interface MoviesService {
      */
 
     @GET("/searchdirector/{dir}")
-    fun getMoviesByDirector(@Path("date") date: String): Call<List<Movie>>
+    fun getMoviesByDirector(@Path("dir") dir: String): Call<List<Movie>>
 
     /**
      * Get the scenes of a movie by its id
@@ -50,7 +51,7 @@ interface MoviesService {
      */
 
     @GET("/getScenes/{id}")
-    fun getScenesByID(@Path("id") id: String): Call<List<Scene>>
+    fun getScenesByID(@Path("id") id: Int): Call<List<Scene>>
 
     /**
      * Sort movies by user ubication
@@ -73,7 +74,7 @@ interface MoviesService {
      */
 
     @GET("/login/{user}")
-    fun getPasswordUser(@Path("user") user: String): Call<List<Movie>>
+    fun getPasswordUser(@Path("user") user: String): Call<User>
 
 
 

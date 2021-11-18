@@ -13,9 +13,9 @@ import com.example.movieplace.data.model.Movie
 import com.example.movieplace.data.Result
 
 
-class HomeFragment : Fragment() {
+class MovieFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var movieViewModel: MovieViewModel
     private lateinit var movieAdapter: MyMoviesRecyclesViewAdapter
     lateinit var toolbar: Toolbar
     private var _binding: FragmentHomeBinding? = null
@@ -35,8 +35,8 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        movieViewModel =
+            ViewModelProvider(this).get(MovieViewModel::class.java)
 
         val view = inflater.inflate(R.layout.fragment_movie, container, false)
         val root: View = binding.root
@@ -57,9 +57,9 @@ class HomeFragment : Fragment() {
                 movieAdapter.setData(ArrayList())
 
                 if (tab?.text == TAB_TITLES[0]) {
-                    homeViewModel.getTopMovies()
+                    movieViewModel.getTopMovies()
                 } else {
-                    homeViewModel.getRecommendMovies()
+                    movieViewModel.getRecommendMovies()
                 }
             }
             override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -68,7 +68,7 @@ class HomeFragment : Fragment() {
             }
         })
 
-        homeViewModel.movies.observe(
+        movieViewModel.movies.observe(
             viewLifecycleOwner,
             {
                 if (it is Result.Success) {

@@ -6,7 +6,7 @@ import com.example.movieplace.MovieRepository
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.Movie
 
-class HomeViewModel: ViewModel() {
+class MovieViewModel: ViewModel() {
     private var repository: MovieRepository = MovieRepository()
     lateinit var movies: MutableLiveData<Result<List<Movie>>>
 
