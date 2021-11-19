@@ -57,14 +57,14 @@ interface MoviesService {
      * Sort movies by user ubication
      */
 
-    @GET("/sortUbi/")
+    @GET("/sortUbi")
     fun getTopMovies(): Call<List<Movie>>
 
     /**
      * Sort movies by users rate
      */
 
-    @GET("/sortRate/")
+    @GET("sortRate")
     fun getRecommendMovies(): Call<List<Movie>>
 
     /**

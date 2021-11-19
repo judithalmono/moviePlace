@@ -8,9 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import androidx.viewpager2.widget.ViewPager2;
 import com.example.movieplace.R;
 import com.google.android.material.tabs.TabLayout;
 import java.lang.NullPointerException;
@@ -25,7 +25,7 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final DrawerLayout fragmentHome;
 
   @NonNull
-  public final ViewPager2 pager;
+  public final RecyclerView listMovies;
 
   @NonNull
   public final TabLayout tabLayout;
@@ -34,10 +34,10 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final Toolbar toolbar;
 
   private FragmentHomeBinding(@NonNull DrawerLayout rootView, @NonNull DrawerLayout fragmentHome,
-      @NonNull ViewPager2 pager, @NonNull TabLayout tabLayout, @NonNull Toolbar toolbar) {
+      @NonNull RecyclerView listMovies, @NonNull TabLayout tabLayout, @NonNull Toolbar toolbar) {
     this.rootView = rootView;
     this.fragmentHome = fragmentHome;
-    this.pager = pager;
+    this.listMovies = listMovies;
     this.tabLayout = tabLayout;
     this.toolbar = toolbar;
   }
@@ -71,9 +71,9 @@ public final class FragmentHomeBinding implements ViewBinding {
     missingId: {
       DrawerLayout fragmentHome = (DrawerLayout) rootView;
 
-      id = R.id.pager;
-      ViewPager2 pager = ViewBindings.findChildViewById(rootView, id);
-      if (pager == null) {
+      id = R.id.listMovies;
+      RecyclerView listMovies = ViewBindings.findChildViewById(rootView, id);
+      if (listMovies == null) {
         break missingId;
       }
 
@@ -89,7 +89,7 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((DrawerLayout) rootView, fragmentHome, pager, tabLayout,
+      return new FragmentHomeBinding((DrawerLayout) rootView, fragmentHome, listMovies, tabLayout,
           toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);

@@ -3,6 +3,7 @@ package com.example.movieplace.ui.home
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.movieplace.R
 import com.example.movieplace.data.model.Movie
+import com.example.movieplace.databinding.FragmentMovieBinding
 
 class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.Adapter<MyMoviesRecyclesViewAdapter.ViewHolder>() {
 
@@ -25,6 +27,7 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
 //    }
     private var movies: List<Movie> = ArrayList()
 
+
     /**
      * it inflates the view of each movie and sees the ViewHolder of the view
      * @param parent is the parent viewGroup
@@ -32,9 +35,11 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      * @return the view holder of the view
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.fragment_movie, parent, false)
-        return ViewHolder(view)
+//        val view = LayoutInflater.from(parent.context)
+//            .inflate(R.layout.fragment_movie, parent, false)
+        val binding = FragmentMovieBinding
+            .inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
     /**
@@ -59,7 +64,10 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      * gets the number of views
      * @return the number of views
      */
-    override fun getItemCount(): Int = movies.size
+    override fun getItemCount(): Int {
+        Log.d("Num", movies.size.toString())
+        return movies.size
+    }
 
     /**
      * sets the new data and notifies to the adapter to refresh if necessary
@@ -77,8 +85,8 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      * @property imageViewBackground is the image to show behind the category
      * @property imageViewIcon is the icon of the category
      */
-    inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
-        val textViewName: TextView = mView.findViewById(R.id.textViewNameMovie)
+    inner class ViewHolder(val binding: FragmentMovieBinding) : RecyclerView.ViewHolder(binding.root) {
+        val textViewName: TextView = binding.root.findViewById(R.id.textViewNameMovie)
 //        val imageViewBackground: ImageView = mView.findViewById(R.id.pinkBackground)
 //        val imageViewIcon: ImageView = mView.findViewById(R.id.imageViewIconCategory)
         /**

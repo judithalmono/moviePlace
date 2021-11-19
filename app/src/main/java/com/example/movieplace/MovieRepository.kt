@@ -162,13 +162,13 @@ class MovieRepository {
             override fun onResponse(call: Call<List<Movie>>, response: Response<List<Movie>>) {
                 if (response.isSuccessful) {
                     result.value = Result.Success(response.body() as List<Movie>)
-                } else result.value = Result.Error(IOException("Error getting info"))
+                } else result.value = Result.Error(IOException("Error getting info 1"))
             }
 
             override fun onFailure(call: Call<List<Movie>>, t: Throwable) {
                 // Error en la connexion
-                Log.d("GET", "Error getting info")
-                result.value = Result.Error(IOException("Error getting info"))
+                Log.d("GET", "Error getting info 2")
+                result.value = Result.Error(IOException("Error getting info 3"))
             }
         })
         return result
@@ -187,15 +187,16 @@ class MovieRepository {
             override fun onResponse(call: Call<List<Movie>>, response: Response<List<Movie>>) {
                 if (response.isSuccessful) {
                     result.value = Result.Success(response.body() as List<Movie>)
-                } else result.value = Result.Error(IOException("Error getting info"))
+                } else result.value = Result.Error(IOException("Error getting info 1"))
             }
 
             override fun onFailure(call: Call<List<Movie>>, t: Throwable) {
                 // Error en la connexion
-                Log.d("GET", "Error getting info")
-                result.value = Result.Error(IOException("Error getting info"))
+                Log.d("GET", "Error getting info 2")
+                result.value = Result.Error(IOException("Error getting info 3"))
             }
         })
+        Log.d("NOENTIENDO", result.value.toString())
         return result
     }
 
