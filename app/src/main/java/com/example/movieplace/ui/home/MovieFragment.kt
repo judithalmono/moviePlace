@@ -1,12 +1,17 @@
 package com.example.movieplace.ui.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.movieplace.R
@@ -16,6 +21,10 @@ import com.example.movieplace.data.model.Movie
 import com.example.movieplace.data.Result
 import com.google.android.material.tabs.TabItem
 import com.google.android.material.tabs.TabLayoutMediator
+import android.widget.ProgressBar
+
+
+
 
 
 class MovieFragment : Fragment() {
@@ -47,23 +56,49 @@ class MovieFragment : Fragment() {
         val root: View = binding.root
 
         movieAdapter = MyMoviesRecyclesViewAdapter(context)
-        toolbar = root.findViewById(R.id.toolbar)
         val tabLayout = root.findViewById<TabLayout>(R.id.tab_layout)
+        val listMovies = root.findViewById<RecyclerView>(R.id.listMovies)
 
+        binding.listMovies.layoutManager = GridLayoutManager(context, 2)
         binding.listMovies.adapter = movieAdapter
+
+        movieViewModel.getTopMovies().observe(
+            viewLifecycleOwner,
+            {
+                if (it is Result.Success) {
+                    movies = it.data
+                    movieAdapter.setData(movies)
+                }
+            }
+        )
 
         tabLayout.addTab(tabLayout.newTab().setText(TAB_TITLES[0]), 0, true)
         tabLayout.addTab(tabLayout.newTab().setText(TAB_TITLES[1]), 1, false)
 
         tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
+            @SuppressLint("ResourceAsColor")
             override fun onTabSelected(tab: TabLayout.Tab?) {
 
                 if (tab?.text == TAB_TITLES[0]) {
-                    movieViewModel.getTopMovies()
-                    Log.d("LEGEN", movieViewModel.movies.value.toString())
+                    movieViewModel.getTopMovies().observe(
+                        viewLifecycleOwner,
+                        {
+                            if (it is Result.Success) {
+                                movies = it.data
+                                movieAdapter.setData(movies)
+                            }
+                        }
+                    )
                 } else {
-                    movieViewModel.getRecommendMovies()
-                    Log.d("DARIO", movieViewModel.movies.value.toString())
+                    movieViewModel.getRecommendMovies().observe(
+                        viewLifecycleOwner,
+                        {
+                            if (it is Result.Success) {
+                                movies = it.data
+                                movieAdapter.setData(movies)
+                            }
+                        }
+                    )
                 }
             }
             override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -71,17 +106,6 @@ class MovieFragment : Fragment() {
             override fun onTabReselected(tab: TabLayout.Tab?) {
             }
         })
-
-        movieViewModel.movies.observe(
-            viewLifecycleOwner,
-            {
-                Log.d("DARIO", movieViewModel.movies.value.toString())
-                if (it is Result.Success) {
-                    movies = it.data
-                    movieAdapter.setData(movies)
-                }
-            }
-        )
 
         return root
     }

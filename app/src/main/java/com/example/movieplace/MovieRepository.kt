@@ -196,7 +196,6 @@ class MovieRepository {
                 result.value = Result.Error(IOException("Error getting info 3"))
             }
         })
-        Log.d("NOENTIENDO", result.value.toString())
         return result
     }
 

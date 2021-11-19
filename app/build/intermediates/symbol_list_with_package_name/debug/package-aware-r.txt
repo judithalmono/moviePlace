@@ -1308,6 +1308,7 @@ color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
+color transparent
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -1840,6 +1841,7 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable btn_style
 drawable btn_unselected
+drawable circular_progress_bar
 drawable date
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1903,6 +1905,9 @@ drawable notify_panel_notification_icon_bg
 drawable searchicon
 drawable selection_band_overlay
 drawable sillas_cine
+drawable starempty
+drawable starfill
+drawable starhalf
 drawable tab_selection
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -2257,6 +2262,7 @@ id on
 id outline
 id outward
 id overshoot
+id pBar
 id packed
 id parallax
 id parent
@@ -2272,6 +2278,7 @@ id percent
 id pin
 id position
 id postLayout
+id progressBar
 id progress_circular
 id progress_horizontal
 id radio
@@ -2334,6 +2341,11 @@ id src_atop
 id src_in
 id src_over
 id standard
+id starRate1
+id starRate2
+id starRate3
+id starRate4
+id starRate5
 id start
 id startHorizontal
 id startToEnd
@@ -2522,6 +2534,7 @@ layout fragment_profile
 layout fragment_scene
 layout fragment_search
 layout fragment_top
+layout loading
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider

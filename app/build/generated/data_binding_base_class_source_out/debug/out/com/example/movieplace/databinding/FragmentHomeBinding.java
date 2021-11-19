@@ -4,6 +4,7 @@ package com.example.movieplace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -28,16 +29,21 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final RecyclerView listMovies;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final TabLayout tabLayout;
 
   @NonNull
   public final Toolbar toolbar;
 
   private FragmentHomeBinding(@NonNull DrawerLayout rootView, @NonNull DrawerLayout fragmentHome,
-      @NonNull RecyclerView listMovies, @NonNull TabLayout tabLayout, @NonNull Toolbar toolbar) {
+      @NonNull RecyclerView listMovies, @NonNull ProgressBar progressBar,
+      @NonNull TabLayout tabLayout, @NonNull Toolbar toolbar) {
     this.rootView = rootView;
     this.fragmentHome = fragmentHome;
     this.listMovies = listMovies;
+    this.progressBar = progressBar;
     this.tabLayout = tabLayout;
     this.toolbar = toolbar;
   }
@@ -77,6 +83,12 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.tab_layout;
       TabLayout tabLayout = ViewBindings.findChildViewById(rootView, id);
       if (tabLayout == null) {
@@ -89,8 +101,8 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((DrawerLayout) rootView, fragmentHome, listMovies, tabLayout,
-          toolbar);
+      return new FragmentHomeBinding((DrawerLayout) rootView, fragmentHome, listMovies, progressBar,
+          tabLayout, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

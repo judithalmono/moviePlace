@@ -9,18 +9,16 @@ import com.example.movieplace.data.model.Movie
 
 class MovieViewModel: ViewModel() {
     private var repository: MovieRepository = MovieRepository()
-    var movies = MutableLiveData<Result<List<Movie>>>()
+    var movies : MutableLiveData<Result<List<Movie>>> = repository.getTopMovies()
 
     /**
      * gets the movies from the repository
      */
-    fun getTopMovies() {
-        Log.d("MARC", repository.getTopMovies().value.toString())
-        movies.value = repository.getTopMovies().value
+    fun getTopMovies() : MutableLiveData<Result<List<Movie>>> {
+        return repository.getTopMovies()
     }
 
-    fun getRecommendMovies() {
-        Log.d("PAU", repository.getRecommendMovies().value.toString())
-        movies.value = repository.getRecommendMovies().value
+    fun getRecommendMovies() : MutableLiveData<Result<List<Movie>>> {
+        return repository.getRecommendMovies()
     }
 }

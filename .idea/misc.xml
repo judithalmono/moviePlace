@@ -13,6 +13,7 @@
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/drawable/back_tab.xml" value="0.22962962962962963" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/drawable/back_tabs.xml" value="0.2703125" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/drawable/btn_style.xml" value="0.2703125" />
+        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/drawable/circular_progress_bar.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/drawable/edt_style.xml" value="0.2703125" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2703125" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2703125" />
@@ -31,12 +32,13 @@
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_map.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_movie.xml" value="0.23229166666666667" />
-        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_movies.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_movies.xml" value="0.152" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_scene.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_search.xml" value="0.264" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_top.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_user.xml" value="0.13405797101449277" />
+        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/loading.xml" value="0.1" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/login.xml" value="0.264" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/movie_list.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/signup.xml" value="0.1" />

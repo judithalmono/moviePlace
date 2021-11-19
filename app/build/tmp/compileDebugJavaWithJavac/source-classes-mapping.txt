@@ -1,13 +1,19 @@
 com/example/movieplace/BuildConfig.java
  com.example.movieplace.BuildConfig
-com/example/movieplace/databinding/FragmentProfileBinding.java
- com.example.movieplace.databinding.FragmentProfileBinding
-com/example/movieplace/databinding/ActivitySignupBinding.java
- com.example.movieplace.databinding.ActivitySignupBinding
 com/example/movieplace/databinding/FragmentMoviesBinding.java
  com.example.movieplace.databinding.FragmentMoviesBinding
 com/example/movieplace/databinding/FragmentMovieBinding.java
  com.example.movieplace.databinding.FragmentMovieBinding
+com/example/movieplace/databinding/ActivityMainBinding.java
+ com.example.movieplace.databinding.ActivityMainBinding
+com/example/movieplace/databinding/ActivityChangePasswordBinding.java
+ com.example.movieplace.databinding.ActivityChangePasswordBinding
+com/example/movieplace/databinding/LoadingBinding.java
+ com.example.movieplace.databinding.LoadingBinding
+com/example/movieplace/databinding/FragmentProfileBinding.java
+ com.example.movieplace.databinding.FragmentProfileBinding
+com/example/movieplace/databinding/ActivitySignupBinding.java
+ com.example.movieplace.databinding.ActivitySignupBinding
 com/example/movieplace/databinding/FragmentHomeBinding.java
  com.example.movieplace.databinding.FragmentHomeBinding
 com/example/movieplace/databinding/ActivityHomeBinding.java
@@ -16,10 +22,6 @@ com/example/movieplace/databinding/FragmentTopBinding.java
  com.example.movieplace.databinding.FragmentTopBinding
 com/example/movieplace/databinding/FragmentSceneBinding.java
  com.example.movieplace.databinding.FragmentSceneBinding
-com/example/movieplace/databinding/ActivityMainBinding.java
- com.example.movieplace.databinding.ActivityMainBinding
-com/example/movieplace/databinding/ActivityChangePasswordBinding.java
- com.example.movieplace.databinding.ActivityChangePasswordBinding
 com/example/movieplace/databinding/ActivityLoginBinding.java
  com.example.movieplace.databinding.ActivityLoginBinding
 com/example/movieplace/databinding/FragmentSearchBinding.java

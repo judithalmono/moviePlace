@@ -21,6 +21,7 @@
             android:layout_marginTop="30dp"
             app:tabIndicatorColor="@color/red2"
             app:tabIndicatorFullWidth="false"
+            android:layout_marginBottom="10dp"
             app:tabRippleColor="#00000000"
             app:tabBackground="@drawable/tab_selection"
             android:background="@drawable/btn_unselected">
@@ -40,6 +41,14 @@
             app:layoutManager="LinearLayoutManager"
             tools:context=".ui.home.MovieFragment"
             tools:listitem="@layout/fragment_movie" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
 

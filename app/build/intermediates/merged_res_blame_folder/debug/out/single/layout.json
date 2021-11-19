@@ -12,16 +12,20 @@
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\activity_change_password.xml"
     },
     {
-        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_signup.xml",
-        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\activity_signup.xml"
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\loading.xml",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\loading.xml"
+    },
+    {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_map.xml",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\fragment_map.xml"
     },
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_movie.xml",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\fragment_movie.xml"
     },
     {
-        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_map.xml",
-        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\fragment_map.xml"
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_signup.xml",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\activity_signup.xml"
     },
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
