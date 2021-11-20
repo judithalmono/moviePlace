@@ -4,12 +4,12 @@
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-anydpi\\next_icon_white.xml"
     },
     {
-        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_starempty.png.flat",
-        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-hdpi\\starempty.png"
-    },
-    {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_logo.png.flat",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xxhdpi\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_starempty.png.flat",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-hdpi\\starempty.png"
     },
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_user.png.flat",
@@ -52,24 +52,24 @@
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\fragment_top.xml"
     },
     {
-        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_background.jpg.flat",
-        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xxxhdpi\\background.jpg"
-    },
-    {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\navigation_mobile_navigation.xml.flat",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\navigation\\mobile_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_background.jpg.flat",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xxxhdpi\\background.jpg"
     },
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_starfill.png.flat",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-hdpi\\starfill.png"
     },
     {
-        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_homeicon.png.flat",
-        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-mdpi\\homeicon.png"
-    },
-    {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_background7.jpg.flat",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xxxhdpi\\background7.jpg"
+    },
+    {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_homeicon.png.flat",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-mdpi\\homeicon.png"
     },
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_background5.jpg.flat",
@@ -96,12 +96,12 @@
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-mdpi\\searchicon.png"
     },
     {
-        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_userwhite.png.flat",
-        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xxhdpi\\userwhite.png"
-    },
-    {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_background1.jpg.flat",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xhdpi\\background1.jpg"
+    },
+    {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_userwhite.png.flat",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xxhdpi\\userwhite.png"
     },
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_usericon.png.flat",
@@ -228,6 +228,10 @@
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-hdpi\\logo.png"
     },
     {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_arrowback.png.flat",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xhdpi\\arrowback.png"
+    },
+    {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_logo2.png.flat",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xxxhdpi\\logo2.png"
     },
@@ -240,16 +244,20 @@
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\fragment_map.xml"
     },
     {
-        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_logo1.png.flat",
-        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xhdpi\\logo1.png"
-    },
-    {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_userwhite.png.flat",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-mdpi\\userwhite.png"
     },
     {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_logo1.png.flat",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xhdpi\\logo1.png"
+    },
+    {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_background15.jpg.flat",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xxxhdpi\\background15.jpg"
+    },
+    {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_scenes.xml.flat",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\fragment_scenes.xml"
     },
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_background1.jpg.flat",
@@ -316,12 +324,16 @@
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_starhalf.png.flat",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-mdpi\\starhalf.png"
+    },
+    {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_background6.jpg.flat",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xxhdpi\\background6.jpg"
     },
     {
-        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_starhalf.png.flat",
-        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-mdpi\\starhalf.png"
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi_arrowback.xml.flat",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-anydpi\\arrowback.xml"
     },
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_locationicon.png.flat",
@@ -372,6 +384,10 @@
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-mdpi\\background6.jpg"
     },
     {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_arrowback.png.flat",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-hdpi\\arrowback.png"
+    },
+    {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable_btn_unselected.xml.flat",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable\\btn_unselected.xml"
     },
@@ -390,6 +406,10 @@
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_listscenes.xml.flat",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\fragment_listscenes.xml"
     },
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_searchicon.png.flat",
@@ -426,6 +446,10 @@
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_background5.jpg.flat",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-mdpi\\background5.jpg"
+    },
+    {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_arrowback.png.flat",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-mdpi\\arrowback.png"
     },
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_user.png.flat",
@@ -646,6 +670,10 @@
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_homeicon.png.flat",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xxhdpi\\homeicon.png"
+    },
+    {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_arrowback.png.flat",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xxhdpi\\arrowback.png"
     },
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi_searchicon.xml.flat",

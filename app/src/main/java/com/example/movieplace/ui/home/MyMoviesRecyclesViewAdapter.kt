@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.movieplace.R
 import com.example.movieplace.data.model.Movie
+import com.example.movieplace.data.model.Scene
 import com.example.movieplace.databinding.FragmentMovieBinding
 import kotlin.math.roundToInt
 
@@ -25,12 +26,12 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
     /**
      * Onclick to item. Updated when activitiesList developed
      */
-//    private val mOnClickListener: View.OnClickListener = View.OnClickListener { v ->
-//        val item = v.tag as Movie
-//        val intent = Intent(context, Scenes::class.java)
-//        intent.putExtra("movie", item.movie)
-//        context?.startActivity(intent)
-//    }
+    private val mOnClickListener: View.OnClickListener = View.OnClickListener { v ->
+        val item = v.tag as Movie
+        val intent = Intent(context, Scene::class.java)
+        intent.putExtra("movie", item.original_title)
+        context?.startActivity(intent)
+    }
     private var movies: List<Movie> = ArrayList()
 
 
@@ -41,8 +42,6 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      * @return the view holder of the view
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-//        val view = LayoutInflater.from(parent.context)
-//            .inflate(R.layout.fragment_movie, parent, false)
         val binding = FragmentMovieBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
@@ -55,17 +54,16 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = movies[position]
-        holder.textViewName.text = item.original_title
         rateStar(holder, item)
+        if (context != null) {
+            Glide.with(context).load(item.img).centerCrop().into(holder.movieImage)
+        }
+        with(holder.movieImage) {
+            tag = item
+            setOnClickListener(mOnClickListener)
+        }
     }
-//        if (context != null) {
-//            Glide.with(context).load(item.urlBackground).centerCrop().into(holder.imageViewBackground)
-//            Glide.with(context).load(item.urlIcon).centerCrop().into(holder.imageViewIcon)
-//        }
-//        with(holder.imageViewBackground) {
-//            tag = item
-//            setOnClickListener(mOnClickListener)
-//        }
+
     fun rateStar(holder: ViewHolder, item: Movie) {
         val num = item.vote_average.roundToInt()
         val star = num/2
@@ -97,13 +95,11 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
         }
     }
 
-
     /**
      * gets the number of views
      * @return the number of views
      */
     override fun getItemCount(): Int {
-        Log.d("Num", movies.size.toString())
         return movies.size
     }
 
@@ -118,19 +114,23 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
 
     /**
      * ViewHolder class to save the refereces to the views of each view
-     * @param mView is the general view
-     * @property textViewName is the textView where will render the category name
-     * @property imageViewBackground is the image to show behind the category
-     * @property imageViewIcon is the icon of the category
+     * @param binding
+     * @property textViewName is the textView where will render the movie name
+     * @property movieImage is the image to show behind the movie
+     * @property starRate1 is the first star
+     * @property starRate2 is the second star
+     * @property starRate3 is the third star
+     * @property starRate4 is the fourth star
+     * @property starRate5 is the fifth star
      */
     inner class ViewHolder(val binding: FragmentMovieBinding) : RecyclerView.ViewHolder(binding.root) {
-        val textViewName: TextView = binding.root.findViewById(R.id.textViewNameMovie)
-//        val imageViewBackground: ImageView = mView.findViewById(R.id.pinkBackground)
+        val movieImage: ImageView = binding.root.findViewById(R.id.movieImage)
         val starRate1: ImageView = binding.root.findViewById(R.id.starRate1)
         val starRate2: ImageView = binding.root.findViewById(R.id.starRate2)
         val starRate3: ImageView = binding.root.findViewById(R.id.starRate3)
         val starRate4: ImageView = binding.root.findViewById(R.id.starRate4)
         val starRate5: ImageView = binding.root.findViewById(R.id.starRate5)
+        
         /**
          * General function that returns the string
          */

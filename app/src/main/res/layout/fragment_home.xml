@@ -42,14 +42,6 @@
             tools:context=".ui.home.MovieFragment"
             tools:listitem="@layout/fragment_movie" />
 
-        <ProgressBar
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/progressBar"
-            android:progressDrawable="@drawable/circular_progress_bar"
-            android:layout_gravity="center_horizontal"/>
-
     </LinearLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -40,6 +40,10 @@
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\fragment_top.xml"
     },
     {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_scenes.xml",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\fragment_scenes.xml"
+    },
+    {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_movies.xml",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\fragment_movies.xml"
     },
@@ -54,5 +58,9 @@
     {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_home.xml",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_listscenes.xml",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\fragment_listscenes.xml"
     }
 ]

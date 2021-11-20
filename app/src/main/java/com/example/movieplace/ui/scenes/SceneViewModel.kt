@@ -1,11 +1,12 @@
 package com.example.movieplace.ui.scenes
 
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.movieplace.MovieRepository
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.Scene
 
-class SceneViewModel {
+class SceneViewModel: ViewModel() {
     private var repository: MovieRepository = MovieRepository()
 
     /**

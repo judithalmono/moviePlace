@@ -1817,6 +1817,7 @@ int drawable abc_textfield_search_activated_mtrl_alpha 0x7f070052
 int drawable abc_textfield_search_default_mtrl_alpha 0x7f070053
 int drawable abc_textfield_search_material 0x7f070054
 int drawable abc_vector_test 0x7f070055
+int drawable arrowback 0x7f0700b7
 int drawable avd_hide_password 0x7f070056
 int drawable avd_show_password 0x7f070057
 int drawable background 0x7f070058
@@ -2173,6 +2174,7 @@ int id line3 0x7f0800ff
 int id linear 0x7f080100
 int id listMode 0x7f080101
 int id listMovies 0x7f080102
+int id listScenes 0x7f08020a
 int id list_item 0x7f080103
 int id masked 0x7f080104
 int id match_constraint 0x7f080105
@@ -2208,6 +2210,7 @@ int id month_navigation_next 0x7f080122
 int id month_navigation_previous 0x7f080123
 int id month_title 0x7f080124
 int id motion_base 0x7f080125
+int id movieImage 0x7f08020b
 int id mtrl_anchor_parent 0x7f080126
 int id mtrl_calendar_day_selector_frame 0x7f080127
 int id mtrl_calendar_days_of_week 0x7f080128
@@ -2277,7 +2280,6 @@ int id percent 0x7f080167
 int id pin 0x7f080168
 int id position 0x7f080169
 int id postLayout 0x7f08016a
-int id progressBar 0x7f08016b
 int id progress_circular 0x7f08016c
 int id progress_horizontal 0x7f08016d
 int id radio 0x7f08016e
@@ -2403,6 +2405,7 @@ int id titleDividerNoCustom 0x7f0801e5
 int id title_template 0x7f0801e6
 int id toggle 0x7f0801e7
 int id toolbar 0x7f0801e8
+int id toolbarScenes 0x7f08020c
 int id top 0x7f0801e9
 int id topPanel 0x7f0801ea
 int id touch_outside 0x7f0801eb
@@ -2526,11 +2529,13 @@ int layout design_navigation_menu_item 0x7f0b002e
 int layout design_text_input_end_icon 0x7f0b002f
 int layout design_text_input_start_icon 0x7f0b0030
 int layout fragment_home 0x7f0b0031
+int layout fragment_listscenes 0x7f0b0087
 int layout fragment_map 0x7f0b0032
 int layout fragment_movie 0x7f0b0033
 int layout fragment_movies 0x7f0b0034
 int layout fragment_profile 0x7f0b0035
 int layout fragment_scene 0x7f0b0036
+int layout fragment_scenes 0x7f0b0088
 int layout fragment_search 0x7f0b0037
 int layout fragment_top 0x7f0b0038
 int layout loading 0x7f0b0039

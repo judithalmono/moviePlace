@@ -2,11 +2,7 @@ package com.example.movieplace.ui.home
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.*
-import android.view.View.GONE
-import android.view.View.VISIBLE
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
@@ -19,9 +15,6 @@ import com.example.movieplace.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayout
 import com.example.movieplace.data.model.Movie
 import com.example.movieplace.data.Result
-import com.google.android.material.tabs.TabItem
-import com.google.android.material.tabs.TabLayoutMediator
-import android.widget.ProgressBar
 
 
 

@@ -1818,6 +1818,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable arrowback
 drawable avd_hide_password
 drawable avd_show_password
 drawable background
@@ -2174,6 +2175,7 @@ id line3
 id linear
 id listMode
 id listMovies
+id listScenes
 id list_item
 id masked
 id match_constraint
@@ -2209,6 +2211,7 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id motion_base
+id movieImage
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
@@ -2278,7 +2281,6 @@ id percent
 id pin
 id position
 id postLayout
-id progressBar
 id progress_circular
 id progress_horizontal
 id radio
@@ -2404,6 +2406,7 @@ id titleDividerNoCustom
 id title_template
 id toggle
 id toolbar
+id toolbarScenes
 id top
 id topPanel
 id touch_outside
@@ -2527,11 +2530,13 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_home
+layout fragment_listscenes
 layout fragment_map
 layout fragment_movie
 layout fragment_movies
 layout fragment_profile
 layout fragment_scene
+layout fragment_scenes
 layout fragment_search
 layout fragment_top
 layout loading
