@@ -1,5 +1,5 @@
-com/example/movieplace/databinding/FragmentMoviesBinding.java
- com.example.movieplace.databinding.FragmentMoviesBinding
+com/example/movieplace/databinding/FragmentMapsScenesBinding.java
+ com.example.movieplace.databinding.FragmentMapsScenesBinding
 com/example/movieplace/databinding/FragmentMovieBinding.java
  com.example.movieplace.databinding.FragmentMovieBinding
 com/example/movieplace/BuildConfig.java
@@ -8,14 +8,14 @@ com/example/movieplace/databinding/ActivityMainBinding.java
  com.example.movieplace.databinding.ActivityMainBinding
 com/example/movieplace/databinding/ActivityChangePasswordBinding.java
  com.example.movieplace.databinding.ActivityChangePasswordBinding
-com/example/movieplace/databinding/LoadingBinding.java
- com.example.movieplace.databinding.LoadingBinding
 com/example/movieplace/databinding/FragmentProfileBinding.java
  com.example.movieplace.databinding.FragmentProfileBinding
 com/example/movieplace/databinding/ActivitySignupBinding.java
  com.example.movieplace.databinding.ActivitySignupBinding
 com/example/movieplace/databinding/FragmentHomeBinding.java
  com.example.movieplace.databinding.FragmentHomeBinding
+com/example/movieplace/databinding/ActivityScenesBinding.java
+ com.example.movieplace.databinding.ActivityScenesBinding
 com/example/movieplace/databinding/ActivityHomeBinding.java
  com.example.movieplace.databinding.ActivityHomeBinding
 com/example/movieplace/databinding/FragmentTopBinding.java
@@ -30,5 +30,3 @@ com/example/movieplace/databinding/FragmentSearchBinding.java
  com.example.movieplace.databinding.FragmentSearchBinding
 com/example/movieplace/databinding/FragmentMapBinding.java
  com.example.movieplace.databinding.FragmentMapBinding
-com/example/movieplace/databinding/FragmentScenesBinding.java
- com.example.movieplace.databinding.FragmentScenesBinding

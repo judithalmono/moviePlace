@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/fragment_home"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.MovieFragment"
-    android:background="@drawable/background15">
+    android:background="@drawable/background15"
+    tools:context=".ui.home.MovieFragment">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
@@ -19,13 +23,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/btn_unselected"
+            app:tabBackground="@drawable/tab_selection"
             app:tabIndicatorColor="@color/red2"
             app:tabIndicatorFullWidth="false"
-            android:layout_marginBottom="10dp"
-            app:tabRippleColor="#00000000"
-            app:tabBackground="@drawable/tab_selection"
-            android:background="@drawable/btn_unselected">
-        </com.google.android.material.tabs.TabLayout>
+            app:tabRippleColor="#00000000" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -41,7 +44,17 @@
             app:layoutManager="LinearLayoutManager"
             tools:context=".ui.home.MovieFragment"
             tools:listitem="@layout/fragment_movie" />
-
     </LinearLayout>
 
-</androidx.drawerlayout.widget.DrawerLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:indeterminateTint="@color/red2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

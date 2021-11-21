@@ -31,69 +31,25 @@
             android:layout_gravity="center"
             />
 
-        <ImageView
-            android:id="@+id/starRate1"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/starfill"
-            app:layout_constraintVertical_bias="0.044"
-            tools:ignore="MissingConstraints" />
+            android:background="#55800000">
 
-        <ImageView
-            android:id="@+id/starRate2"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="46dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/starfill"
-            app:layout_constraintVertical_bias="0.044"
-            tools:ignore="MissingConstraints" />
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:isIndicator="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleX="0.9"
+                android:scaleY="0.9"
+                android:progressBackgroundTint="@color/white"
+                android:numStars="5"
+                android:rating="4"/>
+        </LinearLayout>
 
-        <ImageView
-            android:id="@+id/starRate3"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="230dp"
-            android:src="@drawable/starfill"
-            app:layout_constraintVertical_bias="0.044"
-            tools:ignore="MissingConstraints" />
-
-        <ImageView
-            android:id="@+id/starRate4"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="106dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/starfill"
-            app:layout_constraintVertical_bias="0.044"
-            tools:ignore="MissingConstraints" />
-
-        <ImageView
-            android:id="@+id/starRate5"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="136dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/starfill"
-            app:layout_constraintVertical_bias="0.044"
-            tools:ignore="MissingConstraints" />
 
     </androidx.cardview.widget.CardView>
 
