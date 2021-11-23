@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_home"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.MovieFragment"
+    android:background="@drawable/background7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarScenes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/arrowback"
+            app:title="Text"
+            android:layout_marginBottom="10dp"
+            app:titleTextColor="@color/black"
+            android:background="@color/red2" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listScenes"
+            android:name="com.example.movieplace.ui.scenes.ScenesFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="LinearLayoutManager"
+            tools:context=".ui.home.SceneFragment"
+            tools:listitem="@layout/fragment_scene" />
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

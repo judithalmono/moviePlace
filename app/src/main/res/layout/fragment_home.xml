@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment"
+    tools:context=".ui.home.MovieFragment"
     android:background="@drawable/background15">
 
     <LinearLayout
@@ -21,6 +21,7 @@
             android:layout_marginTop="30dp"
             app:tabIndicatorColor="@color/red2"
             app:tabIndicatorFullWidth="false"
+            android:layout_marginBottom="10dp"
             app:tabRippleColor="#00000000"
             app:tabBackground="@drawable/tab_selection"
             android:background="@drawable/btn_unselected">
@@ -32,11 +33,14 @@
             android:layout_height="0dp"
             android:backgroundTint="@null" />
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/pager"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listMovies"
+            android:name="com.example.movieplace.ui.scenes.ScenesFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </androidx.viewpager2.widget.ViewPager2>
+            android:layout_height="match_parent"
+            app:layoutManager="LinearLayoutManager"
+            tools:context=".ui.home.MovieFragment"
+            tools:listitem="@layout/fragment_movie" />
 
     </LinearLayout>
 
