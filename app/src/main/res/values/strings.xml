@@ -23,4 +23,6 @@
     <string name="change_password">Change Password</string>
     <string name="my_likes">My likes</string>
     <string name="search">film, director, genre...</string>
+    <string name="map">Map</string>
+    <string name="scene_image">Scene Image</string>
 </resources>

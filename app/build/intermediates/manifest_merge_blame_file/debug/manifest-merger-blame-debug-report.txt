@@ -9,116 +9,195 @@
 8-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="31" />
 9-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml
-10
-11    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-11-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:6:5-79
-11-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:6:22-76
-12    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-12-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:7:5-80
-12-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:7:22-78
-13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-13-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:8:5-78
-13-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:8:22-76
-14    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-14-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:9:5-75
-14-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:9:22-73
-15    <uses-permission android:name="android.permission.INTERNET" />
-15-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:10:5-67
-15-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:10:22-64
-16    <uses-permission android:name="android.permission.READ_CALENDAR" />
-16-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:11:5-72
-16-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:11:22-69
-17    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
-17-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:12:5-73
-17-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:12:22-70
-18    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-18-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:14:5-80
-18-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:14:22-77
-19    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-19-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:15:5-16:40
-19-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:15:22-78
-20
-21    <application
-21-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:18:5-52:19
-22        android:allowBackup="true"
-22-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:19:9-35
-23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-23-->[androidx.core:core:1.6.0] C:\Users\judit\.gradle\caches\transforms-3\7cabb0b7df62f3b93c656c79795a54ee\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
-24        android:debuggable="true"
-25        android:icon="@mipmap/ic_launcher"
-25-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:20:9-43
-26        android:label="@string/app_name"
-26-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:21:9-41
-27        android:networkSecurityConfig="@xml/network_security_config"
-27-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:25:9-69
-28        android:requestLegacyExternalStorage="true"
-28-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:24:9-52
-29        android:roundIcon="@mipmap/ic_launcher_round"
-29-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:22:9-54
-30        android:supportsRtl="true"
-30-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:23:9-35
-31        android:testOnly="true"
-32        android:theme="@style/Theme.MoviePlace" >
-32-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:26:9-48
-33        <activity
-33-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:27:9-29:40
-34            android:name="com.example.movieplace.ChangePassword"
-34-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:28:13-43
-35            android:exported="false" />
-35-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:29:13-37
-36        <activity
-36-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:30:9-38:20
-37            android:name="com.example.movieplace.Home"
-37-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:31:13-33
-38            android:exported="true" >
-38-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:32:13-36
-39            <intent-filter>
-39-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:33:13-37:29
-40                <action android:name="android.intent.action.MAIN" />
-40-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:34:17-69
-40-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:34:25-66
-41
-42                <category android:name="android.intent.category.LAUNCHER" />
-42-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:36:17-77
-42-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:36:27-74
-43            </intent-filter>
-44        </activity>
-45        <activity
-45-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:39:9-41:40
-46            android:name="com.example.movieplace.Main"
-46-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:40:13-33
-47            android:exported="false" />
-47-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:41:13-37
-48        <activity
-48-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:42:9-48:20
-49            android:name="com.example.movieplace.Signup"
-49-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:43:13-34
-50            android:exported="false" >
-50-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:44:13-37
-51            <meta-data
-51-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:45:13-47:42
-52                android:name="android.support.PARENT_ACTIVITY"
-52-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:46:17-63
-53                android:value=".Login" />
-53-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:47:17-39
-54        </activity>
-55        <activity
-55-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:49:9-51:40
-56            android:name="com.example.movieplace.Login"
-56-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:50:13-34
-57            android:exported="false" />
-57-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:51:13-37
-58
-59        <provider
-59-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-60            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-60-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-61            android:authorities="com.example.movieplace.lifecycle-process"
-61-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-62            android:exported="false"
-62-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-63            android:multiprocess="true" />
-63-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-64    </application>
-65
-66</manifest>
+10    <!--
+11         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+12         Google Maps Android API v2, but you must specify either coarse or fine
+13         location permissions for the "MyLocation" functionality.
+14    -->
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:10:5-79
+15-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:10:22-76
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+16-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:11:5-81
+16-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:11:22-78
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:12:5-79
+17-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:12:22-76
+18    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+18-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:13:5-76
+18-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:13:22-73
+19    <uses-permission android:name="android.permission.INTERNET" />
+19-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:14:5-67
+19-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:14:22-64
+20    <uses-permission android:name="android.permission.READ_CALENDAR" />
+20-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:15:5-72
+20-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:15:22-69
+21    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+21-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:16:5-73
+21-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:16:22-70
+22    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+22-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:17:5-80
+22-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:17:22-77
+23    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+23-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:18:5-20:40
+23-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:19:9-65
+24
+25    <uses-feature
+25-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:26:5-28:35
+26        android:glEsVersion="0x00020000"
+26-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:27:9-41
+27        android:required="true" />
+27-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:28:9-32
+28
+29    <queries>
+29-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:30:5-34:15
+30
+31        <!-- Needs to be explicitly declared on Android R+ -->
+32        <package android:name="com.google.android.apps.maps" />
+32-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:33:9-64
+32-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:33:18-61
+33    </queries>
+34
+35    <application
+35-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:22:5-80:19
+36        android:allowBackup="true"
+36-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:23:9-35
+37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+37-->[androidx.core:core:1.6.0] C:\Users\judit\.gradle\caches\transforms-3\7cabb0b7df62f3b93c656c79795a54ee\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+38        android:debuggable="true"
+39        android:icon="@mipmap/ic_launcher"
+39-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:24:9-43
+40        android:label="@string/app_name"
+40-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:25:9-41
+41        android:networkSecurityConfig="@xml/network_security_config"
+41-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:26:9-69
+42        android:requestLegacyExternalStorage="true"
+42-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:27:9-52
+43        android:roundIcon="@mipmap/ic_launcher_round"
+43-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:28:9-54
+44        android:supportsRtl="true"
+44-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:29:9-35
+45        android:testOnly="true"
+46        android:theme="@style/Theme.MoviePlace" >
+46-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:30:9-48
+47
+48        <!--
+49             The API key for Google Maps-based APIs is defined as a string resource.
+50             (See the file "res/values/google_maps_api.xml").
+51             Note that the API key is linked to the encryption key used to sign the APK.
+52             You need a different API key for each encryption key, including the release key that is used to
+53             sign the APK for publishing.
+54             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+55        -->
+56        <meta-data
+56-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:40:9-42:55
+57            android:name="com.google.android.geo.API_KEY"
+57-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:41:13-58
+58            android:value="@string/google_maps_key" />
+58-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:42:13-52
+59
+60        <activity
+60-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:44:9-46:40
+61            android:name="com.example.movieplace.ChangePassword"
+61-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:45:13-43
+62            android:exported="false" />
+62-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:46:13-37
+63        <activity
+63-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:47:9-55:20
+64            android:name="com.example.movieplace.Home"
+64-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:48:13-33
+65            android:exported="true" >
+65-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:49:13-36
+66            <intent-filter>
+66-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:50:13-54:29
+67                <action android:name="android.intent.action.MAIN" />
+67-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:51:17-69
+67-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:51:25-66
+68
+69                <category android:name="android.intent.category.LAUNCHER" />
+69-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:53:17-77
+69-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:53:27-74
+70            </intent-filter>
+71        </activity>
+72        <activity
+72-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:56:9-58:40
+73            android:name="com.example.movieplace.Main"
+73-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:57:13-33
+74            android:exported="false" />
+74-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:58:13-37
+75        <activity
+75-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:59:9-63:58
+76            android:name="com.example.movieplace.ui.scenes.ScenesActivity"
+76-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:60:13-53
+77            android:launchMode="singleTop"
+77-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:61:13-43
+78            android:parentActivityName="com.example.movieplace.Home"
+78-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:62:13-47
+79            android:theme="@style/MoviePlaceActionBar" />
+79-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:63:13-55
+80        <activity
+80-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:65:9-69:58
+81            android:name="com.example.movieplace.ui.scenes.ScenesDesc"
+81-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:66:13-49
+82            android:launchMode="singleTop"
+82-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:67:13-43
+83            android:parentActivityName=""
+83-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:68:13-42
+84            android:theme="@style/MoviePlaceActionBar" />
+84-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:69:13-55
+85        <activity
+85-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:70:9-76:20
+86            android:name="com.example.movieplace.Signup"
+86-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:71:13-35
+87            android:exported="false" >
+87-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:72:13-37
+88            <meta-data
+88-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:73:13-75:42
+89                android:name="android.support.PARENT_ACTIVITY"
+89-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:74:17-63
+90                android:value=".Login" />
+90-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:75:17-39
+91        </activity>
+92        <activity
+92-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:77:9-79:40
+93            android:name="com.example.movieplace.Login"
+93-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:78:13-34
+94            android:exported="false" />
+94-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:79:13-37
+95        <!-- Needs to be explicitly declared on P+ -->
+96        <uses-library
+96-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:39:9-41:40
+97            android:name="org.apache.http.legacy"
+97-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:40:13-50
+98            android:required="false" />
+98-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:41:13-37
+99
+100        <activity
+100-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\a25f1e6318654046eb45598079ce89dd\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+101            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+101-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\a25f1e6318654046eb45598079ce89dd\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+102            android:exported="false"
+102-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\a25f1e6318654046eb45598079ce89dd\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+103            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+103-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\a25f1e6318654046eb45598079ce89dd\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+104
+105        <meta-data
+105-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\af5c889c3c1039ab7c247076e19dd514\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+106            android:name="com.google.android.gms.version"
+106-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\af5c889c3c1039ab7c247076e19dd514\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+107            android:value="@integer/google_play_services_version" />
+107-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\af5c889c3c1039ab7c247076e19dd514\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+108
+109        <provider
+109-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+110            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+110-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+111            android:authorities="com.example.movieplace.lifecycle-process"
+111-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+112            android:exported="false"
+112-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+113            android:multiprocess="true" />
+113-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+114    </application>
+115
+116</manifest>

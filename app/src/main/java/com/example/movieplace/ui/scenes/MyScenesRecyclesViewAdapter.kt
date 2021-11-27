@@ -1,27 +1,29 @@
 package com.example.movieplace.ui.scenes
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieplace.R
-import com.example.movieplace.data.model.Movie
 import com.example.movieplace.data.model.Scene
-import com.example.movieplace.ui.home.MyMoviesRecyclesViewAdapter
+import com.google.gson.GsonBuilder
 
 class MyScenesRecyclesViewAdapter(private val context: Context?) : RecyclerView.Adapter<MyScenesRecyclesViewAdapter.ViewHolder>() {
 
     /**
      * Onclick to item. Updated when activitiesList developed
      */
-//    private val mOnClickListener: View.OnClickListener = View.OnClickListener { v ->
-//        val item = v.tag as Movie
-//        val intent = Intent(context, Scenes::class.java)
-//        intent.putExtra("movie", item.movie)
-//        context?.startActivity(intent)
-//    }
+    private val mOnClickListener: View.OnClickListener = View.OnClickListener { v ->
+        val item = v.tag as Scene
+        val intent = Intent(context, ScenesDesc::class.java)
+        intent.putExtra("scene", GsonBuilder().create().toJson(item))
+        context?.startActivity(intent)
+    }
     private var scenes: List<Scene> = ArrayList()
 
     /**
@@ -43,28 +45,32 @@ class MyScenesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = scenes[position]
-        holder.textViewName.text = item.id
+        holder.textNameScene.text = item.actors[0]
+        holder.textLocation.text = item.scene_dsc
 //        if (context != null) {
 //            Glide.with(context).load(item.urlBackground).centerCrop().into(holder.imageViewBackground)
 //            Glide.with(context).load(item.urlIcon).centerCrop().into(holder.imageViewIcon)
 //        }
-//        with(holder.imageViewBackground) {
-//            tag = item
-//            setOnClickListener(mOnClickListener)
-//        }
+        with(holder.cardView) {
+            tag = item
+            setOnClickListener(mOnClickListener)
+        }
     }
 
     /**
      * gets the number of views
      * @return the number of views
      */
-    override fun getItemCount(): Int = scenes.size
+    override fun getItemCount(): Int {
+        Log.d("Scenes: ", scenes.size.toString())
+        return scenes.size
+    }
 
     /**
      * sets the new data and notifies to the adapter to refresh if necessary
-     * @param movies is the new list of movies to set
+     * @param scenes is the new list of movies to set
      */
-    fun setData(movies: List<Movie>?) {
+    fun setData(scenes: List<Scene>?) {
         this.scenes = scenes!!
         notifyDataSetChanged()
     }
@@ -73,13 +79,12 @@ class MyScenesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      * ViewHolder class to save the refereces to the views of each view
      * @param mView is the general view
      * @property textViewName is the textView where will render the category name
-     * @property imageViewBackground is the image to show behind the category
-     * @property imageViewIcon is the icon of the category
      */
-    inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
-        val textViewName: TextView = mView.findViewById(R.id.textViewNameScene)
-//        val imageViewBackground: ImageView = mView.findViewById(R.id.pinkBackground)
-//        val imageViewIcon: ImageView = mView.findViewById(R.id.imageViewIconCategory)
+    inner class ViewHolder (val mView: View) : RecyclerView.ViewHolder(mView) {
+        val textNameScene: TextView = mView.findViewById(R.id.textNameScene)
+        val textLocation: TextView = mView.findViewById(R.id.textLocation)
+        val cardView: CardView = mView.findViewById(R.id.cardViewBackground)
+
         /**
          * General function that returns the string
          */

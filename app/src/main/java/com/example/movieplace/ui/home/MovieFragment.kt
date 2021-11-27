@@ -3,6 +3,9 @@ package com.example.movieplace.ui.home
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
+import android.view.View.GONE
+import android.view.View.VISIBLE
+import android.widget.ProgressBar
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
@@ -24,7 +27,6 @@ class MovieFragment : Fragment() {
 
     private lateinit var movieViewModel: MovieViewModel
     private lateinit var movieAdapter: MyMoviesRecyclesViewAdapter
-    lateinit var toolbar: Toolbar
     private var _binding: FragmentHomeBinding? = null
     private var movies: List<Movie> = ArrayList()
 
@@ -50,7 +52,7 @@ class MovieFragment : Fragment() {
 
         movieAdapter = MyMoviesRecyclesViewAdapter(context)
         val tabLayout = root.findViewById<TabLayout>(R.id.tab_layout)
-        val listMovies = root.findViewById<RecyclerView>(R.id.listMovies)
+        val progressBar = root.findViewById<ProgressBar>(R.id.progressBar)
 
         binding.listMovies.layoutManager = GridLayoutManager(context, 2)
         binding.listMovies.adapter = movieAdapter
@@ -61,6 +63,7 @@ class MovieFragment : Fragment() {
                 if (it is Result.Success) {
                     movies = it.data
                     movieAdapter.setData(movies)
+                    progressBar.visibility = GONE
                 }
             }
         )
@@ -73,22 +76,28 @@ class MovieFragment : Fragment() {
             override fun onTabSelected(tab: TabLayout.Tab?) {
 
                 if (tab?.text == TAB_TITLES[0]) {
+                    movieAdapter.setData(ArrayList())
+                    progressBar.visibility = VISIBLE
                     movieViewModel.getTopMovies().observe(
                         viewLifecycleOwner,
                         {
                             if (it is Result.Success) {
                                 movies = it.data
                                 movieAdapter.setData(movies)
+                                progressBar.visibility = GONE
                             }
                         }
                     )
                 } else {
+                    movieAdapter.setData(ArrayList())
+                    progressBar.visibility = VISIBLE
                     movieViewModel.getRecommendMovies().observe(
                         viewLifecycleOwner,
                         {
                             if (it is Result.Success) {
                                 movies = it.data
                                 movieAdapter.setData(movies)
+                                progressBar.visibility = GONE
                             }
                         }
                     )

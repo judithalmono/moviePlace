@@ -23,16 +23,20 @@
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/drawable/tab_layout.xml" value="0.2703125" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout-v28/activity_home.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/activity_change_password.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/activity_listscenes.xml" value="0.1640625" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/activity_scenes.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/activity_scenes_desc.xml" value="0.19739583333333333" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/activity_signup.xml" value="0.264" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_dashboard.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_for_you.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_listscenes.xml" value="0.264" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_map.xml" value="0.18854166666666666" />
-        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_movie.xml" value="0.1" />
+        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_maps_scenes.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_movie.xml" value="0.2" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_movies.xml" value="0.152" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/fragment_scene.xml" value="0.23229166666666667" />
@@ -47,6 +51,7 @@
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/tab_layout.xml" value="0.1" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/layout/tab_layout1.xml" value="0.2" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/menu/list_map.xml" value="0.1" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/xml/network_security_config.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/activity_change_password.xml" value="0.1921875" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.19270833333333334" />

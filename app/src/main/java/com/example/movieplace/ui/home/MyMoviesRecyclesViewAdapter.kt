@@ -1,35 +1,30 @@
 package com.example.movieplace.ui.home
 
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
-import androidx.appcompat.content.res.AppCompatResources.getDrawable
-import androidx.core.content.ContextCompat
+import android.widget.RatingBar
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.movieplace.R
 import com.example.movieplace.data.model.Movie
-import com.example.movieplace.data.model.Scene
 import com.example.movieplace.databinding.FragmentMovieBinding
-import kotlin.math.roundToInt
+import com.example.movieplace.ui.scenes.ScenesActivity
+import com.google.gson.GsonBuilder
 
 class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.Adapter<MyMoviesRecyclesViewAdapter.ViewHolder>() {
 
     /**
-     * Onclick to item. Updated when activitiesList developed
+     * Onclick to item. Updated when SceneFragment developed
      */
     private val mOnClickListener: View.OnClickListener = View.OnClickListener { v ->
         val item = v.tag as Movie
-        val intent = Intent(context, Scene::class.java)
-        intent.putExtra("movie", item.original_title)
+        val intent = Intent(context, ScenesActivity::class.java)
+        intent.putExtra("movie", GsonBuilder().create().toJson(item))
         context?.startActivity(intent)
     }
     private var movies: List<Movie> = ArrayList()
@@ -54,44 +49,15 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = movies[position]
-        rateStar(holder, item)
+        val num = item.vote_average
+        val star = num/2
+        holder.rating.rating = star.toFloat()
         if (context != null) {
             Glide.with(context).load(item.img).centerCrop().into(holder.movieImage)
         }
         with(holder.movieImage) {
             tag = item
             setOnClickListener(mOnClickListener)
-        }
-    }
-
-    fun rateStar(holder: ViewHolder, item: Movie) {
-        val num = item.vote_average.roundToInt()
-        val star = num/2
-        Log.d(item.original_title, "$num $star")
-        for (i in star..4) {
-            when (i) {
-                5 -> holder.starRate5.setImageDrawable(context?.let { getDrawable(it, R.drawable.starfill) })
-                4 -> holder.starRate4.setImageDrawable(context?.let { getDrawable(it, R.drawable.starfill) })
-                3 -> holder.starRate3.setImageDrawable(context?.let { getDrawable(it, R.drawable.starfill) })
-                2 -> holder.starRate2.setImageDrawable(context?.let { getDrawable(it, R.drawable.starfill) })
-                1 -> holder.starRate1.setImageDrawable(context?.let { getDrawable(it, R.drawable.starfill) })
-            }
-        }
-        for (i in star..4) {
-            Log.d(item.original_title, "$num $star $i")
-            when (i) {
-                4 -> holder.starRate5.setImageDrawable(context?.let { getDrawable(it, R.drawable.starempty) })
-                3 -> holder.starRate4.setImageDrawable(context?.let { getDrawable(it, R.drawable.starempty) })
-                2 -> holder.starRate3.setImageDrawable(context?.let { getDrawable(it, R.drawable.starempty) })
-                1 -> holder.starRate2.setImageDrawable(context?.let { getDrawable(it, R.drawable.starempty) })
-            }
-        }
-        when (num) {
-            9 -> holder.starRate5.setImageDrawable(context?.let { getDrawable(it, R.drawable.starhalf) })
-            7 -> holder.starRate4.setImageDrawable(context?.let { getDrawable(it, R.drawable.starhalf) })
-            5 -> holder.starRate3.setImageDrawable(context?.let { getDrawable(it, R.drawable.starhalf) })
-            3 -> holder.starRate2.setImageDrawable(context?.let { getDrawable(it, R.drawable.starhalf) })
-            1 -> holder.starRate1.setImageDrawable(context?.let { getDrawable(it, R.drawable.starhalf) })
         }
     }
 
@@ -115,7 +81,6 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
     /**
      * ViewHolder class to save the refereces to the views of each view
      * @param binding
-     * @property textViewName is the textView where will render the movie name
      * @property movieImage is the image to show behind the movie
      * @property starRate1 is the first star
      * @property starRate2 is the second star
@@ -125,12 +90,8 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      */
     inner class ViewHolder(val binding: FragmentMovieBinding) : RecyclerView.ViewHolder(binding.root) {
         val movieImage: ImageView = binding.root.findViewById(R.id.movieImage)
-        val starRate1: ImageView = binding.root.findViewById(R.id.starRate1)
-        val starRate2: ImageView = binding.root.findViewById(R.id.starRate2)
-        val starRate3: ImageView = binding.root.findViewById(R.id.starRate3)
-        val starRate4: ImageView = binding.root.findViewById(R.id.starRate4)
-        val starRate5: ImageView = binding.root.findViewById(R.id.starRate5)
-        
+        val rating: RatingBar = binding.root.findViewById(R.id.ratingBar)
+
         /**
          * General function that returns the string
          */

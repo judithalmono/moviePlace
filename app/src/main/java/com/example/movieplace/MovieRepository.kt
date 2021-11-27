@@ -155,6 +155,23 @@ class MovieRepository {
      * @return the mutable livedata list of movies sorted by users' rate
      */
 
+//    fun getTopMovies(onSuccess: List<Movie>) -> Unit, onError: (Throwable) -> Unit) {
+//        val call = api.getMovies()
+//        call.enqueue(object: Callback<MovieResponse> {
+//            override fun onFailure(call: Call<MovieResponse>, t: Throwable) {
+//                onError(t)
+//            }
+//
+//            override fun onResponse(call: Call<MovieResponse>, response: Response<MovieResponse>) {
+//                if (response.isSuccessful) {
+//                    val movies = response.body()?.results
+//                    onSuccess(movies ?: listOf())
+//                }
+//            }
+//        })
+//
+//    }
+
     fun getTopMovies(): MutableLiveData<Result<List<Movie>>> {
         val result = MutableLiveData<Result<List<Movie>>>()
         val call: Call<List<Movie>> = moviesService!!.getTopMovies()
