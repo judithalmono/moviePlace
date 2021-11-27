@@ -1,6 +1,5 @@
 package com.example.movieplace.ui.scenes
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +11,7 @@ import com.google.gson.GsonBuilder
 import android.graphics.drawable.Drawable
 import android.view.Menu
 import android.view.MenuItem
+import androidx.core.content.ContextCompat
 
 
 class ScenesActivity: AppCompatActivity() {
@@ -45,6 +45,12 @@ class ScenesActivity: AppCompatActivity() {
 
         // poner botón hacia atrás
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, ScenesList.newInstance(movie.id))
+                .commitNow()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -54,27 +60,21 @@ class ScenesActivity: AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.button_change) {
-            if (selectedOption) {
+            if (selectedOption) { // Map scenes
                 selectedOption = false
-                item.icon = resources.getDrawable(R.drawable.listicon)
+                item.icon = ContextCompat.getDrawable(this, R.drawable.listicon)
 //                supportFragmentManager.beginTransaction()
 //                    .replace(R.id.container, MapsScenesFragment.newInstance())
 //                    .commitNow()
-                val intent = Intent(this, MapsScenesFragment::class.java)
-                intent.putExtra("movie", GsonBuilder().create().toJson(movie))
-                this?.startActivity(intent)
-            } else {
+            } else { //List scenes
                 selectedOption = true
-                item.icon = resources.getDrawable(R.drawable.locationicon)
+                item.icon = ContextCompat.getDrawable(this, R.drawable.locationicon)
 //                supportFragmentManager.beginTransaction()
-//                    .replace(R.id.container, ScenesList.newInstance(movie))
+//                    .replace(R.id.container, ScenesList.newInstance(movie.id))
 //                    .commitNow()
-
-                val intent = Intent(this, ScenesList::class.java)
-                intent.putExtra("movie", GsonBuilder().create().toJson(movie))
-                this?.startActivity(intent)
             }
+            return true
         }
-        return true
+        return super.onOptionsItemSelected(item)
     }
 }

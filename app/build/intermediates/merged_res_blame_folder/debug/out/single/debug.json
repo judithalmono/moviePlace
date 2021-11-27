@@ -252,6 +252,10 @@
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-xxxhdpi\\background15.jpg"
     },
     {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_scenes_desc.xml.flat",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\activity_scenes_desc.xml"
+    },
+    {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_background1.jpg.flat",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\drawable-mdpi\\background1.jpg"
     },

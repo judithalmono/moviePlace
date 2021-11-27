@@ -3,7 +3,6 @@ package com.example.movieplace.ui.scenes
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
@@ -11,22 +10,22 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieplace.R
 import com.example.movieplace.data.Result
-import com.example.movieplace.data.model.Movie
-import com.example.movieplace.ui.home.MovieViewModel
-import com.example.movieplace.ui.home.MyMoviesRecyclesViewAdapter
-import com.google.gson.GsonBuilder
-import android.content.Intent
-import android.content.Intent.getIntent
+import android.util.Log
+import androidx.core.os.bundleOf
+import com.example.movieplace.data.model.Scene
 
 class ScenesList: Fragment() {
 
     private lateinit var scenesViewModel: SceneViewModel
     private lateinit var scenesListAdapter: MyScenesRecyclesViewAdapter
-    private lateinit var movie: Movie
+    private var idmovie: Int = 0
+    private var scenes: List<Scene> = ArrayList()
 
     companion object {
-        fun newInstance(movie: Movie) =
-            ScenesList()
+        fun newInstance(id_movie: Int) =
+            ScenesList().apply {
+                arguments = bundleOf("movie_id" to id_movie)
+            }
     }
 
     /**
@@ -54,25 +53,27 @@ class ScenesList: Fragment() {
         scenesViewModel = ViewModelProvider(this).get(SceneViewModel::class.java)
         scenesListAdapter = MyScenesRecyclesViewAdapter(context as ScenesActivity)
 
-        val layout = view.findViewById<RecyclerView>(R.id.listActivities)
+        val layout = view.findViewById<RecyclerView>(R.id.listScenes)
         layout.layoutManager = LinearLayoutManager(context)
         layout.adapter = scenesListAdapter
 
-        movie = GsonBuilder().create().fromJson(arguments?.getString("movie").toString(), Movie::class.java)
-
+        idmovie = (requireArguments().get("movie_id") as Int?)!!
+        Log.d("MOVIE", idmovie.toString())
         setHasOptionsMenu(true)
 
-        scenesViewModel.getScenesByID((movie as Movie).id).observe(
+        scenesViewModel.getScenesByID(idmovie).observe(
             viewLifecycleOwner,
             {
                 if (it is Result.Success) {
-                    movies = it.data
-                    movieAdapter.setData(movies)
-                    progressBar.visibility = View.GONE
+                    scenes = it.data
+                    scenesListAdapter.setData(scenes)
+//                    progressBar.visibility = View.GONE
                 }
             }
         )
 
     }
+
+
 
 }

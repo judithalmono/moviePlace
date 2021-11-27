@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.movieplace">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -59,8 +58,14 @@
             android:exported="false" />
         <activity
             android:name=".ui.scenes.ScenesActivity"
-            android:exported="false"
+            android:launchMode="singleTop"
             android:parentActivityName=".Home"
+            android:theme="@style/MoviePlaceActionBar" />
+
+        <activity
+            android:name=".ui.scenes.ScenesDesc"
+            android:launchMode="singleTop"
+            android:parentActivityName=""
             android:theme="@style/MoviePlaceActionBar" />
         <activity
             android:name=".Signup"

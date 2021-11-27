@@ -2193,6 +2193,7 @@ id forever
 id fragment_container_view_tag
 id fragment_home
 id fragment_profile
+id fragment_search
 id frost
 id ghost_view
 id ghost_view_holder
@@ -2219,6 +2220,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView2
+id imgScene
 id imgbutton1
 id imgbutton2
 id imgbutton3
@@ -2243,9 +2245,9 @@ id line1
 id line3
 id linear
 id linearLayout
-id listActivities
 id listMode
 id listMovies
+id listScenes
 id list_item
 id map
 id masked
@@ -2355,6 +2357,7 @@ id progressBar
 id progress_circular
 id progress_horizontal
 id radio
+id rateBar
 id ratingBar
 id ratio
 id rectangles
@@ -2370,6 +2373,7 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id scenes_desc
 id screen
 id scroll
 id scrollIndicatorDown
@@ -2450,14 +2454,18 @@ id test_radiobutton_android_button_tint
 id test_radiobutton_app_button_tint
 id text
 id text2
+id textDesc
 id textEnd
 id textForgot
+id textLocation
+id textLocationDesc
+id textNameScene
+id textRate
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
 id textView
-id textViewNameScene
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2582,6 +2590,7 @@ layout activity_home
 layout activity_login
 layout activity_main
 layout activity_scenes
+layout activity_scenes_desc
 layout activity_signup
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -2831,6 +2840,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string personal_information
 string register
+string scene_image
 string search
 string search_menu_title
 string signIn
