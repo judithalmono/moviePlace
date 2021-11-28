@@ -1865,8 +1865,19 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable background
 drawable background1
+drawable background10
+drawable background11
+drawable background12
+drawable background13
+drawable background14
 drawable background15
+drawable background16
+drawable background17
+drawable background18
+drawable background19
 drawable background2
+drawable background20
+drawable background21
 drawable background3
 drawable background4
 drawable background5
@@ -1978,12 +1989,27 @@ drawable user
 drawable usericon
 drawable userwhite
 id ALT
+id ActionSelect
+id AdvSelect
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id ChangePassword
+id ComedySelect
+id CrimMistSelect
 id FUNCTION
+id FantasySelect
+id FavActors
+id FavComposers
+id FavDirectors
+id HistoSelect
+id HorrorSelect
 id META
+id ManSelect
 id NO_DEBUG
+id OtherSelect
+id RomanceSelect
+id SFicSelect
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -1991,6 +2017,9 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id ThrillerSelect
+id WesternSelect
+id WomanSelect
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2025,6 +2054,7 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+id act_fav_genres
 id action0
 id actionDown
 id actionDownUp
@@ -2082,7 +2112,14 @@ id bounceStart
 id buttonPanel
 id buttonSignIn
 id buttonSignIn2
+id buttonSubmit1
 id button_change
+id button_change_FavActors
+id button_change_FavComp
+id button_change_FavDir
+id button_change_FavGen
+id button_change_MyLikes
+id button_change_PersInfo
 id button_change_password
 id button_login
 id cache_measures
@@ -2096,6 +2133,8 @@ id center_horizontal
 id center_vertical
 id chain
 id chains
+id changeMyLikes
+id changePersInfo
 id checkbox
 id checked
 id chip
@@ -2160,6 +2199,35 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id editActor1
+id editActor2
+id editActor3
+id editActor4
+id editActor5
+id editActor6
+id editActor7
+id editActor8
+id editAdress
+id editBirthday
+id editComplName1
+id editComposer1
+id editComposer2
+id editComposer3
+id editComposer4
+id editComposer5
+id editComposer6
+id editComposer7
+id editComposer8
+id editDirector1
+id editDirector2
+id editDirector3
+id editDirector4
+id editDirector5
+id editDirector6
+id editDirector7
+id editDirector8
+id editEmail1
+id editPhone
 id editText1
 id editText2
 id editText3
@@ -2170,6 +2238,7 @@ id editTextUser
 id editTextUser2
 id editTextUser3
 id editTextUser4
+id editUsername1
 id edit_query
 id elastic
 id end
@@ -2224,8 +2293,6 @@ id imgScene
 id imgbutton1
 id imgbutton2
 id imgbutton3
-id imgbutton4
-id imgbutton6
 id immediateStop
 id included
 id info
@@ -2357,6 +2424,8 @@ id progressBar
 id progress_circular
 id progress_horizontal
 id radio
+id radioButtonChangeSexes
+id radioButtonFavGenr
 id rateBar
 id ratingBar
 id ratio
@@ -2454,8 +2523,13 @@ id test_radiobutton_android_button_tint
 id test_radiobutton_app_button_tint
 id text
 id text2
+id textComposers
 id textDesc
 id textEnd
+id textFavActors
+id textFavComp
+id textFavDir
+id textFavGen
 id textForgot
 id textLocation
 id textLocationDesc
@@ -2464,6 +2538,7 @@ id textRate
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textTitol1
 id textTop
 id textView
 id text_input_end_icon
@@ -2585,13 +2660,15 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_change_password
 layout activity_home
 layout activity_login
 layout activity_main
 layout activity_scenes
 layout activity_scenes_desc
 layout activity_signup
+layout change_my_likes_fragment
+layout change_password_fragment
+layout change_pers_info_fragment
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2608,6 +2685,10 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fav_actors_fragment
+layout fav_composers_fragment
+layout fav_directors_fragment
+layout fav_genres_fragment
 layout fragment_home
 layout fragment_listscenes
 layout fragment_map
@@ -3660,7 +3741,7 @@ styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width 
 styleable LinearProgressIndicator indeterminateAnimationType indicatorDirectionLinear
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
-styleable MapAttrs backgroundColor ambientEnabled cameraBearing cameraMaxZoomPreference cameraMinZoomPreference cameraTargetLat cameraTargetLng cameraTilt cameraZoom latLngBoundsNorthEastLatitude latLngBoundsNorthEastLongitude latLngBoundsSouthWestLatitude latLngBoundsSouthWestLongitude liteMode mapId mapType uiCompass uiMapToolbar uiRotateGestures uiScrollGestures uiScrollGesturesDuringRotateOrZoom uiTiltGestures uiZoomControls uiZoomGestures useViewLifecycle zOrderOnTop
+styleable MapAttrs ambientEnabled backgroundColor cameraBearing cameraMaxZoomPreference cameraMinZoomPreference cameraTargetLat cameraTargetLng cameraTilt cameraZoom latLngBoundsNorthEastLatitude latLngBoundsNorthEastLongitude latLngBoundsSouthWestLatitude latLngBoundsSouthWestLongitude liteMode mapId mapType uiCompass uiMapToolbar uiRotateGestures uiScrollGestures uiScrollGesturesDuringRotateOrZoom uiTiltGestures uiZoomControls uiZoomGestures useViewLifecycle zOrderOnTop
 styleable MaterialAlertDialog backgroundInsetBottom backgroundInsetEnd backgroundInsetStart backgroundInsetTop
 styleable MaterialAlertDialogTheme materialAlertDialogBodyTextStyle materialAlertDialogTheme materialAlertDialogTitleIconStyle materialAlertDialogTitlePanelStyle materialAlertDialogTitleTextStyle
 styleable MaterialAutoCompleteTextView android_inputType

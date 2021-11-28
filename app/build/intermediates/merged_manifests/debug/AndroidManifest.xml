@@ -44,7 +44,12 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.MoviePlace" >
-
+        <activity
+            android:name="com.example.movieplace.ui.profile.FavGenres"
+            android:exported="false" />
+        <activity
+            android:name="com.example.movieplace.ui.profile.FavoGenres"
+            android:exported="false" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

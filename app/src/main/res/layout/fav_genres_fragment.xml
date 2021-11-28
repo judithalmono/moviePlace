@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/act_fav_genres"
+    android:background="@drawable/background12"
+    tools:context=".ui.profile.FavGenres">
+
+    <TextView
+        android:id="@+id/textTitol1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Favourite Genres"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.108"
+        tools:ignore="MissingConstraints" />
+
+    <RadioGroup
+        android:id="@+id/radioButtonFavGenr"
+        android:layout_width="230dp"
+        android:layout_height="535dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.591"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75">
+
+        <RadioButton
+            android:id="@+id/ActionSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Action"
+            android:textColor="@color/white"
+            android:textSize="19dp" />
+
+        <RadioButton
+            android:id="@+id/AdvSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Adventure"
+            android:textColor="@color/white"
+            android:textSize="19dp" />
+
+        <RadioButton
+            android:id="@+id/ComedySelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Comedy"
+            android:textColor="@color/white"
+            android:textSize="19dp" />
+
+        <RadioButton
+            android:id="@+id/CrimMistSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crime and mystery"
+            android:textColor="@color/white"
+            android:textSize="19dp" />
+
+        <RadioButton
+            android:id="@+id/FantasySelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fantasy"
+            android:textColor="@color/white"
+            android:textSize="19dp" />
+
+        <RadioButton
+            android:id="@+id/HistoSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Historical"
+            android:textColor="@color/white"
+            android:textSize="19dp" />
+
+        <RadioButton
+            android:id="@+id/HorrorSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Horror"
+            android:textColor="@color/white"
+            android:textSize="19dp" />
+
+        <RadioButton
+            android:id="@+id/RomanceSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Romance"
+            android:textColor="@color/white"
+            android:textSize="19dp" />
+
+        <RadioButton
+            android:id="@+id/SFicSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Science fiction"
+            android:textColor="@color/white"
+            android:textSize="19dp" />
+
+        <RadioButton
+            android:id="@+id/ThrillerSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thriller"
+            android:textColor="@color/white"
+            android:textSize="19dp" />
+
+        <RadioButton
+            android:id="@+id/WesternSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Western"
+            android:textColor="@color/white"
+            android:textSize="19dp" />
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

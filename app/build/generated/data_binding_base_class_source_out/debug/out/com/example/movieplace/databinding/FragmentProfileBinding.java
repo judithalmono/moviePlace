@@ -24,7 +24,13 @@ public final class FragmentProfileBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ImageButton buttonChangeMyLikes;
+
+  @NonNull
   public final ImageButton buttonChangePassword;
+
+  @NonNull
+  public final ImageButton buttonChangePersInfo;
 
   @NonNull
   public final Button buttonSignIn2;
@@ -62,22 +68,18 @@ public final class FragmentProfileBinding implements ViewBinding {
   @NonNull
   public final ImageButton imgbutton3;
 
-  @NonNull
-  public final ImageButton imgbutton4;
-
-  @NonNull
-  public final ImageButton imgbutton6;
-
   private FragmentProfileBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageButton buttonChangePassword, @NonNull Button buttonSignIn2,
+      @NonNull ImageButton buttonChangeMyLikes, @NonNull ImageButton buttonChangePassword,
+      @NonNull ImageButton buttonChangePersInfo, @NonNull Button buttonSignIn2,
       @NonNull CircleImageView circleImageView, @NonNull TextView editText1,
       @NonNull TextView editText2, @NonNull TextView editText3, @NonNull EditText editTextUser2,
       @NonNull EditText editTextUser3, @NonNull EditText editTextUser4,
       @NonNull ConstraintLayout fragmentProfile, @NonNull ImageButton imgbutton1,
-      @NonNull ImageButton imgbutton2, @NonNull ImageButton imgbutton3,
-      @NonNull ImageButton imgbutton4, @NonNull ImageButton imgbutton6) {
+      @NonNull ImageButton imgbutton2, @NonNull ImageButton imgbutton3) {
     this.rootView = rootView;
+    this.buttonChangeMyLikes = buttonChangeMyLikes;
     this.buttonChangePassword = buttonChangePassword;
+    this.buttonChangePersInfo = buttonChangePersInfo;
     this.buttonSignIn2 = buttonSignIn2;
     this.circleImageView = circleImageView;
     this.editText1 = editText1;
@@ -90,8 +92,6 @@ public final class FragmentProfileBinding implements ViewBinding {
     this.imgbutton1 = imgbutton1;
     this.imgbutton2 = imgbutton2;
     this.imgbutton3 = imgbutton3;
-    this.imgbutton4 = imgbutton4;
-    this.imgbutton6 = imgbutton6;
   }
 
   @Override
@@ -121,9 +121,21 @@ public final class FragmentProfileBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button_change_MyLikes;
+      ImageButton buttonChangeMyLikes = ViewBindings.findChildViewById(rootView, id);
+      if (buttonChangeMyLikes == null) {
+        break missingId;
+      }
+
       id = R.id.button_change_password;
       ImageButton buttonChangePassword = ViewBindings.findChildViewById(rootView, id);
       if (buttonChangePassword == null) {
+        break missingId;
+      }
+
+      id = R.id.button_change_PersInfo;
+      ImageButton buttonChangePersInfo = ViewBindings.findChildViewById(rootView, id);
+      if (buttonChangePersInfo == null) {
         break missingId;
       }
 
@@ -195,22 +207,10 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imgbutton4;
-      ImageButton imgbutton4 = ViewBindings.findChildViewById(rootView, id);
-      if (imgbutton4 == null) {
-        break missingId;
-      }
-
-      id = R.id.imgbutton6;
-      ImageButton imgbutton6 = ViewBindings.findChildViewById(rootView, id);
-      if (imgbutton6 == null) {
-        break missingId;
-      }
-
-      return new FragmentProfileBinding((ConstraintLayout) rootView, buttonChangePassword,
-          buttonSignIn2, circleImageView, editText1, editText2, editText3, editTextUser2,
-          editTextUser3, editTextUser4, fragmentProfile, imgbutton1, imgbutton2, imgbutton3,
-          imgbutton4, imgbutton6);
+      return new FragmentProfileBinding((ConstraintLayout) rootView, buttonChangeMyLikes,
+          buttonChangePassword, buttonChangePersInfo, buttonSignIn2, circleImageView, editText1,
+          editText2, editText3, editTextUser2, editTextUser3, editTextUser4, fragmentProfile,
+          imgbutton1, imgbutton2, imgbutton3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
