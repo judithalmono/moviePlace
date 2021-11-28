@@ -4,6 +4,7 @@ package com.example.movieplace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,12 +21,20 @@ public final class FragmentMapBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final TextView textNotifications;
+  public final SeekBar seekBarDistance;
 
-  private FragmentMapBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView textNotifications) {
+  @NonNull
+  public final TextView textViewDistance;
+
+  @NonNull
+  public final View viewSeekBar;
+
+  private FragmentMapBinding(@NonNull ConstraintLayout rootView, @NonNull SeekBar seekBarDistance,
+      @NonNull TextView textViewDistance, @NonNull View viewSeekBar) {
     this.rootView = rootView;
-    this.textNotifications = textNotifications;
+    this.seekBarDistance = seekBarDistance;
+    this.textViewDistance = textViewDistance;
+    this.viewSeekBar = viewSeekBar;
   }
 
   @Override
@@ -55,13 +64,26 @@ public final class FragmentMapBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.text_notifications;
-      TextView textNotifications = ViewBindings.findChildViewById(rootView, id);
-      if (textNotifications == null) {
+      id = R.id.seekBarDistance;
+      SeekBar seekBarDistance = ViewBindings.findChildViewById(rootView, id);
+      if (seekBarDistance == null) {
         break missingId;
       }
 
-      return new FragmentMapBinding((ConstraintLayout) rootView, textNotifications);
+      id = R.id.textViewDistance;
+      TextView textViewDistance = ViewBindings.findChildViewById(rootView, id);
+      if (textViewDistance == null) {
+        break missingId;
+      }
+
+      id = R.id.viewSeekBar;
+      View viewSeekBar = ViewBindings.findChildViewById(rootView, id);
+      if (viewSeekBar == null) {
+        break missingId;
+      }
+
+      return new FragmentMapBinding((ConstraintLayout) rootView, seekBarDistance, textViewDistance,
+          viewSeekBar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
