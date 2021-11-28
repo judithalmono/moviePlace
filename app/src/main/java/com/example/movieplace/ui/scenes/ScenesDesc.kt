@@ -20,6 +20,9 @@ import com.example.movieplace.data.model.Movie
 import com.example.movieplace.data.model.Scene
 import com.google.gson.GsonBuilder
 
+
+
+
 class ScenesDesc : AppCompatActivity() {
 
     private lateinit var scene: Scene

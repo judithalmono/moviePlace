@@ -18,10 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="25dp"
+            android:padding="25dp"
             android:orientation="vertical">
 
             <ImageView
@@ -45,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Nanana nanan nanaanana nana nananaann anana nananana nanananan nana nan nan nananana nananana nananana nanaanan nanaanan nanaanan nanaanan nananaan nana nan nananaan ananaan nanananan nanan nananaan nanana nanan aan nan na nan nanan nanananana nanaanan nananan nanaanana nanaanan nanaan nanana nanan aaanan nanana nana anana nananan nana nanan "
+                android:text="Nanana nanan nanaanana nana nananaann anana nananana nanananan nana nan nan nananana nananana nananana nanaanan nanaanan nanaanan nanaanan nananaan nana nan nananaan ananaan nanananan nanan nananaan nanana nanan aan nan na nan nanan nanananana nanaanan nananan nanaanana nanaanan nanaan nanana nanan aaanan nanana nana anana nananan nana nanan"
                 android:textColor="#FF555555"
                 android:textSize="23sp" />
 
@@ -63,7 +60,6 @@
                 android:id="@+id/rateBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-
 
         </LinearLayout>
 

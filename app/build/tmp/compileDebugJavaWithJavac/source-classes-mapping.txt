@@ -1,11 +1,11 @@
-com/example/movieplace/BuildConfig.java
- com.example.movieplace.BuildConfig
 com/example/movieplace/databinding/FragmentMapsScenesBinding.java
  com.example.movieplace.databinding.FragmentMapsScenesBinding
 com/example/movieplace/databinding/FragmentMovieBinding.java
  com.example.movieplace.databinding.FragmentMovieBinding
 com/example/movieplace/databinding/ActivityScenesDescBinding.java
  com.example.movieplace.databinding.ActivityScenesDescBinding
+com/example/movieplace/BuildConfig.java
+ com.example.movieplace.BuildConfig
 com/example/movieplace/databinding/ActivityMainBinding.java
  com.example.movieplace.databinding.ActivityMainBinding
 com/example/movieplace/databinding/ActivityChangePasswordBinding.java

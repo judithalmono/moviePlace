@@ -61,16 +61,21 @@ class ScenesList: Fragment() {
         Log.d("MOVIE", idmovie.toString())
         setHasOptionsMenu(true)
 
-        scenesViewModel.getScenesByID(idmovie).observe(
-            viewLifecycleOwner,
-            {
-                if (it is Result.Success) {
-                    scenes = it.data
-                    scenesListAdapter.setData(scenes)
-//                    progressBar.visibility = View.GONE
-                }
-            }
-        )
+        val scene = Scene("4558",
+            arrayListOf("Christian Bale"), "4558", "Calle Provenza, 185, 08036 Barcelona", ArrayList(), "")
+//                    scenes = it.data
+        scenes = arrayListOf(scene)
+        scenesListAdapter.setData(scenes)
+
+//        scenesViewModel.getScenesByID(idmovie).observe(
+//            viewLifecycleOwner,
+//            {
+//                if (it is Result.Success) {
+//
+////                    progressBar.visibility = View.GONE
+//                }
+//            }
+//        )
 
     }
 

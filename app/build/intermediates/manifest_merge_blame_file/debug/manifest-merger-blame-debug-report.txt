@@ -63,7 +63,7 @@
 36        android:allowBackup="true"
 36-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:23:9-35
 37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-37-->[androidx.core:core:1.6.0] C:\Users\judit\.gradle\caches\transforms-3\7cabb0b7df62f3b93c656c79795a54ee\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+37-->[androidx.core:core:1.7.0] C:\Users\judit\.gradle\caches\transforms-3\22fc58c1aba25a38624b19fcaec4a163\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 38        android:debuggable="true"
 39        android:icon="@mipmap/ic_launcher"
 39-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:24:9-43
@@ -164,40 +164,56 @@
 93-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:78:13-34
 94            android:exported="false" />
 94-->C:\Users\judit\AndroidStudioProjects\MoviePlace\moviePlace\app\src\main\AndroidManifest.xml:79:13-37
-95        <!-- Needs to be explicitly declared on P+ -->
-96        <uses-library
-96-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:39:9-41:40
-97            android:name="org.apache.http.legacy"
-97-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:40:13-50
-98            android:required="false" />
-98-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:41:13-37
-99
-100        <activity
-100-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\a25f1e6318654046eb45598079ce89dd\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-101            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-101-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\a25f1e6318654046eb45598079ce89dd\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-102            android:exported="false"
-102-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\a25f1e6318654046eb45598079ce89dd\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-103            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-103-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\a25f1e6318654046eb45598079ce89dd\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-104
-105        <meta-data
-105-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\af5c889c3c1039ab7c247076e19dd514\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-106            android:name="com.google.android.gms.version"
-106-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\af5c889c3c1039ab7c247076e19dd514\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-107            android:value="@integer/google_play_services_version" />
-107-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\af5c889c3c1039ab7c247076e19dd514\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-108
-109        <provider
-109-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-110            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-110-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-111            android:authorities="com.example.movieplace.lifecycle-process"
-111-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-112            android:exported="false"
-112-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-113            android:multiprocess="true" />
-113-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\judit\.gradle\caches\transforms-3\d021bec982e8e10b97ccac4f686ff33c\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-114    </application>
-115
-116</manifest>
+95        <activity
+95-->[com.karumi:dexter:6.2.2] C:\Users\judit\.gradle\caches\transforms-3\ea5d0ff9fab775a245215da116b585fb\transformed\jetified-dexter-6.2.2\AndroidManifest.xml:27:9-29:72
+96            android:name="com.karumi.dexter.DexterActivity"
+96-->[com.karumi:dexter:6.2.2] C:\Users\judit\.gradle\caches\transforms-3\ea5d0ff9fab775a245215da116b585fb\transformed\jetified-dexter-6.2.2\AndroidManifest.xml:28:13-60
+97            android:theme="@style/Dexter.Internal.Theme.Transparent" /> <!-- Needs to be explicitly declared on P+ -->
+97-->[com.karumi:dexter:6.2.2] C:\Users\judit\.gradle\caches\transforms-3\ea5d0ff9fab775a245215da116b585fb\transformed\jetified-dexter-6.2.2\AndroidManifest.xml:29:13-69
+98        <uses-library
+98-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:39:9-41:40
+99            android:name="org.apache.http.legacy"
+99-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:40:13-50
+100            android:required="false" />
+100-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\judit\.gradle\caches\transforms-3\d4d02c5ab78ec5afa4fefabca0cee809\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:41:13-37
+101
+102        <activity
+102-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\a25f1e6318654046eb45598079ce89dd\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+103            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+103-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\a25f1e6318654046eb45598079ce89dd\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+104            android:exported="false"
+104-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\a25f1e6318654046eb45598079ce89dd\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+105            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+105-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\a25f1e6318654046eb45598079ce89dd\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+106
+107        <meta-data
+107-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\af5c889c3c1039ab7c247076e19dd514\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+108            android:name="com.google.android.gms.version"
+108-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\af5c889c3c1039ab7c247076e19dd514\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+109            android:value="@integer/google_play_services_version" />
+109-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\judit\.gradle\caches\transforms-3\af5c889c3c1039ab7c247076e19dd514\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+110
+111        <provider
+111-->[androidx.emoji2:emoji2:1.0.0] C:\Users\judit\.gradle\caches\transforms-3\f0fef0678a57aff454a268ff3683da91\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+112            android:name="androidx.startup.InitializationProvider"
+112-->[androidx.emoji2:emoji2:1.0.0] C:\Users\judit\.gradle\caches\transforms-3\f0fef0678a57aff454a268ff3683da91\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+113            android:authorities="com.example.movieplace.androidx-startup"
+113-->[androidx.emoji2:emoji2:1.0.0] C:\Users\judit\.gradle\caches\transforms-3\f0fef0678a57aff454a268ff3683da91\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+114            android:exported="false" >
+114-->[androidx.emoji2:emoji2:1.0.0] C:\Users\judit\.gradle\caches\transforms-3\f0fef0678a57aff454a268ff3683da91\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+115            <meta-data
+115-->[androidx.emoji2:emoji2:1.0.0] C:\Users\judit\.gradle\caches\transforms-3\f0fef0678a57aff454a268ff3683da91\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+116                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+116-->[androidx.emoji2:emoji2:1.0.0] C:\Users\judit\.gradle\caches\transforms-3\f0fef0678a57aff454a268ff3683da91\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+117                android:value="androidx.startup" />
+117-->[androidx.emoji2:emoji2:1.0.0] C:\Users\judit\.gradle\caches\transforms-3\f0fef0678a57aff454a268ff3683da91\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+118            <meta-data
+118-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\judit\.gradle\caches\transforms-3\18e5844b9a73a26185a74c5ff080299f\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+119                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+119-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\judit\.gradle\caches\transforms-3\18e5844b9a73a26185a74c5ff080299f\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+120                android:value="androidx.startup" />
+120-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\judit\.gradle\caches\transforms-3\18e5844b9a73a26185a74c5ff080299f\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+121        </provider>
+122    </application>
+123
+124</manifest>
