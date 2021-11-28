@@ -27,14 +27,13 @@ class ScenesDesc : AppCompatActivity() {
 
     private lateinit var scene: Scene
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scenes_desc)
 
         val arguments = intent.extras
         scene = GsonBuilder().create().fromJson(arguments?.getString("scene").toString(), Scene::class.java)
-        title = scene.id
+        title = scene.Name
 
         val imgScene = findViewById<ImageView>(R.id.imgScene)
         imgScene.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.background15))

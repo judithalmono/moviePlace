@@ -3,33 +3,43 @@ package com.example.movieplace.ui.scenes
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context.LOCATION_SERVICE
-import android.location.Location
-import android.location.LocationListener
-import android.location.LocationManager
+import android.content.Intent
+import android.location.*
 import androidx.fragment.app.Fragment
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.lifecycle.ViewModelProvider
 import com.example.movieplace.R
+import com.example.movieplace.data.Result
+import com.example.movieplace.data.model.Scene
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
+import com.google.gson.GsonBuilder
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MapsScenesFragment : Fragment() {
 
     companion object {
-        fun newInstance() =
-            MapsScenesFragment()
+        fun newInstance(id_movie: Int) =
+            MapsScenesFragment().apply {
+                arguments = bundleOf("movie_id" to id_movie)
+            }
     }
 
     private lateinit var mMap: GoogleMap
@@ -41,6 +51,12 @@ class MapsScenesFragment : Fragment() {
     private var locationManager : LocationManager? = null
     private lateinit var locationUser: Location
     private lateinit var mapFragment: SupportMapFragment
+    private lateinit var scenesViewModel: SceneViewModel
+    private lateinit var scenesListAdapter: MyScenesRecyclesViewAdapter
+    private var idmovie: Int = 0
+    private var scenes: List<Scene> = ArrayList()
+    private var scenesList: MutableList<Scene> = ArrayList()
+    private var currentScenes: MutableList<Scene> = ArrayList()
 
     private val callback = OnMapReadyCallback { googleMap ->
         /**
@@ -93,6 +109,30 @@ class MapsScenesFragment : Fragment() {
                     TODO("Not yet implemented")
                 }
             }).check()
+
+        for (item in currentScenes) {
+
+            // transform address to coordinates
+//            val geocoder = Geocoder(context, Locale.getDefault())
+            latitude = item.location[0]
+            longitude = item.location[1]
+//            val addresses: List<Address> =
+//                geocoder.getFromLocationName(item.nomCarrer + " " + item.numCarrer, 1)
+//            if (addresses.isNotEmpty()) {
+//                latitude = addresses[0].latitude
+//                longitude = addresses[0].longitude
+//            }
+            // set marker in place
+            val place = LatLng(latitude, longitude)
+            mMap.addMarker(MarkerOptions().position(place).title(item.Name))
+
+            mMap.setOnInfoWindowClickListener {
+                // al clicar al título, se abre la pantalla con la info de la activity
+                val intent = Intent(context, ScenesDesc::class.java)
+                intent.putExtra("scene", GsonBuilder().create().toJson(item))
+                context?.startActivity(intent)
+            }
+        }
     }
 
     override fun onCreateView(
@@ -106,20 +146,32 @@ class MapsScenesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mapFragment = (childFragmentManager.findFragmentById(R.id.mapScenes) as SupportMapFragment?)!!
-        mapFragment.getMapAsync(callback)
 
         locationManager = requireActivity().getSystemService(LOCATION_SERVICE) as LocationManager?
+
+        scenesViewModel = ViewModelProvider(this).get(SceneViewModel::class.java)
+        scenesListAdapter = MyScenesRecyclesViewAdapter(context as ScenesActivity)
 
         viewSeek = view.findViewById(R.id.viewSeekBar)
         seekBarDistance = view.findViewById(R.id.seekBarDistance)
         textViewDistance = view.findViewById(R.id.textViewDistance)
 
+        idmovie = (requireArguments().get("movie_id") as Int?)!!
 
+        scenesViewModel.getScenesByID(idmovie).observe(
+            viewLifecycleOwner,
+            {
+                if (it is Result.Success) {
+                    scenes = it.data
+                    scenesListAdapter.setData(scenes)
+                    for (item in scenes) {
+                        scenesList.add(item)
+                    }
+//                    progressBar.visibility = View.GONE
+                }
+                currentScenes = scenesList
+                mapFragment.getMapAsync(callback)
+            }
+        )
     }
-
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//        val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
-//
-//    }
 }

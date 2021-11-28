@@ -3,6 +3,7 @@ package com.example.movieplace.ui.home
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -66,6 +67,7 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      * @return the number of views
      */
     override fun getItemCount(): Int {
+        Log.d("PELIS", movies.size.toString())
         return movies.size
     }
 

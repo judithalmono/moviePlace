@@ -64,7 +64,7 @@ class ScenesActivity: AppCompatActivity() {
                 selectedOption = false
                 item.icon = ContextCompat.getDrawable(this, R.drawable.listicon)
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, MapsScenesFragment.newInstance())
+                    .replace(R.id.container, MapsScenesFragment.newInstance(movie.id))
                     .commitNow()
             } else { //List scenes
                 selectedOption = true
