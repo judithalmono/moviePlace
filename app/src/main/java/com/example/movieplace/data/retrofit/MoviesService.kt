@@ -1,8 +1,8 @@
 package com.example.movieplace.data.retrofit
 
 import com.example.movieplace.data.model.Movie
-import com.example.movieplace.data.model.User
 import com.example.movieplace.data.model.Scene
+import com.example.movieplace.data.model.User
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -135,7 +135,7 @@ interface MoviesService {
      */
 
     @PUT("/updateUser")
-    fun setTelefon(@Body usr: String, newtel : Int): Call<ResponseBody>
+    fun setTelefon(@Body usr: String, newtel : String): Call<ResponseBody>
 
     /**
      * Gets the password of the user

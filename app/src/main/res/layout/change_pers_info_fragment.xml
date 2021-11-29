@@ -23,8 +23,7 @@
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.105"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.105" />
 
     <EditText
         android:id="@+id/editUsername1"
@@ -48,8 +47,7 @@
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.25"/>
 
     <EditText
         android:id="@+id/editComplName1"
@@ -73,8 +71,7 @@
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.342"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.342" />
 
     <EditText
         android:id="@+id/editEmail1"
@@ -97,8 +94,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.437"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.437" />
 
     <EditText
         android:id="@+id/editPhone"
@@ -121,8 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.527"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.527"/>
 
     <EditText
         android:id="@+id/editBirthday"
@@ -146,11 +141,10 @@
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.618"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.618"/>
 
     <EditText
-        android:id="@+id/editAdress"
+        android:id="@+id/editAddress1"
 
         android:layout_width="329dp"
         android:layout_height="47dp"
@@ -171,8 +165,7 @@
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.706"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.706"/>
 
     <TextView
         android:layout_width="wrap_content"

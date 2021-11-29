@@ -6,12 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageButton
 import androidx.fragment.app.FragmentTransaction
 import com.example.movieplace.R
+import com.example.movieplace.data.Result
 import com.example.movieplace.databinding.FragmentProfileBinding
-
-
+import de.hdodenhof.circleimageview.CircleImageView
 
 
 class ProfileFragment : Fragment() {
@@ -21,15 +22,75 @@ class ProfileFragment : Fragment() {
     }*/
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel: ProfileViewModel
+
+    private lateinit var profileViewModel: ProfileViewModel
+
+    private lateinit var editTextUsername: EditText
+    private lateinit var editTextFullName: EditText
+    private lateinit var editTextEmail: EditText
+    private lateinit var imageViewProfilePic: CircleImageView
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
+        profileViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
+
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        imageViewProfilePic = root.findViewById(R.id.circleImageView)
+        editTextUsername = root.findViewById(R.id.editTextUsername)
+        editTextFullName = root.findViewById(R.id.editTextFullName)
+        editTextEmail = root.findViewById(R.id.editTextEmail)
+
+        // Per ara només funciona manualment, i per l'usuari admin.
+        val usr = "admin"
+
+
+        profileViewModel.getInfoUser(usr)
+        profileViewModel.getInfoUser(usr).observe(
+            viewLifecycleOwner,
+            {
+                if (it is Result.Success) {
+                    editTextUsername.setText(it.data.username)
+                    editTextFullName.setText(it.data.full_name)
+                    editTextEmail.setText(it.data.email)
+                }
+            }
+        )
+
+        val bdUsername : String = editTextUsername.toString()
+        val bdFullName : String = editTextFullName.toString()
+        val bdEmail : String = editTextEmail.toString()
+
+        //Change Username
+        val buttonUsername = root.findViewById<ImageButton>(R.id.button_change_Username2)
+        buttonUsername.setOnClickListener() {
+            /*if (editTextUsername.text.toString() != bdUsername) {
+                profileViewModel.setUsername(usr, editTextUsername.text.toString())
+            }*/
+            val nuevoFragmento: Fragment = ChangePersInfoFragment()
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.fragment_profile, nuevoFragmento)
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+
+        //Change Full Name
+        val buttonFullName = root.findViewById<ImageButton>(R.id.button_change_FullName2)
+        buttonUsername.setOnClickListener() {
+
+        }
+
+        //Change Email
+        val buttonEmail = root.findViewById<ImageButton>(R.id.button_change_Email2)
+        buttonUsername.setOnClickListener() {
+
+        }
+
 
         //Change Personal Information
         val button1 = root.findViewById<ImageButton>(R.id.button_change_PersInfo)
@@ -68,10 +129,9 @@ class ProfileFragment : Fragment() {
         return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }
