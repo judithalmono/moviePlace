@@ -219,7 +219,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonSubmit1"
+        android:id="@+id/buttonSubmitComposers"
         android:background="@drawable/btn_style"
         android:text="Submit"
         android:textSize="15sp"

@@ -28,10 +28,6 @@
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/activity_scenes.xml"
     },
     {
-        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_change_password.xml",
-        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/activity_change_password.xml"
-    },
-    {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/change_my_likes_fragment.xml",
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/change_my_likes_fragment.xml"
     },

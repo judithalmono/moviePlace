@@ -1997,6 +1997,7 @@ id CTRL
 id ChangePassword
 id ComedySelect
 id CrimMistSelect
+id DramaSelect
 id FUNCTION
 id FantasySelect
 id FavActors
@@ -2111,8 +2112,10 @@ id bounceEnd
 id bounceStart
 id buttonPanel
 id buttonSignIn
-id buttonSignIn2
 id buttonSubmit1
+id buttonSubmitComposers
+id buttonSubmitDirectors
+id buttonSubmitGenres
 id button_change
 id button_change_FavActors
 id button_change_FavComp
@@ -2422,7 +2425,6 @@ id progress_circular
 id progress_horizontal
 id radio
 id radioButtonChangeSexes
-id radioButtonFavGenr
 id rateBar
 id ratingBar
 id ratio
