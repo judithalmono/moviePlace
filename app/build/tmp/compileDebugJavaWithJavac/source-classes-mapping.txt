@@ -1,21 +1,43 @@
+com/example/movieplace/databinding/FragmentMapsScenesBinding.java
+ com.example.movieplace.databinding.FragmentMapsScenesBinding
+com/example/movieplace/databinding/ActivityScenesDescBinding.java
+ com.example.movieplace.databinding.ActivityScenesDescBinding
+com/example/movieplace/databinding/FragmentMovieBinding.java
+ com.example.movieplace.databinding.FragmentMovieBinding
+com/example/movieplace/databinding/ChangePersInfoFragmentBinding.java
+ com.example.movieplace.databinding.ChangePersInfoFragmentBinding
+com/example/movieplace/BuildConfig.java
+ com.example.movieplace.BuildConfig
+com/example/movieplace/databinding/FavComposersFragmentBinding.java
+ com.example.movieplace.databinding.FavComposersFragmentBinding
+com/example/movieplace/databinding/ActivityMainBinding.java
+ com.example.movieplace.databinding.ActivityMainBinding
+com/example/movieplace/databinding/FavGenresFragmentBinding.java
+ com.example.movieplace.databinding.FavGenresFragmentBinding
 com/example/movieplace/databinding/ActivitySignupBinding.java
  com.example.movieplace.databinding.ActivitySignupBinding
 com/example/movieplace/databinding/FragmentProfileBinding.java
  com.example.movieplace.databinding.FragmentProfileBinding
-com/example/movieplace/databinding/FragmentForYouBinding.java
- com.example.movieplace.databinding.FragmentForYouBinding
+com/example/movieplace/databinding/ChangePasswordFragmentBinding.java
+ com.example.movieplace.databinding.ChangePasswordFragmentBinding
 com/example/movieplace/databinding/FragmentHomeBinding.java
  com.example.movieplace.databinding.FragmentHomeBinding
+com/example/movieplace/databinding/ActivityScenesBinding.java
+ com.example.movieplace.databinding.ActivityScenesBinding
+com/example/movieplace/databinding/FavActorsFragmentBinding.java
+ com.example.movieplace.databinding.FavActorsFragmentBinding
 com/example/movieplace/databinding/ActivityHomeBinding.java
  com.example.movieplace.databinding.ActivityHomeBinding
-com/example/movieplace/BuildConfig.java
- com.example.movieplace.BuildConfig
+com/example/movieplace/databinding/FragmentSceneBinding.java
+ com.example.movieplace.databinding.FragmentSceneBinding
 com/example/movieplace/databinding/FragmentTopBinding.java
  com.example.movieplace.databinding.FragmentTopBinding
-com/example/movieplace/databinding/ActivityChangePasswordBinding.java
- com.example.movieplace.databinding.ActivityChangePasswordBinding
-com/example/movieplace/databinding/ActivityMainBinding.java
- com.example.movieplace.databinding.ActivityMainBinding
+com/example/movieplace/databinding/ChangeMyLikesFragmentBinding.java
+ com.example.movieplace.databinding.ChangeMyLikesFragmentBinding
+com/example/movieplace/databinding/FragmentListscenesBinding.java
+ com.example.movieplace.databinding.FragmentListscenesBinding
+com/example/movieplace/databinding/FavDirectorsFragmentBinding.java
+ com.example.movieplace.databinding.FavDirectorsFragmentBinding
 com/example/movieplace/databinding/ActivityLoginBinding.java
  com.example.movieplace.databinding.ActivityLoginBinding
 com/example/movieplace/databinding/FragmentSearchBinding.java

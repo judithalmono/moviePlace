@@ -24,7 +24,13 @@ public final class FragmentProfileBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ImageButton buttonChangeMyLikes;
+
+  @NonNull
   public final ImageButton buttonChangePassword;
+
+  @NonNull
+  public final ImageButton buttonChangePersInfo;
 
   @NonNull
   public final Button buttonSignIn2;
@@ -42,56 +48,37 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final TextView editText3;
 
   @NonNull
-  public final EditText editTextUser2;
+  public final EditText editTextEmail;
 
   @NonNull
-  public final EditText editTextUser3;
+  public final EditText editTextFullName;
 
   @NonNull
-  public final EditText editTextUser4;
+  public final EditText editTextUsername;
 
   @NonNull
   public final ConstraintLayout fragmentProfile;
 
-  @NonNull
-  public final ImageButton imgbutton1;
-
-  @NonNull
-  public final ImageButton imgbutton2;
-
-  @NonNull
-  public final ImageButton imgbutton3;
-
-  @NonNull
-  public final ImageButton imgbutton4;
-
-  @NonNull
-  public final ImageButton imgbutton6;
-
   private FragmentProfileBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageButton buttonChangePassword, @NonNull Button buttonSignIn2,
+      @NonNull ImageButton buttonChangeMyLikes, @NonNull ImageButton buttonChangePassword,
+      @NonNull ImageButton buttonChangePersInfo, @NonNull Button buttonSignIn2,
       @NonNull CircleImageView circleImageView, @NonNull TextView editText1,
-      @NonNull TextView editText2, @NonNull TextView editText3, @NonNull EditText editTextUser2,
-      @NonNull EditText editTextUser3, @NonNull EditText editTextUser4,
-      @NonNull ConstraintLayout fragmentProfile, @NonNull ImageButton imgbutton1,
-      @NonNull ImageButton imgbutton2, @NonNull ImageButton imgbutton3,
-      @NonNull ImageButton imgbutton4, @NonNull ImageButton imgbutton6) {
+      @NonNull TextView editText2, @NonNull TextView editText3, @NonNull EditText editTextEmail,
+      @NonNull EditText editTextFullName, @NonNull EditText editTextUsername,
+      @NonNull ConstraintLayout fragmentProfile) {
     this.rootView = rootView;
+    this.buttonChangeMyLikes = buttonChangeMyLikes;
     this.buttonChangePassword = buttonChangePassword;
+    this.buttonChangePersInfo = buttonChangePersInfo;
     this.buttonSignIn2 = buttonSignIn2;
     this.circleImageView = circleImageView;
     this.editText1 = editText1;
     this.editText2 = editText2;
     this.editText3 = editText3;
-    this.editTextUser2 = editTextUser2;
-    this.editTextUser3 = editTextUser3;
-    this.editTextUser4 = editTextUser4;
+    this.editTextEmail = editTextEmail;
+    this.editTextFullName = editTextFullName;
+    this.editTextUsername = editTextUsername;
     this.fragmentProfile = fragmentProfile;
-    this.imgbutton1 = imgbutton1;
-    this.imgbutton2 = imgbutton2;
-    this.imgbutton3 = imgbutton3;
-    this.imgbutton4 = imgbutton4;
-    this.imgbutton6 = imgbutton6;
   }
 
   @Override
@@ -121,9 +108,21 @@ public final class FragmentProfileBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button_change_MyLikes;
+      ImageButton buttonChangeMyLikes = ViewBindings.findChildViewById(rootView, id);
+      if (buttonChangeMyLikes == null) {
+        break missingId;
+      }
+
       id = R.id.button_change_password;
       ImageButton buttonChangePassword = ViewBindings.findChildViewById(rootView, id);
       if (buttonChangePassword == null) {
+        break missingId;
+      }
+
+      id = R.id.button_change_PersInfo;
+      ImageButton buttonChangePersInfo = ViewBindings.findChildViewById(rootView, id);
+      if (buttonChangePersInfo == null) {
         break missingId;
       }
 
@@ -157,60 +156,29 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.editTextUser2;
-      EditText editTextUser2 = ViewBindings.findChildViewById(rootView, id);
-      if (editTextUser2 == null) {
+      id = R.id.editTextEmail;
+      EditText editTextEmail = ViewBindings.findChildViewById(rootView, id);
+      if (editTextEmail == null) {
         break missingId;
       }
 
-      id = R.id.editTextUser3;
-      EditText editTextUser3 = ViewBindings.findChildViewById(rootView, id);
-      if (editTextUser3 == null) {
+      id = R.id.editTextFullName;
+      EditText editTextFullName = ViewBindings.findChildViewById(rootView, id);
+      if (editTextFullName == null) {
         break missingId;
       }
 
-      id = R.id.editTextUser4;
-      EditText editTextUser4 = ViewBindings.findChildViewById(rootView, id);
-      if (editTextUser4 == null) {
+      id = R.id.editTextUsername;
+      EditText editTextUsername = ViewBindings.findChildViewById(rootView, id);
+      if (editTextUsername == null) {
         break missingId;
       }
 
       ConstraintLayout fragmentProfile = (ConstraintLayout) rootView;
 
-      id = R.id.imgbutton1;
-      ImageButton imgbutton1 = ViewBindings.findChildViewById(rootView, id);
-      if (imgbutton1 == null) {
-        break missingId;
-      }
-
-      id = R.id.imgbutton2;
-      ImageButton imgbutton2 = ViewBindings.findChildViewById(rootView, id);
-      if (imgbutton2 == null) {
-        break missingId;
-      }
-
-      id = R.id.imgbutton3;
-      ImageButton imgbutton3 = ViewBindings.findChildViewById(rootView, id);
-      if (imgbutton3 == null) {
-        break missingId;
-      }
-
-      id = R.id.imgbutton4;
-      ImageButton imgbutton4 = ViewBindings.findChildViewById(rootView, id);
-      if (imgbutton4 == null) {
-        break missingId;
-      }
-
-      id = R.id.imgbutton6;
-      ImageButton imgbutton6 = ViewBindings.findChildViewById(rootView, id);
-      if (imgbutton6 == null) {
-        break missingId;
-      }
-
-      return new FragmentProfileBinding((ConstraintLayout) rootView, buttonChangePassword,
-          buttonSignIn2, circleImageView, editText1, editText2, editText3, editTextUser2,
-          editTextUser3, editTextUser4, fragmentProfile, imgbutton1, imgbutton2, imgbutton3,
-          imgbutton4, imgbutton6);
+      return new FragmentProfileBinding((ConstraintLayout) rootView, buttonChangeMyLikes,
+          buttonChangePassword, buttonChangePersInfo, buttonSignIn2, circleImageView, editText1,
+          editText2, editText3, editTextEmail, editTextFullName, editTextUsername, fragmentProfile);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

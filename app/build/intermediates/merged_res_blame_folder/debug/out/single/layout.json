@@ -1,7 +1,59 @@
 [
     {
-        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_for_you.xml",
-        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fragment_for_you.xml"
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_scene.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fragment_scene.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_scenes_desc.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/activity_scenes_desc.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_signup.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/activity_signup.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/change_pers_info_fragment.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/change_pers_info_fragment.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_search.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fragment_search.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/change_password_fragment.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/change_password_fragment.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_scenes.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/activity_scenes.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_change_password.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/activity_change_password.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/change_my_likes_fragment.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/change_my_likes_fragment.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_home.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_profile.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_maps_scenes.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fragment_maps_scenes.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fav_genres_fragment.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fav_genres_fragment.xml"
+    },
+    {
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_listscenes.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fragment_listscenes.xml"
     },
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
@@ -16,12 +68,12 @@
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/activity_home.xml"
     },
     {
-        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_signup.xml",
-        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/activity_signup.xml"
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fav_actors_fragment.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fav_actors_fragment.xml"
     },
     {
-        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_search.xml",
-        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fragment_search.xml"
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fav_composers_fragment.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fav_composers_fragment.xml"
     },
     {
         "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_login.xml",
@@ -32,15 +84,11 @@
         "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fragment_map.xml"
     },
     {
-        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_change_password.xml",
-        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/activity_change_password.xml"
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_movie.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fragment_movie.xml"
     },
     {
-        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_home.xml",
-        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fragment_home.xml"
-    },
-    {
-        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_profile.xml",
-        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fragment_profile.xml"
+        "merged": "/home/usuario/StudioProjects/moviePlace/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fav_directors_fragment.xml",
+        "source": "/home/usuario/StudioProjects/moviePlace/app/src/main/res/layout/fav_directors_fragment.xml"
     }
 ]

@@ -22,11 +22,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.08" />
 
     <EditText
-        android:id="@+id/editTextUser2"
+        android:id="@+id/editTextUsername"
 
         android:layout_width="249dp"
         android:layout_height="48dp"
@@ -37,6 +36,7 @@
         android:ems="10"
         android:hint="@string/user"
         android:inputType="textPersonName"
+        android:enabled="false"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -46,25 +46,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.216"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.243"/>
 
-    <ImageButton
-        android:id="@+id/imgbutton1"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/editwhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.776"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.216"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextUser3"
+        android:id="@+id/editTextFullName"
 
         android:layout_width="249dp"
         android:layout_height="48dp"
@@ -77,6 +63,7 @@
         android:ems="10"
         android:hint="Complete Name"
         android:inputType="textPersonName"
+        android:enabled="false"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -85,25 +72,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.293"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/imgbutton2"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/editwhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.776"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.335" />
 
     <EditText
-        android:id="@+id/editTextUser4"
+        android:id="@+id/editTextEmail"
 
         android:layout_width="249dp"
         android:layout_height="48dp"
@@ -114,6 +86,7 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:enabled="false"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -122,22 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.374"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/imgbutton3"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/editwhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.776"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.374"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.431" />
 
     <TextView
         android:id="@+id/editText1"
@@ -147,35 +105,33 @@
 
         android:background="@drawable/edt_style"
         android:drawablePadding="10dp"
+        android:paddingTop="13dp"
         android:text="Personal Information"
-        android:textColor="@color/white"
 
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="15sp"
-        android:paddingTop="13dp"
 
         app:background="@drawable/edt_style"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.535"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.59"/>
 
     <ImageButton
-        android:id="@+id/imgbutton4"
+        android:id="@+id/button_change_PersInfo"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="48dp"
         android:layout_height="50dp"
-        android:layout_marginStart="324dp"
         android:src="@drawable/next_icon_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.591" />
 
     <TextView
         android:id="@+id/editText3"
@@ -186,19 +142,19 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/edt_style"
         android:drawablePadding="10dp"
-        android:text="Change Password"
+        android:paddingTop="13dp"
 
+        android:text="Change Password"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:paddingTop="13dp"
         android:textSize="15sp"
         app:background="@drawable/edt_style"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.656"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.708" />
 
     <ImageButton
         android:id="@+id/button_change_password"
@@ -211,8 +167,7 @@
         app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.638"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.687" />
 
     <TextView
         android:id="@+id/editText2"
@@ -222,40 +177,37 @@
 
         android:background="@drawable/edt_style"
         android:drawablePadding="10dp"
-        android:text="My likes"
+        android:paddingTop="13dp"
 
+        android:text="My likes"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:paddingTop="13dp"
         android:textSize="15sp"
         app:background="@drawable/edt_style"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.739"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.79" />
 
     <ImageButton
-        android:id="@+id/imgbutton6"
+        android:id="@+id/button_change_MyLikes"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="48dp"
         android:layout_height="50dp"
-        android:layout_marginStart="324dp"
         android:src="@drawable/next_icon_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.741"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.79" />
 
     <Button
         android:id="@+id/buttonSignIn2"
 
-        android:layout_width="371dp"
+        android:layout_width="130dp"
         android:layout_height="48dp"
 
 
@@ -266,11 +218,10 @@
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintHorizontal_bias="0.991"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.877"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.007" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

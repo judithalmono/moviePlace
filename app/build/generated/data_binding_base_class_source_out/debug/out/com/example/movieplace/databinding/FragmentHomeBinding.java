@@ -4,13 +4,15 @@ package com.example.movieplace.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import androidx.viewpager2.widget.ViewPager2;
 import com.example.movieplace.R;
 import com.google.android.material.tabs.TabLayout;
 import java.lang.NullPointerException;
@@ -19,13 +21,19 @@ import java.lang.String;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final DrawerLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
-  public final DrawerLayout fragmentHome;
+  public final ConstraintLayout fragmentHome;
 
   @NonNull
-  public final ViewPager2 pager;
+  public final LinearLayout linearLayout;
+
+  @NonNull
+  public final RecyclerView listMovies;
+
+  @NonNull
+  public final ProgressBar progressBar;
 
   @NonNull
   public final TabLayout tabLayout;
@@ -33,18 +41,22 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final Toolbar toolbar;
 
-  private FragmentHomeBinding(@NonNull DrawerLayout rootView, @NonNull DrawerLayout fragmentHome,
-      @NonNull ViewPager2 pager, @NonNull TabLayout tabLayout, @NonNull Toolbar toolbar) {
+  private FragmentHomeBinding(@NonNull ConstraintLayout rootView,
+      @NonNull ConstraintLayout fragmentHome, @NonNull LinearLayout linearLayout,
+      @NonNull RecyclerView listMovies, @NonNull ProgressBar progressBar,
+      @NonNull TabLayout tabLayout, @NonNull Toolbar toolbar) {
     this.rootView = rootView;
     this.fragmentHome = fragmentHome;
-    this.pager = pager;
+    this.linearLayout = linearLayout;
+    this.listMovies = listMovies;
+    this.progressBar = progressBar;
     this.tabLayout = tabLayout;
     this.toolbar = toolbar;
   }
 
   @Override
   @NonNull
-  public DrawerLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -69,11 +81,23 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      DrawerLayout fragmentHome = (DrawerLayout) rootView;
+      ConstraintLayout fragmentHome = (ConstraintLayout) rootView;
 
-      id = R.id.pager;
-      ViewPager2 pager = ViewBindings.findChildViewById(rootView, id);
-      if (pager == null) {
+      id = R.id.linearLayout;
+      LinearLayout linearLayout = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.listMovies;
+      RecyclerView listMovies = ViewBindings.findChildViewById(rootView, id);
+      if (listMovies == null) {
+        break missingId;
+      }
+
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
         break missingId;
       }
 
@@ -89,8 +113,8 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((DrawerLayout) rootView, fragmentHome, pager, tabLayout,
-          toolbar);
+      return new FragmentHomeBinding((ConstraintLayout) rootView, fragmentHome, linearLayout,
+          listMovies, progressBar, tabLayout, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
