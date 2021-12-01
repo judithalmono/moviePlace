@@ -2114,15 +2114,12 @@ id buttonSignIn
 id buttonSignIn2
 id buttonSubmit1
 id button_change
-id button_change_Email2
 id button_change_FavActors
 id button_change_FavComp
 id button_change_FavDir
 id button_change_FavGen
-id button_change_FullName2
 id button_change_MyLikes
 id button_change_PersInfo
-id button_change_Username2
 id button_change_password
 id button_login
 id cache_measures

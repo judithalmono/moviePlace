@@ -1,8 +1,6 @@
 package com.example.movieplace.data.retrofit
 
-import com.example.movieplace.data.model.Movie
-import com.example.movieplace.data.model.Scene
-import com.example.movieplace.data.model.User
+import com.example.movieplace.data.model.*
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -90,81 +88,75 @@ interface MoviesService {
     /**
      * Gets the password of the user
      *
-     * @param usr
-     * @param newus
+     * @param user
      */
 
+    @Headers("Content-Type: application/json")
     @PUT("/updateUser")
-    fun setUsername(@Body usr: String, newus : String): Call<ResponseBody>
+    fun setUsername(@Body user: Username): Call<ResponseBody>
 
     /**
      * Gets the password of the user
      *
-     * @param usr
-     * @param newname
+     * @param user
      */
 
+    @Headers("Content-Type: application/json")
     @PUT("/updateUser")
-    fun setFullName(@Body usr: String, newname : String): Call<ResponseBody>
+    fun setFullName(@Body user: FullName): Call<ResponseBody>
 
     /**
      * Gets the password of the user
      *
-     * @param usr
-     * @param newpsw
+     * @param user
      */
 
     @PUT("/updateUser")
-    fun setPassword(@Body usr: String, newpsw : String): Call<ResponseBody>
+    fun setPassword(@Body user: Password): Call<ResponseBody>
 
     /**
      * Gets the password of the user
      *
-     * @param usr
-     * @param newmail
+     * @param user
      */
 
     @PUT("/updateUser")
-    fun setEmail(@Body usr: String, newmail : String): Call<ResponseBody>
+    fun setEmail(@Body user: Email): Call<ResponseBody>
 
     /**
      * Gets the password of the user
      *
-     * @param usr
-     * @param newtel
+     * @param user
      */
 
     @PUT("/updateUser")
-    fun setTelefon(@Body usr: String, newtel : String): Call<ResponseBody>
+    fun setTelefon(@Body user: Phone): Call<ResponseBody>
 
     /**
      * Gets the password of the user
      *
-     * @param usr
-     * @param newnbd
+     * @param user
      */
 
     @PUT("/updateUser")
-    fun setBirth(@Body usr: String, newbd : String): Call<ResponseBody>
+    fun setBirth(@Body user: Birth): Call<ResponseBody>
 
     /**
      * Gets the password of the user
      *
-     * @param usr
-     * @param newaddr
+     * @param user
      */
 
     @PUT("/updateUser")
-    fun setAddress(@Body usr: String, newaddr : String): Call<ResponseBody>
+    fun setAddress(@Body user: Address): Call<ResponseBody>
 
     /**
      * Gets the password of the user
      *
-     * @param usr
-     * @param newsex
+     * @param user
      */
 
     @PUT("/updateUser")
-    fun setSex(@Body usr: String, newsex : String): Call<ResponseBody>
+    fun setSex(@Body user: Sex): Call<ResponseBody>
 
 }

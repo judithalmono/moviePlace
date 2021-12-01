@@ -36,6 +36,7 @@
         android:ems="10"
         android:hint="@string/user"
         android:inputType="textPersonName"
+        android:enabled="false"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -47,18 +48,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.243"/>
 
-    <ImageButton
-        android:id="@+id/button_change_Username2"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="50dp"
-        android:src="@drawable/editwhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.776"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.243" />
 
     <EditText
         android:id="@+id/editTextFullName"
@@ -74,6 +63,7 @@
         android:ems="10"
         android:hint="Complete Name"
         android:inputType="textPersonName"
+        android:enabled="false"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -83,19 +73,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.335" />
-
-    <ImageButton
-        android:id="@+id/button_change_FullName2"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="50dp"
-        android:src="@drawable/editwhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.776"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -109,25 +86,13 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:enabled="false"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431" />
-
-    <ImageButton
-        android:id="@+id/button_change_Email2"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="50dp"
-        android:src="@drawable/editwhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.776"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.431" />

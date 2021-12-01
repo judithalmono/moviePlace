@@ -4,10 +4,8 @@ import android.util.Log
 import retrofit2.Call
 import retrofit2.Callback
 import androidx.lifecycle.MutableLiveData
-import com.example.movieplace.data.model.Movie
 import com.example.movieplace.data.Result
-import com.example.movieplace.data.model.Scene
-import com.example.movieplace.data.model.User
+import com.example.movieplace.data.model.*
 import com.example.movieplace.data.retrofit.MoviesClient
 import okhttp3.ResponseBody
 import retrofit2.Response
@@ -272,9 +270,9 @@ class MovieRepository {
      * @return the mutable livedata which will be updated with the result of the call
      */
 
-    fun setUsername(usr: String, newus: String): MutableLiveData<Result<String>> {
+    fun setUsername(user: Username): MutableLiveData<Result<String>> {
         val result = MutableLiveData<Result<String>>()
-        val call: Call<ResponseBody> = moviesService!!.setUsername(usr = usr, newus = newus)
+        val call: Call<ResponseBody> = moviesService!!.setUsername(user)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
@@ -306,14 +304,13 @@ class MovieRepository {
      *
      * @return the mutable livedata which will be updated with the result of the call
      */
-
-    fun setFullName(usr: String, newname: String): MutableLiveData<Result<String>> {
+    fun setFullName(user: FullName): MutableLiveData<Result<String>> {
         val result = MutableLiveData<Result<String>>()
-        val call: Call<ResponseBody> = moviesService!!.setUsername(usr = usr, newname)
+        val call: Call<ResponseBody> = moviesService!!.setFullName(user)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
-                    Log.d("response", "setUsername response: is successful")
+                    Log.d("response", "setFullName response: is successful")
                     result.value = Result.Success(response.body().toString())
                 } else result.value = Result.Error(IOException("Error getting info"))
             }
@@ -333,13 +330,13 @@ class MovieRepository {
      * @return the mutable livedata which will be updated with the result of the call
      */
 
-    fun setPassword(usr: String, newpsw : String): MutableLiveData<Result<String>> {
+    fun setPassword(user: Password): MutableLiveData<Result<String>> {
         val result = MutableLiveData<Result<String>>()
-        val call: Call<ResponseBody> = moviesService!!.setUsername(usr = usr, newpsw)
+        val call: Call<ResponseBody> = moviesService!!.setPassword(user)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
-                    Log.d("response", "setUsername response: is successful")
+                    Log.d("response", "setPassword response: is successful")
                     result.value = Result.Success(response.body().toString())
                 } else result.value = Result.Error(IOException("Error getting info"))
             }
@@ -359,13 +356,13 @@ class MovieRepository {
      * @return the mutable livedata which will be updated with the result of the call
      */
 
-    fun setEmail(usr: String, newmail : String): MutableLiveData<Result<String>> {
+    fun setEmail(user: Email): MutableLiveData<Result<String>> {
         val result = MutableLiveData<Result<String>>()
-        val call: Call<ResponseBody> = moviesService!!.setUsername(usr = usr, newmail)
+        val call: Call<ResponseBody> = moviesService!!.setEmail(user)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
-                    Log.d("response", "setUsername response: is successful")
+                    Log.d("response", "setEmail response: is successful")
                     result.value = Result.Success(response.body().toString())
                 } else result.value = Result.Error(IOException("Error getting info"))
             }
@@ -385,13 +382,13 @@ class MovieRepository {
      * @return the mutable livedata which will be updated with the result of the call
      */
 
-    fun setTelefon(usr: String, newtel : String): MutableLiveData<Result<String>> {
+    fun setTelefon(user: Phone): MutableLiveData<Result<String>> {
         val result = MutableLiveData<Result<String>>()
-        val call: Call<ResponseBody> = moviesService!!.setUsername(usr = usr, newtel)
+        val call: Call<ResponseBody> = moviesService!!.setTelefon(user)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
-                    Log.d("response", "setUsername response: is successful")
+                    Log.d("response", "setTelefon response: is successful")
                     result.value = Result.Success(response.body().toString())
                 } else result.value = Result.Error(IOException("Error getting info"))
             }
@@ -411,13 +408,13 @@ class MovieRepository {
      * @return the mutable livedata which will be updated with the result of the call
      */
 
-    fun setBirth(usr: String, newbd : String): MutableLiveData<Result<String>> {
+    fun setBirth(user: Birth): MutableLiveData<Result<String>> {
         val result = MutableLiveData<Result<String>>()
-        val call: Call<ResponseBody> = moviesService!!.setUsername(usr = usr, newbd)
+        val call: Call<ResponseBody> = moviesService!!.setBirth(user)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
-                    Log.d("response", "setUsername response: is successful")
+                    Log.d("response", "setBirth response: is successful")
                     result.value = Result.Success(response.body().toString())
                 } else result.value = Result.Error(IOException("Error getting info"))
             }
@@ -437,13 +434,13 @@ class MovieRepository {
      * @return the mutable livedata which will be updated with the result of the call
      */
 
-    fun setAddress(usr: String, newaddr : String): MutableLiveData<Result<String>> {
+    fun setAddress(user: Address): MutableLiveData<Result<String>> {
         val result = MutableLiveData<Result<String>>()
-        val call: Call<ResponseBody> = moviesService!!.setUsername(usr = usr, newaddr)
+        val call: Call<ResponseBody> = moviesService!!.setAddress(user)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
-                    Log.d("response", "setUsername response: is successful")
+                    Log.d("response", "setAddress response: is successful")
                     result.value = Result.Success(response.body().toString())
                 } else result.value = Result.Error(IOException("Error getting info"))
             }
@@ -463,13 +460,13 @@ class MovieRepository {
      * @return the mutable livedata which will be updated with the result of the call
      */
 
-    fun setSex(usr: String, newsex : String): MutableLiveData<Result<String>> {
+    fun setSex(user: Sex): MutableLiveData<Result<String>> {
         val result = MutableLiveData<Result<String>>()
-        val call: Call<ResponseBody> = moviesService!!.setUsername(usr = usr, newsex)
+        val call: Call<ResponseBody> = moviesService!!.setSex(user)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
-                    Log.d("response", "setUsername response: is successful")
+                    Log.d("response", "setSex response: is successful")
                     result.value = Result.Success(response.body().toString())
                 } else result.value = Result.Error(IOException("Error getting info"))
             }
@@ -482,7 +479,6 @@ class MovieRepository {
         })
         return result
     }
-
 
 
 }

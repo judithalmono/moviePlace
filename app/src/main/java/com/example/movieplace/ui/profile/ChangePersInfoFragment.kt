@@ -2,6 +2,7 @@ package com.example.movieplace.ui.profile
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import android.widget.EditText
 import android.widget.RadioButton
 import com.example.movieplace.R
 import com.example.movieplace.data.Result
+import com.example.movieplace.data.model.*
 import com.example.movieplace.databinding.ChangePersInfoFragmentBinding
 
 class ChangePersInfoFragment : Fragment() {
@@ -73,19 +75,29 @@ class ChangePersInfoFragment : Fragment() {
             }
         )
 
-        /*fun onRadioButtonClicked (view: View) {
-            if (view is RadioButton) {
-                val checked = view.isChecked
-                when (view.getId()) {
-                    R.id.ManSelect ->
-                        if (checked) {}
-                    R.id.WomanSelect ->
-                        if (checked) {}
-                    R.id.OtherSelect ->
-                        if (checked) {}
-                }
-            }
-        }*/
+        //If click the Submitted Button
+        buttonSubmit.setOnClickListener {
+            Log.d("MainActivity", "Button clicked")
+            val user = Username(usr, editTextUsername.text.toString())
+            changePersInfoViewModel.setUsername(user)
+            val f_n = FullName(usr, editTextFullName.text.toString())
+            changePersInfoViewModel.setFullName(f_n)
+            val email = Email(usr, editTextEmail.text.toString())
+            changePersInfoViewModel.setEmail(email)
+            val telf = Phone(usr, editTextPhone.text.toString())
+            changePersInfoViewModel.setTelefon(telf)
+            val birth = Birth(usr, editTextPhone.text.toString())
+            changePersInfoViewModel.setBirth(birth)
+            val add = Address(usr, editTextAddress.text.toString())
+            changePersInfoViewModel.setAddress(add)
+            var c_sex = ""
+            if (rman.isChecked) c_sex = "man"
+            if (rwoman.isChecked) c_sex = "woman"
+            if (rother.isChecked) c_sex = "other"
+            val sex = Sex(usr, c_sex)
+            changePersInfoViewModel.setSex(sex)
+            Log.d("MainActivity", "Update")
+        }
 
         return root
     }
