@@ -30,28 +30,38 @@
                 android:src="@color/red2" />
 
             <TextView
+                android:id="@+id/textDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nanana nanan nanaanana nana nananaann anana nananana nanananan nana nan nan nananana nananana nananana nanaanan nanaanan nanaanan nanaanan nananaan nana nan nananaan ananaan nanananan nanan nananaan nanana nanan aan nan na nan nanan nanananana nanaanan nananan nanaanana nanaanan nanaan nanana nanan aaanan nanana nana anana nananan nana nanan"
+                android:textColor="#FF555555"
+                android:justificationMode="inter_word"
+                android:layout_marginBottom="15dp"
+                android:textSize="23sp" />
+
+            <TextView
                 android:id="@+id/textLocationDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Plaça del Tibidabo, 08035 Barcelona"
                 android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
                 android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/textDesc"
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/mapDesc"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="Nanana nanan nanaanana nana nananaann anana nananana nanananan nana nan nan nananana nananana nananana nanaanan nanaanan nanaanan nanaanan nananaan nana nan nananaan ananaan nanananan nanan nananaan nanana nanan aan nan na nan nanan nanananana nanaanan nananan nanaanana nanaanan nanaan nanana nanan aaanan nanana nana anana nananan nana nanan"
-                android:textColor="#FF555555"
-                android:textSize="23sp" />
+                android:layout_height="200dp"
+                android:layout_marginBottom="15dp"/>
 
             <TextView
                 android:id="@+id/textRate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
                 android:text="Your rating"
                 android:textColor="@color/black"
                 android:textSize="23sp" />
@@ -59,7 +69,9 @@
             <RatingBar
                 android:id="@+id/rateBar"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
+
+
 
         </LinearLayout>
 

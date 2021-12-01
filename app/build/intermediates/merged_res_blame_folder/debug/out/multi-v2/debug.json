@@ -2213,21 +2213,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\values-w360dp-port-v13_values-w360dp-port-v13.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\judit\\.gradle\\caches\\transforms-3\\b64c581a9daa138f08ffadfeafcf90fd\\transformed\\material-1.4.0\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,114,170,226,293,358,413,478",
-                        "endColumns": "58,55,55,66,64,54,64,68",
-                        "endOffsets": "109,165,221,288,353,408,473,542"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\values-is_values-is.arsc.flat",
             "map": [
                 {
@@ -2332,6 +2317,21 @@
                         "startOffsets": "3322,3430,3616,3743,3854,4054,4181,4320,4642,4855,4963,5151,5279,5480,5664,5758,5851",
                         "endColumns": "107,185,126,110,199,126,138,133,212,107,187,127,200,183,93,92,107",
                         "endOffsets": "3425,3611,3738,3849,4049,4176,4315,4449,4850,4958,5146,5274,5475,5659,5753,5846,5954"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\merged_res\\debug\\values-w360dp-port-v13_values-w360dp-port-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\judit\\.gradle\\caches\\transforms-3\\b64c581a9daa138f08ffadfeafcf90fd\\transformed\\material-1.4.0\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,114,170,226,293,358,413,478",
+                        "endColumns": "58,55,55,66,64,54,64,68",
+                        "endOffsets": "109,165,221,288,353,408,473,542"
                     }
                 }
             ]

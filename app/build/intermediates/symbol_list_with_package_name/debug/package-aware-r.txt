@@ -2261,6 +2261,7 @@ id listMovies
 id listScenes
 id list_item
 id map
+id mapDesc
 id mapScenes
 id masked
 id match_constraint
@@ -2393,6 +2394,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id search
 id search_badge
 id search_bar
 id search_button
@@ -2403,7 +2405,6 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
-id seekBarDistance
 id select_dialog_listview
 id selected
 id selection_type
@@ -2421,6 +2422,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id snippet
 id south
 id spacer
 id special_effects_controller_view_tag
@@ -2480,7 +2482,6 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
-id textViewDistance
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2513,7 +2514,6 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
-id viewSeekBar
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -2632,6 +2632,7 @@ layout fragment_profile
 layout fragment_scene
 layout fragment_search
 layout fragment_top
+layout map_info
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider

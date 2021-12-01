@@ -2260,6 +2260,7 @@ int id listMovies 0x7f080102
 int id listScenes 0x7f08020a
 int id list_item 0x7f080103
 int id map 0x7f080218
+int id mapDesc 0x7f080230
 int id mapScenes 0x7f08022e
 int id masked 0x7f080104
 int id match_constraint 0x7f080105
@@ -2392,6 +2393,7 @@ int id scrollIndicatorDown 0x7f08017e
 int id scrollIndicatorUp 0x7f08017f
 int id scrollView 0x7f080180
 int id scrollable 0x7f080181
+int id search 0x7f080231
 int id search_badge 0x7f080182
 int id search_bar 0x7f080183
 int id search_button 0x7f080184
@@ -2402,7 +2404,6 @@ int id search_mag_icon 0x7f080188
 int id search_plate 0x7f080189
 int id search_src_text 0x7f08018a
 int id search_voice_btn 0x7f08018b
-int id seekBarDistance 0x7f080225
 int id select_dialog_listview 0x7f08018c
 int id selected 0x7f08018d
 int id selection_type 0x7f08018e
@@ -2420,6 +2421,7 @@ int id snackbar_action 0x7f080199
 int id snackbar_text 0x7f08019a
 int id snap 0x7f08019b
 int id snapMargins 0x7f08019c
+int id snippet 0x7f08022f
 int id south 0x7f08019d
 int id spacer 0x7f08019e
 int id special_effects_controller_view_tag 0x7f08019f
@@ -2479,7 +2481,6 @@ int id textSpacerNoTitle 0x7f0801d3
 int id textStart 0x7f0801d4
 int id textTop 0x7f0801d5
 int id textView 0x7f0801d6
-int id textViewDistance 0x7f080226
 int id text_input_end_icon 0x7f0801d9
 int id text_input_error_icon 0x7f0801da
 int id text_input_start_icon 0x7f0801db
@@ -2512,7 +2513,6 @@ int id unlabeled 0x7f0801f6
 int id up 0x7f0801f7
 int id useLogo 0x7f0801f8
 int id vertical_only 0x7f0801f9
-int id viewSeekBar 0x7f080227
 int id view_offset_helper 0x7f0801fa
 int id view_transition 0x7f0801fb
 int id view_tree_lifecycle_owner 0x7f0801fc
@@ -2631,6 +2631,7 @@ int layout fragment_profile 0x7f0b0035
 int layout fragment_scene 0x7f0b0036
 int layout fragment_search 0x7f0b0037
 int layout fragment_top 0x7f0b0038
+int layout map_info 0x7f0b008d
 int layout material_chip_input_combo 0x7f0b003a
 int layout material_clock_display 0x7f0b003b
 int layout material_clock_display_divider 0x7f0b003c

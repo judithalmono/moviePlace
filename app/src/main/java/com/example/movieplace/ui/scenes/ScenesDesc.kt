@@ -1,31 +1,33 @@
 package com.example.movieplace.ui.scenes
 
-import android.content.Intent
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.view.View
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.app.NavUtils
-import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.SimpleTarget
 import com.example.movieplace.R
-import com.example.movieplace.data.model.Movie
 import com.example.movieplace.data.model.Scene
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.gson.GsonBuilder
+import java.util.*
 
 
-
-
-class ScenesDesc : AppCompatActivity() {
+class ScenesDesc : AppCompatActivity() , OnMapReadyCallback {
 
     private lateinit var scene: Scene
+    private lateinit var mMap: GoogleMap
+    private var latitude: Double = 0.0
+    private var longitude: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,19 +38,42 @@ class ScenesDesc : AppCompatActivity() {
         title = scene.Name
 
         val imgScene = findViewById<ImageView>(R.id.imgScene)
-        imgScene.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.background15))
+        Glide.with(this).load(scene.img).centerCrop().into(object : SimpleTarget<Drawable>() {
+            override fun onResourceReady(
+                resource: Drawable,
+                transition: com.bumptech.glide.request.transition.Transition<in Drawable>?
+            ) {
+                imgScene.setImageDrawable(resource)
+            }
+        })
 
         val rateBar = findViewById<RatingBar>(R.id.rateBar)
         rateBar.onRatingBarChangeListener =
             RatingBar.OnRatingBarChangeListener { _, p1, _ -> Log.d("Rate", p1.toString()) }
 
-//        val textLoc = findViewById<TextView>(R.id.textLocationDesc)
-//        textLoc.text = scene.location
+        val textLoc = findViewById<TextView>(R.id.textLocationDesc)
+        textLoc.text = scene.location.toString()
 
-//        val textDesc = findViewById<TextView>(R.id.textDesc)
-//        textDesc.text = scene.scene_dsc
+        val textDesc = findViewById<TextView>(R.id.textDesc)
+        textDesc.text = scene.Description
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.mapDesc) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+        mMap.uiSettings.isZoomControlsEnabled = true
+
+        latitude = scene.location[0]
+        longitude = scene.location[1]
+
+        val place = LatLng(latitude, longitude)
+        mMap.addMarker(MarkerOptions().position(place).title(scene.Name))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(place, 16.0f))
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

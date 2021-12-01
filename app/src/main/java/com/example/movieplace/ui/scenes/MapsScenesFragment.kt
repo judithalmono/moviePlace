@@ -7,12 +7,9 @@ import android.content.Intent
 import android.location.*
 import androidx.fragment.app.Fragment
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SeekBar
-import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import com.example.movieplace.R
@@ -30,8 +27,12 @@ import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
-import java.util.*
 import kotlin.collections.ArrayList
+import android.os.StrictMode
+import android.os.StrictMode.ThreadPolicy
+import com.example.movieplace.CustomInfoWindowForGoogleMap
+import com.google.android.gms.maps.model.Marker
+
 
 class MapsScenesFragment : Fragment() {
 
@@ -43,9 +44,6 @@ class MapsScenesFragment : Fragment() {
     }
 
     private lateinit var mMap: GoogleMap
-    private lateinit var viewSeek: View
-    private lateinit var seekBarDistance: SeekBar
-    private lateinit var textViewDistance: TextView
     private var latitude: Double = 0.0
     private var longitude: Double = 0.0
     private var locationManager : LocationManager? = null
@@ -57,6 +55,7 @@ class MapsScenesFragment : Fragment() {
     private var scenes: List<Scene> = ArrayList()
     private var scenesList: MutableList<Scene> = ArrayList()
     private var currentScenes: MutableList<Scene> = ArrayList()
+    private lateinit var marker: Marker
 
     private val callback = OnMapReadyCallback { googleMap ->
         /**
@@ -86,7 +85,6 @@ class MapsScenesFragment : Fragment() {
                         val locationListener = object: LocationListener{
                             override fun onLocationChanged(location: Location) {
                                 locationUser = location
-//                                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(locationUser.latitude, locationUser.longitude), 12.5f))
                             }
                             override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
                             }
@@ -122,18 +120,31 @@ class MapsScenesFragment : Fragment() {
 //                latitude = addresses[0].latitude
 //                longitude = addresses[0].longitude
 //            }
-            // set marker in place
+
             val place = LatLng(latitude, longitude)
-            mMap.addMarker(MarkerOptions().position(place).title(item.Name))
+
+            marker = mMap.addMarker(MarkerOptions()
+                .position(place)
+                .title(item.Name)
+                .snippet(item.Description))!!
+
+            marker.tag = item
+
+            mMap.setInfoWindowAdapter(CustomInfoWindowForGoogleMap(requireContext()))
 
             mMap.setOnInfoWindowClickListener {
+
                 // al clicar al título, se abre la pantalla con la info de la activity
                 val intent = Intent(context, ScenesDesc::class.java)
-                intent.putExtra("scene", GsonBuilder().create().toJson(item))
+                intent.putExtra("scene", GsonBuilder().create().toJson(it.tag))
                 context?.startActivity(intent)
             }
+
         }
+
     }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -149,14 +160,13 @@ class MapsScenesFragment : Fragment() {
 
         locationManager = requireActivity().getSystemService(LOCATION_SERVICE) as LocationManager?
 
-        scenesViewModel = ViewModelProvider(this).get(SceneViewModel::class.java)
+        scenesViewModel = ViewModelProvider(this)[SceneViewModel::class.java]
         scenesListAdapter = MyScenesRecyclesViewAdapter(context as ScenesActivity)
 
-        viewSeek = view.findViewById(R.id.viewSeekBar)
-        seekBarDistance = view.findViewById(R.id.seekBarDistance)
-        textViewDistance = view.findViewById(R.id.textViewDistance)
-
         idmovie = (requireArguments().get("movie_id") as Int?)!!
+
+        val policy = ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
 
         scenesViewModel.getScenesByID(idmovie).observe(
             viewLifecycleOwner,
@@ -175,3 +185,4 @@ class MapsScenesFragment : Fragment() {
         )
     }
 }
+

@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.FrameLayout;
+import android.widget.SearchView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -21,20 +21,20 @@ public final class FragmentSearchBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final FrameLayout container;
-
-  @NonNull
   public final EditText editTextUser;
 
   @NonNull
   public final ConstraintLayout fragmentSearch;
 
-  private FragmentSearchBinding(@NonNull ConstraintLayout rootView, @NonNull FrameLayout container,
-      @NonNull EditText editTextUser, @NonNull ConstraintLayout fragmentSearch) {
+  @NonNull
+  public final SearchView search;
+
+  private FragmentSearchBinding(@NonNull ConstraintLayout rootView, @NonNull EditText editTextUser,
+      @NonNull ConstraintLayout fragmentSearch, @NonNull SearchView search) {
     this.rootView = rootView;
-    this.container = container;
     this.editTextUser = editTextUser;
     this.fragmentSearch = fragmentSearch;
+    this.search = search;
   }
 
   @Override
@@ -64,12 +64,6 @@ public final class FragmentSearchBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.container;
-      FrameLayout container = ViewBindings.findChildViewById(rootView, id);
-      if (container == null) {
-        break missingId;
-      }
-
       id = R.id.editTextUser;
       EditText editTextUser = ViewBindings.findChildViewById(rootView, id);
       if (editTextUser == null) {
@@ -78,8 +72,14 @@ public final class FragmentSearchBinding implements ViewBinding {
 
       ConstraintLayout fragmentSearch = (ConstraintLayout) rootView;
 
-      return new FragmentSearchBinding((ConstraintLayout) rootView, container, editTextUser,
-          fragmentSearch);
+      id = R.id.search;
+      SearchView search = ViewBindings.findChildViewById(rootView, id);
+      if (search == null) {
+        break missingId;
+      }
+
+      return new FragmentSearchBinding((ConstraintLayout) rootView, editTextUser, fragmentSearch,
+          search);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

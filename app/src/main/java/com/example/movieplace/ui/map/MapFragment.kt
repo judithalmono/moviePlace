@@ -7,6 +7,7 @@ import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
+import android.os.StrictMode
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +16,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.movieplace.R
+import com.example.movieplace.data.Result
 import com.example.movieplace.databinding.FragmentMapBinding
+import com.example.movieplace.ui.scenes.MyScenesRecyclesViewAdapter
+import com.example.movieplace.ui.scenes.SceneViewModel
+import com.example.movieplace.ui.scenes.ScenesActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -30,6 +35,7 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 class MapFragment : Fragment() {
 
     private lateinit var mapViewModel: MapViewModel
+//    private lateinit var mapScenesAdapter: MyMapRecyclesViewAdapter
     private var _binding: FragmentMapBinding? = null
 
     // This property is only valid between onCreateView and
@@ -37,9 +43,6 @@ class MapFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var mMap: GoogleMap
-    private lateinit var viewSeek: View
-    private lateinit var seekBarDistance: SeekBar
-    private lateinit var textViewDistance: TextView
     private var latitude: Double = 0.0
     private var longitude: Double = 0.0
     private var locationManager : LocationManager? = null
@@ -116,14 +119,32 @@ class MapFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mapFragment = (childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?)!!
-        mapFragment.getMapAsync(callback)
 
         locationManager = requireActivity().getSystemService(Context.LOCATION_SERVICE) as LocationManager?
 
-        viewSeek = view.findViewById(R.id.viewSeekBar)
-        seekBarDistance = view.findViewById(R.id.seekBarDistance)
-        textViewDistance = view.findViewById(R.id.textViewDistance)
+        mapViewModel = ViewModelProvider(this)[MapViewModel::class.java]
+//        mapScenesAdapter = MyScenesRecyclesViewAdapter(context)
 
+        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
+
+        mapFragment.getMapAsync(callback)
+
+//        mapViewModel.getAllScenes().observe(
+//            viewLifecycleOwner,
+//            {
+//                if (it is Result.Success) {
+//                    scenes = it.data
+//                    mapScenesAdapter.setData(scenes)
+//                    for (item in scenes) {
+//                        scenesList.add(item)
+//                    }
+////                    progressBar.visibility = View.GONE
+//                }
+//                currentScenes = scenesList
+//                mapFragment.getMapAsync(callback)
+//            }
+//        )
     }
 
 

@@ -16,8 +16,13 @@ import com.example.movieplace.data.model.Movie
 import com.example.movieplace.databinding.FragmentMovieBinding
 import com.example.movieplace.ui.scenes.ScenesActivity
 import com.google.gson.GsonBuilder
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.Adapter<MyMoviesRecyclesViewAdapter.ViewHolder>() {
+
+    private var listCategoriesFull: List<Movie> = ArrayList()
+    private var tempListCat: List<Movie> = ArrayList()
 
     /**
      * Onclick to item. Updated when SceneFragment developed
@@ -77,6 +82,26 @@ class MyMoviesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      */
     fun setData(movies: List<Movie>?) {
         this.movies = movies!!
+        notifyDataSetChanged()
+    }
+
+    fun performFiltering(constraint: CharSequence?) {
+        if (tempListCat.isNotEmpty()) movies = tempListCat
+
+        tempListCat = ArrayList<Movie>(movies)
+        this.listCategoriesFull = ArrayList<Movie>(movies)
+
+        val charSearch = constraint.toString()
+        listCategoriesFull = if (charSearch.isEmpty()) tempListCat
+        else {
+            val resultList = ArrayList<Movie>()
+            for (row in movies) {
+                if (row.original_title.toLowerCase(Locale.ROOT).contains(charSearch.toLowerCase(Locale.ROOT))) resultList.add(row)
+            }
+            resultList
+        }
+
+        movies = listCategoriesFull
         notifyDataSetChanged()
     }
 
