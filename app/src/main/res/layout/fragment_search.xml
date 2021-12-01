@@ -8,35 +8,48 @@
     tools:context=".ui.search.SearchFragment"
     android:background="@drawable/background15">
 
-    <EditText
-        android:id="@+id/editTextUser"
-
-        android:layout_width="358dp"
-        android:layout_height="50dp"
-
-        android:layout_marginTop="48dp"
-
-        android:background="@drawable/edt_style"
-
-        android:drawableStart="@drawable/searchicon"
-        android:drawablePadding="10dp"
-
-        android:ems="10"
-        android:hint="Search"
-        android:inputType="textNoSuggestions"
-        android:textColor="@color/white"
-        android:textColorHint="#FFCCCCCC"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <FrameLayout
-        android:id="@+id/container"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUser"/>
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/editTextUser"
+
+            android:layout_width="358dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+
+            android:background="@drawable/edt_style"
+
+            android:drawableStart="@drawable/searchicon"
+            android:drawablePadding="10dp"
+
+            android:ems="10"
+            android:hint="Search"
+            android:inputType="textNoSuggestions"
+            android:textColor="@color/white"
+            android:textColorHint="#FFCCCCCC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SearchView
+            android:id="@+id/search"
+            android:name="com.example.movieplace.ui.search.SearchFragment"
+            android:layout_width="match_parent"
+            android:layout_height="638dp"
+            app:layoutManager="LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextUser"
+            tools:context=".ui.search.SearchFragment"
+            tools:listitem="@layout/fragment_movie" />
+
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

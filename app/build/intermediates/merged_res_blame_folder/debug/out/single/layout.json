@@ -56,6 +56,10 @@
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\fragment_maps_scenes.xml"
     },
     {
+        "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\map_info.xml",
+        "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\map_info.xml"
+    },
+    {
         "merged": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_home.xml",
         "source": "C:\\Users\\judit\\AndroidStudioProjects\\MoviePlace\\moviePlace\\app\\src\\main\\res\\layout\\activity_home.xml"
     },

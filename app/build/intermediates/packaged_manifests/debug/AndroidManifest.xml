@@ -92,10 +92,17 @@
         <activity
             android:name="com.example.movieplace.Login"
             android:exported="false" />
-        <!-- Needs to be explicitly declared on P+ -->
+        <activity
+            android:name="com.karumi.dexter.DexterActivity"
+            android:theme="@style/Dexter.Internal.Theme.Transparent" /> <!-- Needs to be explicitly declared on P+ -->
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.example.movieplace.com.squareup.picasso"
+            android:exported="false" />
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
@@ -107,10 +114,16 @@
             android:value="@integer/google_play_services_version" />
 
         <provider
-            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-            android:authorities="com.example.movieplace.lifecycle-process"
-            android:exported="false"
-            android:multiprocess="true" />
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.example.movieplace.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
     </application>
 
 </manifest>

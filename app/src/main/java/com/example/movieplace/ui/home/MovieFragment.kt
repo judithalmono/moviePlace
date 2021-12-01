@@ -1,6 +1,5 @@
 package com.example.movieplace.ui.home
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
 import android.view.View.GONE
@@ -68,11 +67,11 @@ class MovieFragment : Fragment() {
             }
         )
 
+
         tabLayout.addTab(tabLayout.newTab().setText(TAB_TITLES[0]), 0, true)
         tabLayout.addTab(tabLayout.newTab().setText(TAB_TITLES[1]), 1, false)
 
         tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
-            @SuppressLint("ResourceAsColor")
             override fun onTabSelected(tab: TabLayout.Tab?) {
 
                 if (tab?.text == TAB_TITLES[0]) {
