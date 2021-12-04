@@ -2,40 +2,40 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_profile"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background8"
-    tools:context=".ui.profile.ProfileFragment">
+    android:id="@+id/FavActors"
+    android:background="@drawable/background16"
+    tools:context=".ui.profile.FavActorsFragment">
 
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
-        android:layout_width="119dp"
-        android:layout_height="106dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/userwhite"
-        app:civ_border_color="@color/black1"
-        app:civ_border_width="2dp"
+    <TextView
+        android:id="@+id/textTitol1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Favorite actors"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.134" />
+        app:layout_constraintVertical_bias="0.089"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextUsername"
+        android:id="@+id/editActor1"
 
-        android:layout_width="249dp"
-        android:layout_height="48dp"
+        android:layout_width="329dp"
+        android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
 
         android:drawablePadding="10dp"
         android:ems="10"
-        android:enabled="false"
-        android:hint="@string/user"
+        android:hint="Actor name"
         android:inputType="textPersonName"
 
         android:textColor="@color/white"
@@ -46,174 +46,192 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308" />
+        app:layout_constraintVertical_bias="0.204"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextFullName"
+        android:id="@+id/editActor2"
 
-        android:layout_width="249dp"
-        android:layout_height="48dp"
-
-        android:layout_marginTop="4dp"
+        android:layout_width="329dp"
+        android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
 
         android:drawablePadding="10dp"
         android:ems="10"
-        android:enabled="false"
-        android:hint="Complete Name"
+        android:hint="Actor name"
         android:inputType="textPersonName"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="15sp"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintVertical_bias="0.295"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextEmail"
+        android:id="@+id/editActor3"
 
-        android:layout_width="249dp"
-        android:layout_height="48dp"
+        android:layout_width="329dp"
+        android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
 
         android:drawablePadding="10dp"
         android:ems="10"
-        android:enabled="false"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
+        android:hint="Actor name"
+        android:inputType="textPersonName"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="15sp"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.387"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/editText1"
-        android:layout_width="371dp"
-        android:layout_height="48dp"
+    <EditText
+        android:id="@+id/editActor4"
 
+        android:layout_width="329dp"
+        android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+
         android:drawablePadding="10dp"
-        android:paddingTop="13dp"
-        android:text="Personal Information"
+        android:ems="10"
+        android:hint="Actor name"
+        android:inputType="textPersonName"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="15sp"
-
-        app:background="@drawable/edt_style"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653" />
+        app:layout_constraintVertical_bias="0.48"
+        tools:ignore="MissingConstraints" />
 
-    <ImageButton
-        android:id="@+id/button_change_PersInfo"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="50dp"
-        android:src="@drawable/next_icon_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.651" />
+    <EditText
+        android:id="@+id/editActor5"
 
-    <TextView
-        android:id="@+id/editText3"
-        android:layout_width="371dp"
-        android:layout_height="48dp"
-
-
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/edt_style"
-        android:drawablePadding="10dp"
-        android:paddingTop="13dp"
-
-        android:text="Change Password"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="15sp"
-        app:background="@drawable/edt_style"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
-
-    <ImageButton
-        android:id="@+id/button_change_password"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="50dp"
-        android:src="@drawable/next_icon_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.76" />
-
-    <TextView
-        android:id="@+id/editText2"
-        android:layout_width="371dp"
-        android:layout_height="48dp"
-
+        android:layout_width="329dp"
+        android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
-        android:drawablePadding="10dp"
-        android:paddingTop="13dp"
 
-        android:text="My likes"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Actor name"
+        android:inputType="textPersonName"
+
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="15sp"
-        app:background="@drawable/edt_style"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
+        app:layout_constraintVertical_bias="0.574"
+        tools:ignore="MissingConstraints" />
 
-    <ImageButton
-        android:id="@+id/button_change_MyLikes"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="50dp"
-        android:src="@drawable/next_icon_white"
+    <EditText
+        android:id="@+id/editActor6"
+
+        android:layout_width="329dp"
+        android:layout_height="47dp"
+
+        android:background="@drawable/edt_style"
+
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Actor name"
+        android:inputType="textPersonName"
+
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="15sp"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.863" />
+        app:layout_constraintVertical_bias="0.668"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editActor7"
+
+        android:layout_width="329dp"
+        android:layout_height="47dp"
+
+        android:background="@drawable/edt_style"
+
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Actor name"
+        android:inputType="textPersonName"
+
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="15sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.757"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editActor8"
+
+        android:layout_width="329dp"
+        android:layout_height="47dp"
+
+        android:background="@drawable/edt_style"
+
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Actor name"
+        android:inputType="textPersonName"
+
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="15sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.845"
+        tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonLogOut2"
-        android:layout_width="130dp"
-        android:layout_height="48dp"
+        android:id="@+id/buttonSubmit1"
         android:background="@drawable/btn_style"
-        android:text="Log out"
+        android:text="Submit"
         android:textSize="15sp"
         app:backgroundTint="@null"
+
+        android:layout_width="328dp"
+        android:layout_height="41dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.975"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
-
+        app:layout_constraintVertical_bias="0.944"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
