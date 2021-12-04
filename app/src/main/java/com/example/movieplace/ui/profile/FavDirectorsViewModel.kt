@@ -1,13 +1,13 @@
 package com.example.movieplace.ui.profile
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.movieplace.MovieRepository
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.User
-import com.example.movieplace.data.model.Username
 
-class ProfileViewModel : ViewModel() {
+class FavDirectorsViewModel : ViewModel() {
     private var repository: MovieRepository = MovieRepository()
 
     /**
@@ -16,5 +16,4 @@ class ProfileViewModel : ViewModel() {
     fun getInfoUser(user: String): MutableLiveData<Result<User>> {
         return repository.getInfoUser(user)
     }
-
 }

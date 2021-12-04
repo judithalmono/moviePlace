@@ -56,10 +56,24 @@
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/menu/list_map.xml" value="0.1" />
         <entry key="..\:/Users/judit/AndroidStudioProjects/MoviePlace/moviePlace/app/src/main/res/xml/network_security_config.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/activity_change_password.xml" value="0.1921875" />
+        <entry key="app/src/main/res/layout/activity_fav_actors.xml" value="0.17097264437689969" />
+        <entry key="app/src/main/res/layout/activity_fav_composers.xml" value="0.17097264437689969" />
+        <entry key="app/src/main/res/layout/activity_fav_directors.xml" value="0.19895833333333332" />
+        <entry key="app/src/main/res/layout/activity_fav_genres.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/activity_favo_genres.xml" value="0.20260416666666667" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/change_my_likes_fragment.xml" value="0.18206521739130435" />
+        <entry key="app/src/main/res/layout/change_password_fragment.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/change_pers_info_fragment.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fav_actors_fragment.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fav_composers_fragment.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fav_directors_fragment.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fav_genres_activity.xml" value="0.3515625" />
+        <entry key="app/src/main/res/layout/fav_genres_fragment.xml" value="0.3515625" />
         <entry key="app/src/main/res/layout/fragment_for_you.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19270833333333334" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.1921875" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/main_fragment.xml" value="0.33697916666666666" />
       </map>
     </option>
   </component>
