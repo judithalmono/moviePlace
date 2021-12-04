@@ -45,8 +45,8 @@ class MyScenesRecyclesViewAdapter(private val context: Context?) : RecyclerView.
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = scenes[position]
-        holder.textNameScene.text = item.actors[0]
-        holder.textLocation.text = item.scene_dsc
+        holder.textNameScene.text = item.Name
+        holder.textLocation.text = item.Description
 //        if (context != null) {
 //            Glide.with(context).load(item.urlBackground).centerCrop().into(holder.imageViewBackground)
 //            Glide.with(context).load(item.urlIcon).centerCrop().into(holder.imageViewIcon)

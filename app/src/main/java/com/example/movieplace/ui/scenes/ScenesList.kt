@@ -74,6 +74,4 @@ class ScenesList: Fragment() {
 
     }
 
-
-
 }

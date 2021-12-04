@@ -135,13 +135,12 @@ class MovieRepository {
             override fun onResponse(call: Call<List<Scene>>, response: Response<List<Scene>>) {
                 if (response.isSuccessful) {
                     result.value = Result.Success(response.body() as List<Scene>)
-                } else result.value = Result.Error(IOException("Error getting info"))
+                } else result.value = Result.Error(IOException("Error getting info 1"))
             }
-
             override fun onFailure(call: Call<List<Scene>>, t: Throwable) {
                 // Error en la connexion
-                Log.d("GET", "Error getting info")
-                result.value = Result.Error(IOException("Error getting info"))
+                Log.d("GET", t.toString())
+                result.value = Result.Error(IOException("Error getting info 3"))
             }
         })
         return result
