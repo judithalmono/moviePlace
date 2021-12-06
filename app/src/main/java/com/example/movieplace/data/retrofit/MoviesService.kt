@@ -64,7 +64,7 @@ interface MoviesService {
      * Sort movies by users rate
      */
 
-    @GET("sortRate")
+    @GET("/sortRate")
     fun getRecommendMovies(): Call<List<Movie>>
 
     /**

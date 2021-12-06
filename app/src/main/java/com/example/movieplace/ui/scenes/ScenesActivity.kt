@@ -63,15 +63,15 @@ class ScenesActivity: AppCompatActivity() {
             if (selectedOption) { // Map scenes
                 selectedOption = false
                 item.icon = ContextCompat.getDrawable(this, R.drawable.listicon)
-//                supportFragmentManager.beginTransaction()
-//                    .replace(R.id.container, MapsScenesFragment.newInstance())
-//                    .commitNow()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, MapsScenesFragment.newInstance(movie.id))
+                    .commitNow()
             } else { //List scenes
                 selectedOption = true
                 item.icon = ContextCompat.getDrawable(this, R.drawable.locationicon)
-//                supportFragmentManager.beginTransaction()
-//                    .replace(R.id.container, ScenesList.newInstance(movie.id))
-//                    .commitNow()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, ScenesList.newInstance(movie.id))
+                    .commitNow()
             }
             return true
         }
