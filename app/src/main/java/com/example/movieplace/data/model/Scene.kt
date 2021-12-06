@@ -8,5 +8,6 @@ data class Scene(
     val _id: String,
     val id: Int,
     val img: String,
-    val location: List<Double>
+    val location: List<Double>,
+    val nameLoc: String
 )

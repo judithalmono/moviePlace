@@ -52,6 +52,9 @@ interface MoviesService {
     @GET("/getScenes/{id}")
     fun getScenesByID(@Path("id") id: Int): Call<List<Scene>>
 
+
+    @GET("/getAllScenes")
+    fun getAllScenes(): Call<List<Scene>>
     /**
      * Sort movies by user ubication
      */

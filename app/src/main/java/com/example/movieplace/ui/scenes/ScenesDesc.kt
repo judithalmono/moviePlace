@@ -52,7 +52,7 @@ class ScenesDesc : AppCompatActivity() , OnMapReadyCallback {
             RatingBar.OnRatingBarChangeListener { _, p1, _ -> Log.d("Rate", p1.toString()) }
 
         val textLoc = findViewById<TextView>(R.id.textLocationDesc)
-        textLoc.text = scene.location.toString()
+        textLoc.text = scene.nameLoc
 
         val textDesc = findViewById<TextView>(R.id.textDesc)
         textDesc.text = scene.Description

@@ -5,22 +5,14 @@ import android.view.*
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.ProgressBar
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
 import com.example.movieplace.R
 import com.example.movieplace.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayout
 import com.example.movieplace.data.model.Movie
 import com.example.movieplace.data.Result
-
-
-
-
 
 class MovieFragment : Fragment() {
 

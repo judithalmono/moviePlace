@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.movieplace" >
+    package="com.example.movieplace">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -27,13 +27,16 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MoviePlace" >
+        android:theme="@style/Theme.MoviePlace">
+        <activity
+            android:name=".ForgotPassword"
+            android:exported="false" />
         <activity
             android:name=".ui.profile.FavGenres"
-            android:exported="false" />
-        <activity
-            android:name=".ui.profile.FavoGenres"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" /> <!-- <activity -->
+        <!-- android:name=".ui.profile.FavoGenres" -->
+        <!-- android:exported="false" /> -->
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -44,23 +47,21 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-
-        <activity
-            android:name=".ChangePassword"
-            android:exported="false" />
+            android:value="@string/google_maps_key" /> <!-- <activity -->
+        <!-- android:name=".ChangePassword" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".Home"
-            android:exported="true" >
+            android:exported="false"></activity>
+        <activity
+            android:name=".Main"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Main"
-            android:exported="false" />
         <activity
             android:name=".ui.scenes.ScenesActivity"
             android:launchMode="singleTop"
@@ -69,17 +70,16 @@
         <activity
             android:name=".ui.scenes.ScenesDesc"
             android:launchMode="singleTop"
-            android:parentActivityName=""
             android:theme="@style/MoviePlaceActionBar" />
         <activity
-            android:name=".Signup"
-            android:exported="false" >
+            android:name=".ui.signUp.SignUp"
+            android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Login" />
+                android:value=".ui.login.Login" />
         </activity>
         <activity
-            android:name=".Login"
+            android:name=".ui.login.Login"
             android:exported="false" />
     </application>
 

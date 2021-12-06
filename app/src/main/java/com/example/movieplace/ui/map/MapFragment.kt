@@ -3,6 +3,7 @@ package com.example.movieplace.ui.map
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
@@ -15,17 +16,23 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.movieplace.CustomInfoWindowForGoogleMap
 import com.example.movieplace.R
 import com.example.movieplace.data.Result
+import com.example.movieplace.data.model.Scene
 import com.example.movieplace.databinding.FragmentMapBinding
 import com.example.movieplace.ui.scenes.MyScenesRecyclesViewAdapter
 import com.example.movieplace.ui.scenes.SceneViewModel
 import com.example.movieplace.ui.scenes.ScenesActivity
+import com.example.movieplace.ui.scenes.ScenesDesc
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
+import com.google.android.gms.maps.model.MarkerOptions
+import com.google.gson.GsonBuilder
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
@@ -48,9 +55,12 @@ class MapFragment : Fragment() {
     private var locationManager : LocationManager? = null
     private lateinit var locationUser: Location
     private lateinit var mapFragment: SupportMapFragment
+    private var scenes: List<Scene> = ArrayList()
+    private var scenesList: MutableList<Scene> = ArrayList()
+    private var currentScenes: MutableList<Scene> = ArrayList()
+    private lateinit var marker: Marker
 
     private val callback = OnMapReadyCallback { googleMap ->
-
         /**
          * Manipulates the map once available.
          * This callback is triggered when the map is ready to be used.
@@ -75,10 +85,9 @@ class MapFragment : Fragment() {
                     if (response!!.areAllPermissionsGranted()) {
                         mMap.isMyLocationEnabled = true;
                         mMap.uiSettings.isMyLocationButtonEnabled = true;
-                        val locationListener = object: LocationListener {
+                        val locationListener = object: LocationListener{
                             override fun onLocationChanged(location: Location) {
                                 locationUser = location
-//                                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(locationUser.latitude, locationUser.longitude), 12.5f))
                             }
                             override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
                             }
@@ -101,6 +110,42 @@ class MapFragment : Fragment() {
                     TODO("Not yet implemented")
                 }
             }).check()
+
+        for (item in currentScenes) {
+
+            // transform address to coordinates
+//            val geocoder = Geocoder(context, Locale.getDefault())
+            latitude = item.location[0]
+            longitude = item.location[1]
+//            val addresses: List<Address> =
+//                geocoder.getFromLocationName(item.nomCarrer + " " + item.numCarrer, 1)
+//            if (addresses.isNotEmpty()) {
+//                latitude = addresses[0].latitude
+//                longitude = addresses[0].longitude
+//            }
+
+            val place = LatLng(latitude, longitude)
+
+            marker = mMap.addMarker(
+                MarkerOptions()
+                .position(place)
+                .title(item.Name)
+                .snippet(item.Description))!!
+
+            marker.tag = item
+
+            mMap.setInfoWindowAdapter(CustomInfoWindowForGoogleMap(requireContext()))
+
+            mMap.setOnInfoWindowClickListener {
+
+                // al clicar al título, se abre la pantalla con la info de la activity
+                val intent = Intent(context, ScenesDesc::class.java)
+                intent.putExtra("scene", GsonBuilder().create().toJson(it.tag))
+                context?.startActivity(intent)
+            }
+
+        }
+
     }
 
     override fun onCreateView(
@@ -130,21 +175,20 @@ class MapFragment : Fragment() {
 
         mapFragment.getMapAsync(callback)
 
-//        mapViewModel.getAllScenes().observe(
-//            viewLifecycleOwner,
-//            {
-//                if (it is Result.Success) {
-//                    scenes = it.data
-//                    mapScenesAdapter.setData(scenes)
-//                    for (item in scenes) {
-//                        scenesList.add(item)
-//                    }
-////                    progressBar.visibility = View.GONE
-//                }
-//                currentScenes = scenesList
-//                mapFragment.getMapAsync(callback)
-//            }
-//        )
+        mapViewModel.getAllScenes().observe(
+            viewLifecycleOwner,
+            {
+                if (it is Result.Success) {
+                    scenes = it.data
+                    for (item in scenes) {
+                        scenesList.add(item)
+                    }
+//                    progressBar.visibility = View.GONE
+                }
+                currentScenes = scenesList
+                mapFragment.getMapAsync(callback)
+            }
+        )
     }
 
 

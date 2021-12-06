@@ -213,6 +213,25 @@ class MovieRepository {
         return result
     }
 
+    fun getAllScenes(): MutableLiveData<Result<List<Scene>>> {
+        val result = MutableLiveData<Result<List<Scene>>>()
+        val call: Call<List<Scene>> = moviesService!!.getAllScenes()
+        call.enqueue(object : Callback<List<Scene>> {
+            override fun onResponse(call: Call<List<Scene>>, response: Response<List<Scene>>) {
+                if (response.isSuccessful) {
+                    result.value = Result.Success(response.body() as List<Scene>)
+                } else result.value = Result.Error(IOException("Error getting info 1"))
+            }
+
+            override fun onFailure(call: Call<List<Scene>>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info 2")
+                result.value = Result.Error(IOException("Error getting info 3"))
+            }
+        })
+        return result
+    }
+
     /**
      * It gets the User of the user "user"
      *
