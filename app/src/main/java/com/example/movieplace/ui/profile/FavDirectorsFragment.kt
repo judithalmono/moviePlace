@@ -60,7 +60,16 @@ class FavDirectorsFragment : Fragment() {
             viewLifecycleOwner,
             {
                 if (it is Result.Success) {
-                    editTextDirector1.setText(it.data.directors_pref)
+                    for (dir in it.data.directors_pref) {
+                        editTextDirector1.setText(dir)
+                        editTextDirector2.setText(dir)
+                        editTextDirector3.setText(dir)
+                        editTextDirector4.setText(dir)
+                        editTextDirector5.setText(dir)
+                        editTextDirector6.setText(dir)
+                        editTextDirector7.setText(dir)
+                        editTextDirector8.setText(dir)
+                    }
                 }
             }
         )
@@ -69,10 +78,9 @@ class FavDirectorsFragment : Fragment() {
         return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        favDirectorsviewModel = ViewModelProvider(this).get(FavDirectorsViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

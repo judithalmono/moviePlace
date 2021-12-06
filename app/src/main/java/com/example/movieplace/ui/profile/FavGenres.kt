@@ -93,10 +93,9 @@ class FavGenres : Fragment() {
         return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        favGenresviewModel = ViewModelProvider(this).get(FavGenresViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

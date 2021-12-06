@@ -6,6 +6,7 @@ import retrofit2.Callback
 import androidx.lifecycle.MutableLiveData
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.*
+import com.example.movieplace.data.model.User
 import com.example.movieplace.data.retrofit.MoviesClient
 import okhttp3.ResponseBody
 import retrofit2.Response

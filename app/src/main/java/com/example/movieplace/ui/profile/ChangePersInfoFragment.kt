@@ -14,6 +14,8 @@ import com.example.movieplace.R
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.*
 import com.example.movieplace.databinding.ChangePersInfoFragmentBinding
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 
 class ChangePersInfoFragment : Fragment() {
 
@@ -67,9 +69,9 @@ class ChangePersInfoFragment : Fragment() {
                     editTextDateBirth.setText(it.data.date_birth)
                     editTextAddress.setText(it.data.personal_address)
                     when (it.data.sex) {
-                        "man" -> rman.isChecked = true
-                        "woman" -> rwoman.isChecked = true
-                        "nobinari" -> rother.isChecked = true
+                        "Man" -> rman.isChecked = true
+                        "Woman" -> rwoman.isChecked = true
+                        "Other" -> rother.isChecked = true
                     }
                 }
             }
@@ -77,6 +79,7 @@ class ChangePersInfoFragment : Fragment() {
 
         //If click the Submitted Button
         buttonSubmit.setOnClickListener {
+
             Log.d("MainActivity", "Button clicked")
             val user = Username(usr, editTextUsername.text.toString())
             changePersInfoViewModel.setUsername(user)
@@ -91,12 +94,16 @@ class ChangePersInfoFragment : Fragment() {
             val add = Address(usr, editTextAddress.text.toString())
             changePersInfoViewModel.setAddress(add)
             var c_sex = ""
-            if (rman.isChecked) c_sex = "man"
-            if (rwoman.isChecked) c_sex = "woman"
-            if (rother.isChecked) c_sex = "other"
+            if (rman.isChecked) c_sex = "Man"
+            if (rwoman.isChecked) c_sex = "Woman"
+            if (rother.isChecked) c_sex = "Other"
             val sex = Sex(usr, c_sex)
             changePersInfoViewModel.setSex(sex)
-            Log.d("MainActivity", "Update")
+            Snackbar.make(
+                root.findViewById(R.id.changePersInfo),
+                "Update successfully",
+                BaseTransientBottomBar.LENGTH_SHORT
+            ).show()
         }
 
         return root

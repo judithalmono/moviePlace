@@ -60,7 +60,16 @@ class FavComposersFragment : Fragment() {
             viewLifecycleOwner,
             {
                 if (it is Result.Success) {
-                    editTextComposer1.setText(it.data.compositors_pref)
+                    for (comp in it.data.compositors_pref) {
+                        editTextComposer1.setText(comp)
+                        editTextComposer2.setText(comp)
+                        editTextComposer3.setText(comp)
+                        editTextComposer4.setText(comp)
+                        editTextComposer5.setText(comp)
+                        editTextComposer6.setText(comp)
+                        editTextComposer7.setText(comp)
+                        editTextComposer8.setText(comp)
+                    }
                 }
             }
         )
@@ -68,10 +77,9 @@ class FavComposersFragment : Fragment() {
         return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        favComposersviewModel = ViewModelProvider(this).get(FavComposersViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

@@ -28,10 +28,9 @@ class ChangePasswordFragment : Fragment() {
         return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ChangePasswordViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

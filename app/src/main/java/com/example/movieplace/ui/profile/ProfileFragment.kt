@@ -33,9 +33,6 @@ class ProfileFragment : Fragment() {
     private lateinit var editTextEmail: EditText
     private lateinit var imageViewProfilePic: CircleImageView
 
-    private lateinit var buttonUsername: ImageButton
-    private lateinit var buttonFullName: ImageButton
-    private lateinit var buttonEmail: ImageButton
     // Per ara només funciona manualment, i per l'usuari admin.
     private val usr = "admin"
 
@@ -54,15 +51,6 @@ class ProfileFragment : Fragment() {
         editTextFullName = root.findViewById(R.id.editTextFullName)
         editTextEmail = root.findViewById(R.id.editTextEmail)
 
-        /*Glide.with(this).load(urlimagequevullposar.img).centerCrop().into(object : SimpleTarget<Drawable>() {
-            override fun onResourceReady(
-                resource: Drawable,
-                transition: com.bumptech.glide.request.transition.Transition<in Drawable>?
-            ) {
-                imageViewProfilePic.background = resource
-            }
-        })*/
-
         profileViewModel.getInfoUser(usr)
         profileViewModel.getInfoUser(usr).observe(
             viewLifecycleOwner,
@@ -74,6 +62,15 @@ class ProfileFragment : Fragment() {
                 }
             }
         )
+
+        /*Glide.with(this).load(urlimagequevullposar.img).centerCrop().into(object : SimpleTarget<Drawable>() {
+            override fun onResourceReady(
+                resource: Drawable,
+                transition: com.bumptech.glide.request.transition.Transition<in Drawable>?
+            ) {
+                imageViewProfilePic.background = resource
+            }
+        })*/
 
 
         //Change Personal Information
