@@ -1,5 +1,6 @@
 package com.example.movieplace.ui.profile
 
+import android.content.Context.INPUT_METHOD_SERVICE
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -7,9 +8,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
+import androidx.core.content.ContextCompat.getSystemService
 import com.example.movieplace.R
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.*
@@ -23,6 +26,8 @@ class ChangePersInfoFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var changePersInfoViewModel : ChangePersInfoViewModel
+    private lateinit var pers : View
+
     private lateinit var editTextUsername: EditText
     private lateinit var editTextFullName: EditText
     private lateinit var editTextEmail: EditText
@@ -53,6 +58,15 @@ class ChangePersInfoFragment : Fragment() {
         rwoman = root.findViewById(R.id.WomanSelect)
         rother = root.findViewById(R.id.OtherSelect)
         buttonSubmit = root.findViewById(R.id.buttonSubmit1)
+
+        /*pers = root.findViewById(R.id.changePersInfo)
+        root.setOnClickListener {
+            val view = this.currentFocus
+            if (view != null) {
+                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(view.windowToken, 0)
+            }
+        }*/
 
         // Per ara només funciona manualment, i per l'usuari admin.
         val usr = "admin"
@@ -89,7 +103,7 @@ class ChangePersInfoFragment : Fragment() {
             changePersInfoViewModel.setEmail(email)
             val telf = Phone(usr, editTextPhone.text.toString())
             changePersInfoViewModel.setTelefon(telf)
-            val birth = Birth(usr, editTextPhone.text.toString())
+            val birth = Birth(usr, editTextDateBirth.text.toString())
             changePersInfoViewModel.setBirth(birth)
             val add = Address(usr, editTextAddress.text.toString())
             changePersInfoViewModel.setAddress(add)
@@ -98,6 +112,7 @@ class ChangePersInfoFragment : Fragment() {
             if (rwoman.isChecked) c_sex = "Woman"
             if (rother.isChecked) c_sex = "Other"
             val sex = Sex(usr, c_sex)
+            Log.d("hola", c_sex)
             changePersInfoViewModel.setSex(sex)
             Snackbar.make(
                 root.findViewById(R.id.changePersInfo),

@@ -13,6 +13,8 @@ import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.Movie
 import com.example.movieplace.databinding.ChangeMyLikesFragmentBinding
 import com.example.movieplace.databinding.FavGenresFragmentBinding
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 
 class FavGenres : Fragment() {
 
@@ -89,6 +91,16 @@ class FavGenres : Fragment() {
                 }
             }
         )
+
+        //If click the Submitted Button
+        buttonSubmit.setOnClickListener {
+
+            Snackbar.make(
+                root.findViewById(R.id.changePersInfo),
+                "Update successfully",
+                BaseTransientBottomBar.LENGTH_SHORT
+            ).show()
+        }
 
         return root
     }
