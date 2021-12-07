@@ -10,7 +10,11 @@ import android.widget.Button
 import android.widget.EditText
 import com.example.movieplace.R
 import com.example.movieplace.data.Result
+import com.example.movieplace.data.model.NewCompositor
+import com.example.movieplace.data.model.NewDirector
 import com.example.movieplace.databinding.FavComposersFragmentBinding
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 
 class FavComposersFragment : Fragment() {
 
@@ -32,6 +36,8 @@ class FavComposersFragment : Fragment() {
     private lateinit var editTextComposer7: EditText
     private lateinit var editTextComposer8: EditText
     private lateinit var buttonSubmit : Button
+
+    private lateinit var llista_comp : List<String>
 
     // Per ara només funciona manualment, i per l'usuari admin.
     private val usr = "admin"
@@ -60,19 +66,51 @@ class FavComposersFragment : Fragment() {
             viewLifecycleOwner,
             {
                 if (it is Result.Success) {
-                    for (comp in it.data.compositors_pref) {
-                        editTextComposer1.setText(comp)
-                        editTextComposer2.setText(comp)
-                        editTextComposer3.setText(comp)
-                        editTextComposer4.setText(comp)
-                        editTextComposer5.setText(comp)
-                        editTextComposer6.setText(comp)
-                        editTextComposer7.setText(comp)
-                        editTextComposer8.setText(comp)
+                    llista_comp = it.data.compositors_pref
+                    var num = 0
+                    val iterator = llista_comp.iterator()
+                    while (iterator.hasNext()) {
+                        when (num) {
+                            0 -> editTextComposer1.setText(iterator.next())
+                            1 -> editTextComposer2.setText(iterator.next())
+                            2 -> editTextComposer3.setText(iterator.next())
+                            3 -> editTextComposer4.setText(iterator.next())
+                            4 -> editTextComposer5.setText(iterator.next())
+                            5 -> editTextComposer6.setText(iterator.next())
+                            6 -> editTextComposer7.setText(iterator.next())
+                            7 -> editTextComposer8.setText(iterator.next())
+                        }
+                        ++num
                     }
                 }
             }
         )
+
+        //If click the Submitted Button
+        buttonSubmit.setOnClickListener {
+            var user = NewCompositor(usr, editTextComposer1.text.toString())
+            favComposersviewModel.setCompositor(user)
+            user = NewCompositor(usr, editTextComposer2.text.toString())
+            favComposersviewModel.setCompositor(user)
+            user = NewCompositor(usr, editTextComposer3.text.toString())
+            favComposersviewModel.setCompositor(user)
+            user = NewCompositor(usr, editTextComposer4.text.toString())
+            favComposersviewModel.setCompositor(user)
+            user = NewCompositor(usr, editTextComposer5.text.toString())
+            favComposersviewModel.setCompositor(user)
+            user = NewCompositor(usr, editTextComposer6.text.toString())
+            favComposersviewModel.setCompositor(user)
+            user = NewCompositor(usr, editTextComposer7.text.toString())
+            favComposersviewModel.setCompositor(user)
+            user = NewCompositor(usr, editTextComposer8.text.toString())
+            favComposersviewModel.setCompositor(user)
+
+            Snackbar.make(
+                root.findViewById(R.id.FavComposers),
+                "Update successfully",
+                BaseTransientBottomBar.LENGTH_SHORT
+            ).show()
+        }
 
         return root
     }

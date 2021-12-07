@@ -2,15 +2,20 @@ package com.example.movieplace.ui.profile
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioButton
+import android.widget.ToggleButton
 import com.example.movieplace.R
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.Movie
+import com.example.movieplace.data.model.NewDirector
+import com.example.movieplace.data.model.NewGenre
+import com.example.movieplace.data.model.Sex
 import com.example.movieplace.databinding.ChangeMyLikesFragmentBinding
 import com.example.movieplace.databinding.FavGenresFragmentBinding
 import com.google.android.material.snackbar.BaseTransientBottomBar
@@ -27,18 +32,18 @@ class FavGenres : Fragment() {
 
     private lateinit var favGenresviewModel: FavGenresViewModel
 
-    private lateinit var raction : RadioButton
-    private lateinit var radventure : RadioButton
-    private lateinit var rcomedy: RadioButton
-    private lateinit var rcrime_mysery: RadioButton
-    private lateinit var rdrama: RadioButton
-    private lateinit var rfantasy: RadioButton
-    private lateinit var rhistorical: RadioButton
-    private lateinit var rhorror: RadioButton
-    private lateinit var rromance: RadioButton
-    private lateinit var rscfiction: RadioButton
-    private lateinit var rthriller: RadioButton
-    private lateinit var rwestern: RadioButton
+    private lateinit var raction : ToggleButton
+    private lateinit var radventure : ToggleButton
+    private lateinit var rcomedy: ToggleButton
+    private lateinit var rcrime_mysery: ToggleButton
+    private lateinit var rdrama: ToggleButton
+    private lateinit var rfantasy: ToggleButton
+    private lateinit var rhistorical: ToggleButton
+    private lateinit var rhorror: ToggleButton
+    private lateinit var rromance: ToggleButton
+    private lateinit var rscfiction: ToggleButton
+    private lateinit var rthriller: ToggleButton
+    private lateinit var rwestern: ToggleButton
     private lateinit var buttonSubmit : Button
 
     private val usr = "admin"
@@ -81,7 +86,7 @@ class FavGenres : Fragment() {
                             "drama" -> rdrama.isChecked = true
                             "fantasy" -> rfantasy.isChecked = true
                             "historical" -> rhistorical.isChecked = true
-                            "horror" -> rhistorical.isChecked = true
+                            "horror" -> rhorror.isChecked = true
                             "romance" -> rromance.isChecked = true
                             "fiction" -> rscfiction.isChecked = true
                             "thriller" -> rthriller.isChecked = true
@@ -94,9 +99,56 @@ class FavGenres : Fragment() {
 
         //If click the Submitted Button
         buttonSubmit.setOnClickListener {
-
+            if (raction.isChecked) {
+                val act = NewGenre(usr, "accio")
+                favGenresviewModel.setGenre(act)
+            }
+            if (radventure.isChecked) {
+                val act = NewGenre(usr, "adventure")
+                favGenresviewModel.setGenre(act)
+            }
+            if (rcomedy.isChecked) {
+                val act = NewGenre(usr, "comedy")
+                favGenresviewModel.setGenre(act)
+            }
+            if (rcrime_mysery.isChecked) {
+                val act = NewGenre(usr, "crime_mystery")
+                favGenresviewModel.setGenre(act)
+            }
+            if (rdrama.isChecked) {
+                val act = NewGenre(usr, "drama")
+                favGenresviewModel.setGenre(act)
+            }
+            if (rfantasy.isChecked) {
+                val act = NewGenre(usr, "fantasy")
+                favGenresviewModel.setGenre(act)
+            }
+            if (rhistorical.isChecked) {
+                val act = NewGenre(usr, "historical")
+                favGenresviewModel.setGenre(act)
+            }
+            if (rhorror.isChecked) {
+                val act = NewGenre(usr, "horror")
+                favGenresviewModel.setGenre(act)
+            }
+            if (rromance.isChecked) {
+                val act = NewGenre(usr, "romance")
+                favGenresviewModel.setGenre(act)
+            }
+            if (rscfiction.isChecked) {
+                val act = NewGenre(usr, "fiction")
+                favGenresviewModel.setGenre(act)
+            }
+            if (rthriller.isChecked) {
+                val act = NewGenre(usr, "thriller")
+                favGenresviewModel.setGenre(act)
+            }
+            if (rwestern.isChecked) {
+                val act = NewGenre(usr, "western")
+                favGenresviewModel.setGenre(act)
+            }
             Snackbar.make(
-                root.findViewById(R.id.changePersInfo),
+                root.findViewById(R.id.act_fav_genres),
                 "Update successfully",
                 BaseTransientBottomBar.LENGTH_SHORT
             ).show()

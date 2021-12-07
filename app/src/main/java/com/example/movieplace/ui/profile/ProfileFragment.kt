@@ -63,15 +63,9 @@ class ProfileFragment : Fragment() {
             }
         )
 
-        /*Glide.with(this).load(urlimagequevullposar.img).centerCrop().into(object : SimpleTarget<Drawable>() {
-            override fun onResourceReady(
-                resource: Drawable,
-                transition: com.bumptech.glide.request.transition.Transition<in Drawable>?
-            ) {
-                imageViewProfilePic.background = resource
-            }
-        })*/
-
+        //Profile Photo
+        Glide.with(this)
+            .load("https://loremflickr.com/320/240/dog").into(imageViewProfilePic)
 
         //Change Personal Information
         val button1 = root.findViewById<ImageButton>(R.id.button_change_PersInfo)

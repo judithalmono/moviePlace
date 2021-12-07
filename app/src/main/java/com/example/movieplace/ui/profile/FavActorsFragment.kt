@@ -14,10 +14,6 @@ import com.example.movieplace.databinding.FavActorsFragmentBinding
 
 class FavActorsFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = FavActorsFragment()
-    }
-
     private var _binding: FavActorsFragmentBinding? = null
     private val binding get() = _binding!!
 
@@ -32,6 +28,8 @@ class FavActorsFragment : Fragment() {
     private lateinit var editTextActor7: EditText
     private lateinit var editTextActor8: EditText
     private lateinit var buttonSubmit : Button
+
+    private lateinit var llista_actors : List<Int>
 
     // Per ara només funciona manualment, i per l'usuari admin.
     private val usr = "admin"
@@ -60,20 +58,10 @@ class FavActorsFragment : Fragment() {
             viewLifecycleOwner,
             {
                 if (it is Result.Success) {
-                    for (actor in it.data.actors_pref) {
-                        editTextActor1.setText(actor)
-                        editTextActor2.setText(actor)
-                        editTextActor3.setText(actor)
-                        editTextActor4.setText(actor)
-                        editTextActor5.setText(actor)
-                        editTextActor6.setText(actor)
-                        editTextActor7.setText(actor)
-                        editTextActor8.setText(actor)
-                    }
+                    llista_actors = it.data.actors_pref
                 }
             }
         )
-
 
         return root
     }

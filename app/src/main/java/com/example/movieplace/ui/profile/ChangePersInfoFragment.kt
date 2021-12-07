@@ -12,6 +12,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
+import android.widget.Toolbar
 import androidx.core.content.ContextCompat.getSystemService
 import com.example.movieplace.R
 import com.example.movieplace.data.Result
@@ -38,6 +39,7 @@ class ChangePersInfoFragment : Fragment() {
     private lateinit var rwoman : RadioButton
     private lateinit var rother: RadioButton
     private lateinit var buttonSubmit : Button
+    private lateinit var pers_info_toolbar : Toolbar
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -94,7 +96,6 @@ class ChangePersInfoFragment : Fragment() {
         //If click the Submitted Button
         buttonSubmit.setOnClickListener {
 
-            Log.d("MainActivity", "Button clicked")
             val user = Username(usr, editTextUsername.text.toString())
             changePersInfoViewModel.setUsername(user)
             val f_n = FullName(usr, editTextFullName.text.toString())

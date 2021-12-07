@@ -171,5 +171,40 @@ interface MoviesService {
     fun setProfilePhoto(@Body user: Sex, @Part(value = "file\"; filename=\"photo.jpeg\" ") file: RequestBody): Call<ResponseBody>
     */
 
+    /**
+     * Update the genre of the user
+     *
+     * @param user
+     */
+
+    @POST("/anadirGen")
+    fun setGenre(@Body user: NewGenre): Call<ResponseBody>
+
+    /**
+     * Update the directors of the user
+     *
+     * @param user
+     */
+
+    @POST("/anadirDir")
+    fun setDirector(@Body user: NewDirector): Call<ResponseBody>
+
+    /**
+     * Update the actors of the user
+     *
+     * @param user
+     */
+
+    @POST("/anadirActor")
+    fun setActor(@Body user: NewActor): Call<ResponseBody>
+
+    /**
+     * Update the composers of the user
+     *
+     * @param user
+     */
+
+    @POST("/anadirComp")
+    fun setCompositor(@Body user: NewCompositor): Call<ResponseBody>
 
 }
