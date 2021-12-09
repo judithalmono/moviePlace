@@ -43,4 +43,5 @@
     <string name="sign_up_server_error">Server Error</string>
     <string name="unknown_sign_up_error">Uknown Sign Up</string>
     <string name="emailConfirmationMessage">Confirmation Email</string>
+    <string name="login_failed_server">Login Failed Server!</string>
 </resources>

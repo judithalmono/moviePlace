@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background6"
-    tools:context=".ui.home.MovieFragment">
+    tools:context=".ui.movie.MovieFragment">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="LinearLayoutManager"
-            tools:context=".ui.home.MovieFragment"
+            tools:context=".ui.movie.MovieFragment"
             tools:listitem="@layout/fragment_movie" />
     </LinearLayout>
 

@@ -1,5 +1,6 @@
 package com.example.movieplace.ui.signUp
 
+import android.util.Log
 import android.util.Patterns
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
@@ -8,6 +9,9 @@ import com.example.movieplace.R
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import com.example.movieplace.SignUpRepository
+import com.example.movieplace.data.Result
+import com.example.movieplace.data.model.EmailUser
+import com.example.movieplace.data.model.Exist
 
 class SignUpViewModel (private val signUpRepository: SignUpRepository) : ViewModel() {
 
@@ -27,12 +31,14 @@ class SignUpViewModel (private val signUpRepository: SignUpRepository) : ViewMod
      * @param password
      * @param activity pointer to the activity, used by the observers
      */
-    fun signUp(email: String, username: String, password: String?, activity: AppCompatActivity) {
+
+    fun signUp (email: String, username: String, password: String?, activity: AppCompatActivity) {
         // can be launched in a separate asynchronous job
         signUpRepository.result.observe(
             activity,
             Observer {
                 val resultRepo = it ?: return@Observer
+                Log.d("RESULT S", resultRepo.success.toString())
                 if (resultRepo.error != null) {
                     val msg: String = resultRepo.error.toString()
                     // println("msg = $msg")
@@ -66,40 +72,40 @@ class SignUpViewModel (private val signUpRepository: SignUpRepository) : ViewMod
         signUpRepository.signUp(email, username, password, activity)
     }
 
-    fun signUpBack(email: String, username: String, uid: String, token: String, activity: AppCompatActivity) {
-        signUpRepository.result.observe(
-            activity,
-            Observer {
-                val resultRepo = it ?: return@Observer
-                if (resultRepo.error != null) {
-                    val msg: String = resultRepo.error.toString()
-
-                    when { // quan el backend implementi noves excepcions, haurem d'afegir entrades aqui
-                        msg == "com.google.firebase.auth.FirebaseAuthUserCollisionException: The email address is already in use by another account."
-                        -> _signUpResult.value = SignUpResult(error = R.string.email_taken)
-                        msg == "com.google.firebase.auth.FirebaseAuthInvalidCredentialsException: The email address is badly formatted."
-                        -> _signUpResult.value = SignUpResult(error = R.string.sign_up_bad_email_format)
-                        msg == "com.google.firebase.FirebaseNetworkException: A network error (such as timeout, interrupted connection or unreachable host) has occurred."
-                        -> _signUpResult.value = SignUpResult(error = R.string.sign_up_fb_connection_error)
-                        (msg == "connection error. Server not reached" || msg == "java.lang.Exception: connection error. Server not reached") // crec q nomes serà el 2n.
-                        -> _signUpResult.value = SignUpResult(error = R.string.sign_up_connection_error)
-                        (msg == "response received. Error in the server" || msg == "java.lang.Exception: response received. Error in the server")
-                        -> _signUpResult.value = SignUpResult(error = R.string.sign_up_server_error)
-
-                        else
-                        -> _signUpResult.value = SignUpResult(error = R.string.unknown_sign_up_error)
-                    }
-                }
-                if (resultRepo.success != null) {
-                    _signUpResult.value = SignUpResult(success = resultRepo.success)
-                }
-                // aqui la activity fa mes coses q suposo q aqui no calen
-
-                signUpRepository.result.removeObservers(activity)
-            }
-        )
-        signUpRepository.signUpBack(email, username, uid, token, activity)
-    }
+//    fun signUpBack(email: String, username: String, uid: String, token: String, activity: AppCompatActivity) {
+//        signUpRepository.result.observe(
+//            activity,
+//            Observer {
+//                val resultRepo = it ?: return@Observer
+//                if (resultRepo.error != null) {
+//                    val msg: String = resultRepo.error.toString()
+//
+//                    when { // quan el backend implementi noves excepcions, haurem d'afegir entrades aqui
+//                        msg == "com.google.firebase.auth.FirebaseAuthUserCollisionException: The email address is already in use by another account."
+//                        -> _signUpResult.value = SignUpResult(error = R.string.email_taken)
+//                        msg == "com.google.firebase.auth.FirebaseAuthInvalidCredentialsException: The email address is badly formatted."
+//                        -> _signUpResult.value = SignUpResult(error = R.string.sign_up_bad_email_format)
+//                        msg == "com.google.firebase.FirebaseNetworkException: A network error (such as timeout, interrupted connection or unreachable host) has occurred."
+//                        -> _signUpResult.value = SignUpResult(error = R.string.sign_up_fb_connection_error)
+//                        (msg == "connection error. Server not reached" || msg == "java.lang.Exception: connection error. Server not reached") // crec q nomes serà el 2n.
+//                        -> _signUpResult.value = SignUpResult(error = R.string.sign_up_connection_error)
+//                        (msg == "response received. Error in the server" || msg == "java.lang.Exception: response received. Error in the server")
+//                        -> _signUpResult.value = SignUpResult(error = R.string.sign_up_server_error)
+//
+//                        else
+//                        -> _signUpResult.value = SignUpResult(error = R.string.unknown_sign_up_error)
+//                    }
+//                }
+//                if (resultRepo.success != null) {
+//                    _signUpResult.value = SignUpResult(success = resultRepo.success)
+//                }
+//                // aqui la activity fa mes coses q suposo q aqui no calen
+//
+//                signUpRepository.result.removeObservers(activity)
+//            }
+//        )
+//        signUpRepository.signUpBack(email, username, uid, token, activity)
+//    }
 
     /**
      * Updates the live data _signUpForm depending on whether the data in the parameters has the proper format
@@ -142,6 +148,11 @@ class SignUpViewModel (private val signUpRepository: SignUpRepository) : ViewMod
         return username.isNotBlank()
     }
 
+    fun existsUser(username:String): MutableLiveData<Result<Boolean>> {
+        return signUpRepository.existsUser(username)
+
+    }
+
     /**
      * Returns true <=> the password string follows the expected format
      *
@@ -152,4 +163,8 @@ class SignUpViewModel (private val signUpRepository: SignUpRepository) : ViewMod
     private fun isPasswordValid(password: String): Boolean {
         return password.length > 5
     }
+
+//    fun signUpBD(user: BasicUser): MutableLiveData<Result<String>>{
+//        return signUpRepository.signUpBD(user)
+//    }
 }

@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
@@ -33,10 +36,11 @@ class Login : AppCompatActivity() {
     private lateinit var btnToSignUp: TextView
     private lateinit var btnRecoverPassword: TextView
     private lateinit var root: View
-    private lateinit var email: String
+    private var email: String = ""
     private lateinit var visibilityPassword: Button
     private lateinit var loading: ProgressBar
     private var visibility: Boolean = false
+    private lateinit var username: String
 
 
     /**
@@ -55,11 +59,11 @@ class Login : AppCompatActivity() {
 //            finish()
 //        }
 
-        if (SharedPreferenceManager.getStringValue(Constants().PREF_EMAIL) != null) {
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
-            finish()
-        }
+//        if (SharedPreferenceManager.getStringValue(Constants().PREF_EMAIL) != null) {
+//            val intent = Intent(this, Home::class.java)
+//            startActivity(intent)
+//            finish()
+//        }
 
         setUp()
         startObservers()
@@ -90,6 +94,7 @@ class Login : AppCompatActivity() {
 
         root.setOnClickListener {
             val view = this.currentFocus
+            root.clearFocus()
             if (view != null) {
                 val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(view.windowToken, 0)
@@ -101,9 +106,7 @@ class Login : AppCompatActivity() {
             val intent = Intent(this, ForgotPassword::class.java)
             startActivity(intent)
         }
-
     }
-
 
     private fun setUp() {
         editTextUser = findViewById(R.id.editTextUser)
@@ -126,10 +129,6 @@ class Login : AppCompatActivity() {
                 // disable login button unless both username / password is valid
                 btnLogin.isEnabled = loginState.isDataValid
 
-                if (editTextUser.text.isNotEmpty() && loginState.emailError != null) {
-                    editTextUser.setBackgroundResource(R.drawable.background_edt_wrong)
-                    Toast.makeText(this, getString(loginState.emailError), Toast.LENGTH_LONG).show()
-                }
             }
         )
 
@@ -137,59 +136,99 @@ class Login : AppCompatActivity() {
             this@Login,
             Observer {
                 val loginResult = it ?: return@Observer
-
+                Log.d("RESULT", loginResult.toString())
                 if (loginResult.error != null) {
                     loading.visibility = View.GONE
                     showLoginFailed(loginResult.error)
                 }
+                if (loginResult.success != null) {
+                    updateUiWithUser(loginResult.success)
+                }
 
                 setResult(Activity.RESULT_OK)
                 // Complete and destroy login activity once successful
-                 finish()
+//                 finish()
+            }
+        )
+    }
+
+    private fun updateUiWithUser(model: LoggedInUserView) {
+        model.data.observe(
+            this@Login,
+            {
+                loading.visibility = View.GONE
+                val welcome = getString(R.string.welcome)
+                when {
+                    it.errorLogin != null && it.errorLogin == R.string.login_failed_email -> {
+                        loading.visibility = GONE
+                        Toast.makeText(applicationContext, getString(R.string.login_failed_email), Toast.LENGTH_LONG).show()
+                    }
+                    it.errorLogin != null && it.errorLogin == R.string.login_failed_login -> {
+                        loading.visibility = GONE
+                        Toast.makeText(applicationContext, getString(R.string.login_failed_login), Toast.LENGTH_LONG).show()
+                    }
+                    it.errorLogin != null && it.errorLogin == R.string.login_failed_server -> loading.visibility = VISIBLE
+                    else -> {
+                        loading.visibility = GONE
+                        val intent = Intent(this, Home::class.java)
+                        startActivity(intent)
+                        Toast.makeText(
+                            applicationContext,
+                            "$welcome $username",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        finish()
+                    }
+                }
             }
         )
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {
+        editTextPassword.setBackgroundResource(R.drawable.background_edt_wrong)
+        editTextUser.setBackgroundResource(R.drawable.background_edt_wrong)
         Toast.makeText(applicationContext, errorString, Toast.LENGTH_SHORT).show()
     }
 
     private fun editTextsChanges() {
         editTextUser.afterTextChanged {
+            email = ""
             editTextUser.setBackgroundResource(R.drawable.background_btn_edit)
-            loginViewModel.getEmail(editTextUser.text.toString()).observe(
-                this, {
-                    if (it is Result.Success) {
-                        email = it.data
-                    }
-                }
-
-            )
         }
-
         editTextUser.setOnFocusChangeListener { _, hasFocus ->
-            if (!hasFocus)
+            if (!hasFocus){
+                Log.d("SE VA", "el foco")
+                username = editTextUser.text.toString()
+                loginViewModel.getEmail(editTextUser.text.toString()).observe(
+                    this, {
+                        if (it is Result.Success) {
+                            email = it.data.email
+                        }
+                    }
+                )
                 loginViewModel.loginDataChanged(
+                    email,
                     editTextPassword.text.toString()
                 )
+            }
         }
 
         editTextPassword.apply {
             setOnFocusChangeListener { _, hasFocus ->
                 if (!hasFocus) {
                     loginViewModel.loginDataChanged(
+                        email,
                         editTextPassword.text.toString()
                     )
-//                    if (!res) setBackgroundResource(R.drawable.background_edt_wrong)
                 }
             }
 
             afterTextChanged {
                 setBackgroundResource(R.drawable.background_btn_edit)
-                val res = loginViewModel.loginDataChanged(
+                loginViewModel.loginDataChanged(
+                    email,
                     editTextPassword.text.toString()
                 )
-//                if (!res) setBackgroundResource(R.drawable.background_edt_wrong)
             }
 
             setOnEditorActionListener { _, actionId, _ ->
@@ -204,14 +243,13 @@ class Login : AppCompatActivity() {
             }
 
             btnLogin.setOnClickListener {
+                btnLogin.clearFocus()
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(
                     email,
                     editTextPassword.text.toString()
                 )
             }
-
-
         }
     }
 

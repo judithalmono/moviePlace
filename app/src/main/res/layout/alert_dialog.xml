@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:scaleType="center"
+        android:background="@color/red2"
+        android:text="Filter"
+        android:gravity="center_vertical|center"
+        android:textColor="@color/white"
+        android:contentDescription="@string/app_name" />
+
+    <Button
+        android:id="@+id/genreBtn"
+        android:layout_width="match_parent"
+        android:text="Genre"
+        android:textSize="11sp"
+        android:textColor="@color/black"
+        android:background="@color/cardview_dark_background"
+        android:layout_height="40dp" />
+
+    <Button
+        android:id="@+id/directorBtn"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@color/black"
+        android:background="@color/cardview_dark_background"/>
+
+    <Button
+        android:id="@+id/actorBtn"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@color/black"
+        android:background="@color/cardview_dark_background"/>
+
+    <Button
+        android:id="@+id/composerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@color/black"
+        android:background="@color/cardview_dark_background"/>
+</LinearLayout>

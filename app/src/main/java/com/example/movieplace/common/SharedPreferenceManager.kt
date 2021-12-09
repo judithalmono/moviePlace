@@ -6,7 +6,7 @@ import android.content.SharedPreferences
 class SharedPreferenceManager {
 
     companion object Factory {
-        private val appSettingsFile = "APP_SETTINGS"
+        private const val appSettingsFile = "APP_SETTINGS"
         private fun getSharedPreferences(): SharedPreferences {
             return MyApp.getInstance().getSharedPreferences(
                 appSettingsFile,

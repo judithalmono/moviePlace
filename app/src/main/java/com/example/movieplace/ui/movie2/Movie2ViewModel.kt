@@ -1,10 +1,10 @@
-package com.example.movieplace.ui.search
+package com.example.movieplace.ui.movie2
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SearchViewModel : ViewModel() {
+class Movie2ViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is search Fragment"

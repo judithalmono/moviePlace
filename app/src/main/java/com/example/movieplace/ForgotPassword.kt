@@ -3,14 +3,17 @@ package com.example.movieplace
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.view.View
+import android.view.View.GONE
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.movieplace.ui.login.Login
 import com.example.movieplace.ui.login.LoginViewModel
+import com.example.movieplace.ui.login.LoginViewModelFactory
 
 class ForgotPassword : AppCompatActivity() {
 
@@ -33,15 +36,40 @@ class ForgotPassword : AppCompatActivity() {
         btnToSignIn = findViewById(R.id.textSignIn)
         loading = findViewById(R.id.progressBar)
 
-        loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
+        loginViewModel = ViewModelProvider(this, LoginViewModelFactory())[LoginViewModel::class.java]
 
         btnGetPassword.setOnClickListener {
             if (isValidEmail()) {
+                loading.visibility = View.VISIBLE
                 loginViewModel.recoverPassword(editTextEmail.text.toString())
+
             } else {
                 editTextEmail.setBackgroundResource(R.drawable.background_edt_wrong)
                 Toast.makeText(this, "Email not correct!", Toast.LENGTH_LONG).show()
             }
+        }
+
+        loginViewModel.recoverResult.observe(
+            this@ForgotPassword,
+            Observer {
+                loading.visibility = GONE
+                val recoverResult = it ?: return@Observer
+                Log.d("IT", recoverResult)
+                Toast.makeText(applicationContext, "Enters $recoverResult", Toast.LENGTH_LONG).show()
+                if (recoverResult == "OK") {
+                    Toast.makeText(applicationContext, "Email sent. Please check your email inbox", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this, Login::class.java))
+                } else if (recoverResult == "ERROR") {
+                    editTextEmail.setBackgroundResource(R.drawable.background_edt_wrong)
+                    Toast.makeText(this, "Email not found!", Toast.LENGTH_LONG).show()
+                }
+            }
+        )
+
+        btnToSignIn.setOnClickListener {
+            loading.visibility = View.VISIBLE
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
         }
 
         root.setOnClickListener {
@@ -51,24 +79,6 @@ class ForgotPassword : AppCompatActivity() {
                 imm.hideSoftInputFromWindow(view.windowToken, 0)
             }
         }
-
-        loginViewModel.recoverResult.observe(
-            this@ForgotPassword,
-            Observer {
-                val recoverResult = it ?: return@Observer
-                Toast.makeText(applicationContext, "Enters $recoverResult", Toast.LENGTH_LONG).show()
-                if (recoverResult == "OK") {
-                    Toast.makeText(applicationContext, "Email sent. Please check your email inbox", Toast.LENGTH_LONG).show()
-                    startActivity(Intent(this, Login::class.java))
-                } else if (recoverResult == "ERROR") {
-                    editTextEmail.setBackgroundResource(R.drawable.background_edt_wrong)
-                    Toast.makeText(this, "Email not found!", Toast.LENGTH_LONG).show()
-                }
-
-                // Complete and destroy login activity once successful
-                // finish()
-            }
-        )
     }
 
     private fun isValidEmail(): Boolean {

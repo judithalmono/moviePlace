@@ -1,4 +1,4 @@
-package com.example.movieplace.ui.home
+package com.example.movieplace.ui.movie
 
 import android.os.Bundle
 import android.view.*
@@ -36,7 +36,7 @@ class MovieFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         movieViewModel =
-            ViewModelProvider(this).get(MovieViewModel::class.java)
+            ViewModelProvider(this)[MovieViewModel::class.java]
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root

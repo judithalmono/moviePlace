@@ -1,4 +1,4 @@
-package com.example.movieplace.ui.home
+package com.example.movieplace.ui.movie
 
 
 import android.content.Context

@@ -21,9 +21,6 @@ import com.example.movieplace.R
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.Scene
 import com.example.movieplace.databinding.FragmentMapBinding
-import com.example.movieplace.ui.scenes.MyScenesRecyclesViewAdapter
-import com.example.movieplace.ui.scenes.SceneViewModel
-import com.example.movieplace.ui.scenes.ScenesActivity
 import com.example.movieplace.ui.scenes.ScenesDesc
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap

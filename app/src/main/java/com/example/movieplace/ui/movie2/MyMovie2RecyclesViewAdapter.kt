@@ -1,4 +1,4 @@
-package com.example.movieplace.ui.search
+package com.example.movieplace.ui.movie2
 
 import android.content.Context
 import android.content.Intent
@@ -16,7 +16,7 @@ import com.example.movieplace.databinding.FragmentMovieBinding
 import com.example.movieplace.ui.scenes.ScenesActivity
 import com.google.gson.GsonBuilder
 
-class MySearchRecyclesViewAdapter (private val context: Context?) : RecyclerView.Adapter<MySearchRecyclesViewAdapter.ViewHolder>() {
+class MyMovie2RecyclesViewAdapter (private val context: Context?) : RecyclerView.Adapter<MyMovie2RecyclesViewAdapter.ViewHolder>() {
 
     /**
      * Onclick to item. Updated when SceneFragment developed

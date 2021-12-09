@@ -5,8 +5,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.movieplace.data.LoginDataSource
 import com.example.movieplace.data.Result
+import com.example.movieplace.data.model.EmailUser
 import com.example.movieplace.data.model.LoggedInUser
 import com.example.movieplace.data.retrofit.LoginClient
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,11 +45,10 @@ class LoginRepository(val dataSource: LoginDataSource) {
      */
     fun login(email: String, password: String): Result<LiveData<LoggedInUser>> {
         val result = dataSource.login(email, password)
-
         if (result is Result.Success) {
+            Log.d("LOGIN REPO", result.data.value.toString())
             setLoggedInUser(result.data.value)
         }
-
         return result
     }
 
@@ -62,23 +63,27 @@ class LoginRepository(val dataSource: LoginDataSource) {
      * It calls the data source to send the reset password email
      */
     fun recoverPassword(email: String): LiveData<String> {
-        return dataSource.recoverPassword(email)
+        val qu = dataSource.recoverPassword(email)
+        Log.d("A ver1", qu.value.toString())
+        return qu
     }
 
     fun deleteAccount() {
     }
 
-    fun getEmail(username: String): MutableLiveData<Result<String>> {
-        val result = MutableLiveData<Result<String>>()
-        val call: Call<String> = loginServices!!.getEmail(username)
-        call.enqueue(object : Callback<String> {
-            override fun onResponse(call: Call<String>, response: Response<String>) {
+    fun getEmail(username: String): MutableLiveData<Result<EmailUser>> {
+        val result = MutableLiveData<Result<EmailUser>>()
+        val call: Call<EmailUser> = loginServices!!.getEmail(username)
+        call.enqueue(object : Callback<EmailUser> {
+            override fun onResponse(call: Call<EmailUser>, response: Response<EmailUser>) {
                 if (response.isSuccessful) {
-                    result.value = Result.Success(response.body() as String)
+                    if (response.body() != null)
+                        result.value = Result.Success(response.body() as EmailUser)
+                    else result.value = Result.Success(EmailUser(""))
                 } else result.value = Result.Error(IOException("Error getting info 1"))
             }
 
-            override fun onFailure(call: Call<String>, t: Throwable) {
+            override fun onFailure(call: Call<EmailUser>, t: Throwable) {
                 // Error en la connexion
                 Log.d("GET", t.toString())
                 result.value = Result.Error(IOException("Error getting info 3"))
@@ -86,9 +91,4 @@ class LoginRepository(val dataSource: LoginDataSource) {
         })
         return result
     }
-
-//    private fun setLoggedInUser(loggedInUser: LoggedInUser?) {
-//        this.user = loggedInUser
-//    }
-
 }

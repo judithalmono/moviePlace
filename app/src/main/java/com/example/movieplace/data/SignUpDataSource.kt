@@ -11,6 +11,9 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
 import com.example.movieplace.common.Constants
+import com.example.movieplace.data.model.BasicUser
+import com.example.movieplace.data.model.Exist
+import com.example.movieplace.data.model.Movie
 import com.example.movieplace.data.model.SignUpUserData
 import com.example.movieplace.data.retrofit.SignUpService
 import okhttp3.ResponseBody
@@ -19,6 +22,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.IOException
 import java.util.*
 
 class SignUpDataSource {
@@ -71,8 +75,7 @@ class SignUpDataSource {
                             // Get new FCM registration token
                             val token = task.result
 
-                            val signedUpUser = SignUpUserData(email, user.uid, token)
-                            signUpBack(username, signedUpUser)
+                            signUpBack(username, password, email)
                         })
                     } else { // error a Firebase
                         Log.w("Sign-up", "createUserWithEmail:failure", task.exception)
@@ -86,14 +89,14 @@ class SignUpDataSource {
         }
     }
 
-    fun signUpBack(username: String, signedUpUser: SignUpUserData) {
-        val call: Call<ResponseBody> = signUpService.createProfile(username, signedUpUser)
+    private fun signUpBack(username: String, password: String, email: String) {
+        val user = BasicUser(username, password, email)
+        val call: Call<ResponseBody> = signUpService.signUp(user)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
                     _result.value = ResultSignUp(success = true)
                 } else {
-
                     _result.value = ResultSignUp(error = Exception("response received. Error in the server"))
                 }
             }
@@ -104,5 +107,25 @@ class SignUpDataSource {
                 _result.value = ResultSignUp(error = Exception("connection error. Server not reached"))
             }
         })
+    }
+
+    fun existsUser(username: String) : MutableLiveData<Result<Boolean>> {
+        val result = MutableLiveData<Result<Boolean>>()
+        val call: Call<Exist> = signUpService.existsUser(username)
+        call.enqueue(object : Callback<Exist> {
+            override fun onResponse(call: Call<Exist>, response: Response<Exist>) {
+                if (response.isSuccessful) {
+                    result.value = Result.Success(response.body()!!.exists)
+                } else {
+                    result.value = Result.Error(IOException("Error getting info1"))
+                }
+            }
+
+            override fun onFailure(call: Call<Exist>, t: Throwable) {
+                Log.d("GET", t.toString())
+                result.value = Result.Error(IOException("Error getting info3"))
+            }
+        })
+        return result
     }
 }

@@ -1,6 +1,5 @@
-package com.example.movieplace.ui.home
+package com.example.movieplace.ui.movie
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.movieplace.MovieRepository

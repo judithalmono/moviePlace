@@ -1,14 +1,27 @@
 package com.example.movieplace
 
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.movieplace.data.ResultSignUp
 import com.example.movieplace.data.SignUpDataSource
 import androidx.lifecycle.Observer
+import com.example.movieplace.data.Result
+import com.example.movieplace.data.model.BasicUser
+import com.example.movieplace.data.model.Exist
 import com.example.movieplace.data.model.SignUpUserData
+import com.example.movieplace.data.retrofit.LoginClient
+import com.example.movieplace.data.retrofit.SignUpClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.io.IOException
 
 class SignUpRepository(val dataSource: SignUpDataSource) {
+
+    private val signUpClient = SignUpClient()
+    private val signUpService = signUpClient.getSignUpService()
 
     private val _result = MutableLiveData<ResultSignUp>()
     val result: LiveData<ResultSignUp> = _result
@@ -43,23 +56,47 @@ class SignUpRepository(val dataSource: SignUpDataSource) {
         dataSource.signUp(email, username, password)
     }
 
-    fun signUpBack(email: String, username: String, uid: String, token: String, activity: AppCompatActivity) {
-        dataSource.result.observe(
-            activity,
-            Observer {
-                val resultDS = it ?: return@Observer
-
-                // _result.value = resultDS  //potser es pot substituir per això
-                if (resultDS.error != null) {
-                    _result.value = ResultSignUp(error = resultDS.error)
-                }
-                if (resultDS.success != null) {
-                    _result.value = ResultSignUp(success = resultDS.success)
-                }
-                // aqui la activity fa mes coses q suposo q aqui no calen
-                dataSource.result.removeObservers(activity)
-            }
-        )
-        dataSource.signUpBack(username, SignUpUserData(email, uid, token))
+    fun existsUser(username: String): MutableLiveData<Result<Boolean>> {
+        return dataSource.existsUser(username)
     }
+
+//    fun signUpBack(email: String, username: String, uid: String, token: String, activity: AppCompatActivity) {
+//        dataSource.result.observe(
+//            activity,
+//            Observer {
+//                val resultDS = it ?: return@Observer
+//
+//                // _result.value = resultDS  //potser es pot substituir per això
+//                if (resultDS.error != null) {
+//                    _result.value = ResultSignUp(error = resultDS.error)
+//                }
+//                if (resultDS.success != null) {
+//                    _result.value = ResultSignUp(success = resultDS.success)
+//                }
+//                // aqui la activity fa mes coses q suposo q aqui no calen
+//                dataSource.result.removeObservers(activity)
+//            }
+//        )
+//        dataSource.signUpBack(username, password, email)
+//    }
+
+//    fun signUpBD(user: BasicUser): MutableLiveData<Result<String>> {
+//        val result = MutableLiveData<Result<String>>()
+//        val call: Call<String> = signUpService!!.signUp(user)
+//        call.enqueue(object : Callback<String> {
+//            override fun onResponse(call: Call<String>, response: Response<String>) {
+//                if (response.isSuccessful) {
+//                    result.value = Result.Success(response.body() as String)
+//                } else result.value = Result.Error(IOException("Error getting info 1"))
+//            }
+//
+//            override fun onFailure(call: Call<String>, t: Throwable) {
+//                // Error en la connexion
+//                Log.d("GET", t.toString())
+//                result.value = Result.Error(IOException("Error getting info 3"))
+//            }
+//        })
+//        return result
+//    }
+
 }
