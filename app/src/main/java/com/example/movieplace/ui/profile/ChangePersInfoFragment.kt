@@ -1,5 +1,6 @@
 package com.example.movieplace.ui.profile
 
+import android.content.Context.INPUT_METHOD_SERVICE
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -7,13 +8,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
+import android.widget.Toolbar
+import androidx.core.content.ContextCompat.getSystemService
 import com.example.movieplace.R
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.*
 import com.example.movieplace.databinding.ChangePersInfoFragmentBinding
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 
 class ChangePersInfoFragment : Fragment() {
 
@@ -21,6 +27,8 @@ class ChangePersInfoFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var changePersInfoViewModel : ChangePersInfoViewModel
+    private lateinit var pers : View
+
     private lateinit var editTextUsername: EditText
     private lateinit var editTextFullName: EditText
     private lateinit var editTextEmail: EditText
@@ -31,6 +39,7 @@ class ChangePersInfoFragment : Fragment() {
     private lateinit var rwoman : RadioButton
     private lateinit var rother: RadioButton
     private lateinit var buttonSubmit : Button
+    private lateinit var pers_info_toolbar : Toolbar
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,6 +61,15 @@ class ChangePersInfoFragment : Fragment() {
         rother = root.findViewById(R.id.OtherSelect)
         buttonSubmit = root.findViewById(R.id.buttonSubmit1)
 
+        /*pers = root.findViewById(R.id.changePersInfo)
+        root.setOnClickListener {
+            val view = this.currentFocus
+            if (view != null) {
+                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(view.windowToken, 0)
+            }
+        }*/
+
         // Per ara només funciona manualment, i per l'usuari admin.
         val usr = "admin"
 
@@ -67,9 +85,9 @@ class ChangePersInfoFragment : Fragment() {
                     editTextDateBirth.setText(it.data.date_birth)
                     editTextAddress.setText(it.data.personal_address)
                     when (it.data.sex) {
-                        "man" -> rman.isChecked = true
-                        "woman" -> rwoman.isChecked = true
-                        "nobinari" -> rother.isChecked = true
+                        "Man" -> rman.isChecked = true
+                        "Woman" -> rwoman.isChecked = true
+                        "Other" -> rother.isChecked = true
                     }
                 }
             }
@@ -77,7 +95,7 @@ class ChangePersInfoFragment : Fragment() {
 
         //If click the Submitted Button
         buttonSubmit.setOnClickListener {
-            Log.d("MainActivity", "Button clicked")
+
             val user = Username(usr, editTextUsername.text.toString())
             changePersInfoViewModel.setUsername(user)
             val f_n = FullName(usr, editTextFullName.text.toString())
@@ -86,17 +104,22 @@ class ChangePersInfoFragment : Fragment() {
             changePersInfoViewModel.setEmail(email)
             val telf = Phone(usr, editTextPhone.text.toString())
             changePersInfoViewModel.setTelefon(telf)
-            val birth = Birth(usr, editTextPhone.text.toString())
+            val birth = Birth(usr, editTextDateBirth.text.toString())
             changePersInfoViewModel.setBirth(birth)
             val add = Address(usr, editTextAddress.text.toString())
             changePersInfoViewModel.setAddress(add)
             var c_sex = ""
-            if (rman.isChecked) c_sex = "man"
-            if (rwoman.isChecked) c_sex = "woman"
-            if (rother.isChecked) c_sex = "other"
+            if (rman.isChecked) c_sex = "Man"
+            if (rwoman.isChecked) c_sex = "Woman"
+            if (rother.isChecked) c_sex = "Other"
             val sex = Sex(usr, c_sex)
+            Log.d("hola", c_sex)
             changePersInfoViewModel.setSex(sex)
-            Log.d("MainActivity", "Update")
+            Snackbar.make(
+                root.findViewById(R.id.changePersInfo),
+                "Update successfully",
+                BaseTransientBottomBar.LENGTH_SHORT
+            ).show()
         }
 
         return root

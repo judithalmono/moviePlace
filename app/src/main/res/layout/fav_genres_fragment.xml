@@ -23,176 +23,188 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.059"
+        app:layout_constraintVertical_bias="0.179"
         tools:ignore="MissingConstraints" />
 
-    <RadioButton
+    <ToggleButton
         android:id="@+id/ActionSelect"
-        android:layout_width="109dp"
-        android:layout_height="47dp"
-        android:text="Action"
-        android:textColor="@color/white"
-        android:textSize="19dp"
+        android:layout_width="108dp"
+        android:layout_height="46dp"
+        android:textOff="Action"
+        android:textOn="Action"
+        android:textSize="18sp"
+        android:background="@drawable/toggle_button_options"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.138" />
+        app:layout_constraintVertical_bias="0.356" />
 
-    <RadioButton
+    <ToggleButton
         android:id="@+id/AdvSelect"
         android:layout_width="162dp"
         android:layout_height="45dp"
-        android:text="Adventure"
-        android:textColor="@color/white"
-        android:textSize="19dp"
+        android:textOff="Adventure"
+        android:textOn="Adventure"
+        android:textSize="18sp"
+        android:background="@drawable/toggle_button_options"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.205" />
+        app:layout_constraintVertical_bias="0.357" />
 
-    <RadioButton
+    <ToggleButton
         android:id="@+id/ComedySelect"
         android:layout_width="125dp"
         android:layout_height="44dp"
-        android:text="Comedy"
-        android:textColor="@color/white"
-        android:textSize="19dp"
+        android:background="@drawable/toggle_button_options"
+        android:textOff="Comedy"
+        android:textOn="Comedy"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.27" />
+        app:layout_constraintVertical_bias="0.448" />
 
-    <RadioButton
+    <ToggleButton
         android:id="@+id/CrimMistSelect"
-        android:layout_width="216dp"
-        android:layout_height="41dp"
-        android:text="Crime and mystery"
-        android:textColor="@color/white"
-        android:textSize="19dp"
+        android:layout_width="215dp"
+        android:layout_height="46dp"
+        android:background="@drawable/toggle_button_options"
+        android:textOff="Crime and mystery"
+        android:textOn="Crime and mystery"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintHorizontal_bias="0.974"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintVertical_bias="0.446" />
 
-    <RadioButton
+    <ToggleButton
         android:id="@+id/DramaSelect"
-        android:layout_width="216dp"
-        android:layout_height="41dp"
-        android:text="Drama"
-        android:textColor="@color/white"
-        android:textSize="19dp"
+        android:layout_width="127dp"
+        android:layout_height="44dp"
+        android:background="@drawable/toggle_button_options"
+        android:textOff="Drama"
+        android:textOn="Drama"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.646"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.392" />
+        app:layout_constraintVertical_bias="0.541" />
 
-    <RadioButton
+    <ToggleButton
         android:id="@+id/FantasySelect"
-        android:layout_width="123dp"
-        android:layout_height="41dp"
-        android:text="Fantasy"
-        android:textColor="@color/white"
-        android:textSize="19dp"
+        android:layout_width="128dp"
+        android:layout_height="47dp"
+        android:background="@drawable/toggle_button_options"
+        android:textOff="Fantasy"
+        android:textOn="Fantasy"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintHorizontal_bias="0.784"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintVertical_bias="0.539" />
 
-    <RadioButton
+    <ToggleButton
         android:id="@+id/HistoSelect"
         android:layout_width="137dp"
         android:layout_height="46dp"
-        android:text="Historical"
-        android:textColor="@color/white"
-        android:textSize="19dp"
+        android:background="@drawable/toggle_button_options"
+        android:textOff="Historical"
+        android:textOn="Historical"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512" />
+        app:layout_constraintVertical_bias="0.627" />
 
-    <RadioButton
+    <ToggleButton
         android:id="@+id/HorrorSelect"
         android:layout_width="136dp"
         android:layout_height="45dp"
-        android:text="Horror"
-        android:textColor="@color/white"
-        android:textSize="19dp"
+        android:background="@drawable/toggle_button_options"
+        android:textOff="Horror"
+        android:textOn="Horror"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintHorizontal_bias="0.807"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.578" />
+        app:layout_constraintVertical_bias="0.628" />
 
-    <RadioButton
+    <ToggleButton
         android:id="@+id/RomanceSelect"
         android:layout_width="158dp"
         android:layout_height="47dp"
-        android:text="Romance"
-        android:textColor="@color/white"
-        android:textSize="19dp"
+        android:background="@drawable/toggle_button_options"
+        android:textOff="Romance"
+        android:textOn="Romance"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.162"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.646" />
+        app:layout_constraintVertical_bias="0.716" />
 
-    <RadioButton
+    <ToggleButton
         android:id="@+id/SFicSelect"
         android:layout_width="173dp"
         android:layout_height="46dp"
-        android:text="Science fiction"
-        android:textColor="@color/white"
-        android:textSize="19dp"
+        android:background="@drawable/toggle_button_options"
+        android:textOff="Science fiction"
+        android:textOn="Science fiction"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713" />
+        app:layout_constraintVertical_bias="0.716" />
 
-    <RadioButton
+    <ToggleButton
         android:id="@+id/ThrillerSelect"
         android:layout_width="126dp"
         android:layout_height="46dp"
-        android:text="Thriller"
-        android:textColor="@color/white"
-        android:textSize="19dp"
+        android:background="@drawable/toggle_button_options"
+        android:textOff="Thriller"
+        android:textOn="Thriller"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
+        app:layout_constraintVertical_bias="0.808" />
 
-    <RadioButton
+    <ToggleButton
         android:id="@+id/WesternSelect"
         android:layout_width="136dp"
         android:layout_height="49dp"
-        android:text="Western"
-        android:textColor="@color/white"
-        android:textSize="19dp"
+        android:background="@drawable/toggle_button_options"
+        android:textOff="Western"
+        android:textOn="Western"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintHorizontal_bias="0.807"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.851" />
+        app:layout_constraintVertical_bias="0.807" />
 
     <Button
         android:id="@+id/buttonSubmitGenres"
@@ -208,7 +220,7 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.943" />
+        app:layout_constraintVertical_bias="0.914" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

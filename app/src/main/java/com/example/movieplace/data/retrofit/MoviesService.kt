@@ -1,6 +1,7 @@
 package com.example.movieplace.data.retrofit
 
 import com.example.movieplace.data.model.*
+import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -84,7 +85,7 @@ interface MoviesService {
      * @param user
      */
 
-    @GET("/login/{user}")
+    @GET("/searchUsr/{user}")
     fun getInfoUser(@Path("user") user: String): Call<User>
 
 
@@ -95,7 +96,7 @@ interface MoviesService {
      */
 
     @Headers("Content-Type: application/json")
-    @PUT("/updateUser")
+    @POST("/updateUser")
     fun setUsername(@Body user: Username): Call<ResponseBody>
 
     /**
@@ -105,7 +106,7 @@ interface MoviesService {
      */
 
     @Headers("Content-Type: application/json")
-    @PUT("/updateUser")
+    @POST("/updateFullName")
     fun setFullName(@Body user: FullName): Call<ResponseBody>
 
     /**
@@ -114,7 +115,7 @@ interface MoviesService {
      * @param user
      */
 
-    @PUT("/updateUser")
+    @POST("/updatePassword")
     fun setPassword(@Body user: Password): Call<ResponseBody>
 
     /**
@@ -123,7 +124,7 @@ interface MoviesService {
      * @param user
      */
 
-    @PUT("/updateUser")
+    @POST("/updateMail")
     fun setEmail(@Body user: Email): Call<ResponseBody>
 
     /**
@@ -132,7 +133,7 @@ interface MoviesService {
      * @param user
      */
 
-    @PUT("/updateUser")
+    @POST("/updateTelefon")
     fun setTelefon(@Body user: Phone): Call<ResponseBody>
 
     /**
@@ -141,7 +142,7 @@ interface MoviesService {
      * @param user
      */
 
-    @PUT("/updateUser")
+    @POST("/updateBirth")
     fun setBirth(@Body user: Birth): Call<ResponseBody>
 
     /**
@@ -150,7 +151,7 @@ interface MoviesService {
      * @param user
      */
 
-    @PUT("/updateUser")
+    @POST("/updateAddress")
     fun setAddress(@Body user: Address): Call<ResponseBody>
 
     /**
@@ -159,7 +160,54 @@ interface MoviesService {
      * @param user
      */
 
-    @PUT("/updateUser")
+    @POST("/updateSex")
     fun setSex(@Body user: Sex): Call<ResponseBody>
+
+    /**
+     * Gets the password of the user
+     *
+     * @param user
+     */
+    /*
+    @Multipart
+    @POST("/updatePhoto")
+    fun setProfilePhoto(@Body user: Sex, @Part(value = "file\"; filename=\"photo.jpeg\" ") file: RequestBody): Call<ResponseBody>
+    */
+
+    /**
+     * Update the genre of the user
+     *
+     * @param user
+     */
+
+    @POST("/anadirGen")
+    fun setGenre(@Body user: NewGenre): Call<ResponseBody>
+
+    /**
+     * Update the directors of the user
+     *
+     * @param user
+     */
+
+    @POST("/anadirDir")
+    fun setDirector(@Body user: NewDirector): Call<ResponseBody>
+
+    /**
+     * Update the actors of the user
+     *
+     * @param user
+     */
+
+    @POST("/anadirActor")
+    fun setActor(@Body user: NewActor): Call<ResponseBody>
+
+    /**
+     * Update the composers of the user
+     *
+     * @param user
+     */
+
+    @POST("/anadirComp")
+    fun setCompositor(@Body user: NewCompositor): Call<ResponseBody>
 
 }
