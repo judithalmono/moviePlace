@@ -10,13 +10,13 @@ import android.widget.Button
 import android.widget.EditText
 import com.example.movieplace.R
 import com.example.movieplace.data.Result
+import com.example.movieplace.data.model.NewDirector
+import com.example.movieplace.data.model.Username
 import com.example.movieplace.databinding.FavDirectorsFragmentBinding
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 
 class FavDirectorsFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = FavDirectorsFragment()
-    }
 
     private var _binding: FavDirectorsFragmentBinding? = null
     private val binding get() = _binding!!
@@ -32,6 +32,8 @@ class FavDirectorsFragment : Fragment() {
     private lateinit var editTextDirector7: EditText
     private lateinit var editTextDirector8: EditText
     private lateinit var buttonSubmit : Button
+
+    private lateinit var llista_dir : List<String>
 
     // Per ara només funciona manualment, i per l'usuari admin.
     private val usr = "admin"
@@ -60,19 +62,58 @@ class FavDirectorsFragment : Fragment() {
             viewLifecycleOwner,
             {
                 if (it is Result.Success) {
-                    editTextDirector1.setText(it.data.directors_pref)
+                    llista_dir = it.data.directors_pref
+                    var num = 0
+                    val iterator = llista_dir.iterator()
+                    while (iterator.hasNext()) {
+                        when (num) {
+                            0 -> editTextDirector1.setText(iterator.next())
+                            1 -> editTextDirector2.setText(iterator.next())
+                            2 -> editTextDirector3.setText(iterator.next())
+                            3 -> editTextDirector4.setText(iterator.next())
+                            4 -> editTextDirector5.setText(iterator.next())
+                            5 -> editTextDirector6.setText(iterator.next())
+                            6 -> editTextDirector7.setText(iterator.next())
+                            7 -> editTextDirector8.setText(iterator.next())
+                        }
+                        ++num
+                    }
                 }
             }
         )
 
+        //If click the Submitted Button
+        buttonSubmit.setOnClickListener {
+            var user = NewDirector(usr, editTextDirector1.text.toString())
+            favDirectorsviewModel.setDirector(user)
+            user = NewDirector(usr, editTextDirector2.text.toString())
+            favDirectorsviewModel.setDirector(user)
+            user = NewDirector(usr, editTextDirector3.text.toString())
+            favDirectorsviewModel.setDirector(user)
+            user = NewDirector(usr, editTextDirector4.text.toString())
+            favDirectorsviewModel.setDirector(user)
+            user = NewDirector(usr, editTextDirector5.text.toString())
+            favDirectorsviewModel.setDirector(user)
+            user = NewDirector(usr, editTextDirector6.text.toString())
+            favDirectorsviewModel.setDirector(user)
+            user = NewDirector(usr, editTextDirector7.text.toString())
+            favDirectorsviewModel.setDirector(user)
+            user = NewDirector(usr, editTextDirector8.text.toString())
+            favDirectorsviewModel.setDirector(user)
+
+            Snackbar.make(
+                root.findViewById(R.id.FavDirectors),
+                "Update successfully",
+                BaseTransientBottomBar.LENGTH_SHORT
+            ).show()
+        }
 
         return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        favDirectorsviewModel = ViewModelProvider(this).get(FavDirectorsViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

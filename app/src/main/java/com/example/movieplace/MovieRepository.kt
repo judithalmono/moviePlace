@@ -6,6 +6,7 @@ import retrofit2.Callback
 import androidx.lifecycle.MutableLiveData
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.*
+import com.example.movieplace.data.model.User
 import com.example.movieplace.data.retrofit.MoviesClient
 import okhttp3.ResponseBody
 import retrofit2.Response
@@ -479,5 +480,107 @@ class MovieRepository {
         return result
     }
 
+    /**
+     * It sets the Fav Genres of the user "user"
+     *
+     * @return the mutable livedata which will be updated with the result of the call
+     */
 
+    fun setGenre(user: NewGenre): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.setGenre(user)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "setGenre response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("setGenre Error getting info"))
+            }
+        })
+        return result
+    }
+
+    /**
+     * It sets the Fav Directors of the user "user"
+     *
+     * @return the mutable livedata which will be updated with the result of the call
+     */
+
+    fun setDirector(user: NewDirector): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.setDirector(user)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "setDirector response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("setDirector Error getting info"))
+            }
+        })
+        return result
+    }
+
+    /**
+     * It sets the Fav Actors of the user "user"
+     *
+     * @return the mutable livedata which will be updated with the result of the call
+     */
+
+    fun setActor(user: NewActor): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.setActor(user)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "setActor response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("setActor Error getting info"))
+            }
+        })
+        return result
+    }
+
+    /**
+     * It sets the Fav Compositors of the user "user"
+     *
+     * @return the mutable livedata which will be updated with the result of the call
+     */
+
+    fun setCompositor(user: NewCompositor): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.setCompositor(user)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "setCompositor response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("setCompositor Error getting info"))
+            }
+        })
+        return result
+    }
 }

@@ -1,6 +1,6 @@
 package com.example.movieplace.data.model
 
 data class Password(
-    val usr: String,
+    val user: String,
     val newpasswd: String
 )
