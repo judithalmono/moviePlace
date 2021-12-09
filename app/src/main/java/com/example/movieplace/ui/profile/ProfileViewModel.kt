@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import com.example.movieplace.MovieRepository
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.User
-import com.example.movieplace.data.model.Username
 
 class ProfileViewModel : ViewModel() {
     private var repository: MovieRepository = MovieRepository()
