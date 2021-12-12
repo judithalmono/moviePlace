@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.fragment.app.FragmentTransaction
@@ -109,9 +110,9 @@ class ProfileFragment : Fragment() {
         }
 
         //Change Password
-        val button2 = root.findViewById<ImageButton>(R.id.button_change_password)
+        val button2 = root.findViewById<ImageButton>(R.id.button_change_Suggestions)
         button2.setOnClickListener() {
-            val nuevoFragmento: Fragment = ChangePasswordFragment()
+            val nuevoFragmento: Fragment = SuggestionsFragment()
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.fragment_profile, nuevoFragmento)
             transaction.addToBackStack(null)
@@ -130,7 +131,6 @@ class ProfileFragment : Fragment() {
             // Commit a la transacción
             transaction.commit()
         }
-
 
         return root
     }

@@ -9,10 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.Toolbar
+import android.widget.*
 import androidx.core.content.ContextCompat.getSystemService
 import com.example.movieplace.R
 import com.example.movieplace.data.Result
@@ -105,11 +102,7 @@ class ChangePersInfoFragment : Fragment() {
             val sex = Sex(usr, c_sex)
             Log.d("hola", c_sex)
             changePersInfoViewModel.setSex(sex)
-            Snackbar.make(
-                root.findViewById(R.id.changePersInfo),
-                "Update successfully",
-                BaseTransientBottomBar.LENGTH_SHORT
-            ).show()
+            Toast.makeText(context, "Update successfully", Toast.LENGTH_SHORT).show()
         }
 
         return root

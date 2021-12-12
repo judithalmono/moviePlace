@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioButton
+import android.widget.Toast
 import android.widget.ToggleButton
 import com.example.movieplace.R
 import com.example.movieplace.data.Result
@@ -341,11 +342,7 @@ class FavGenres : Fragment() {
                 if (genre2 == "western") favGenresviewModel.deleteGenre2(del)
             }
 
-            Snackbar.make(
-                root.findViewById(R.id.act_fav_genres),
-                "Update successfully",
-                BaseTransientBottomBar.LENGTH_SHORT
-            ).show()
+            Toast.makeText(context, "Update successfully", Toast.LENGTH_SHORT).show()
         }
 
         return root

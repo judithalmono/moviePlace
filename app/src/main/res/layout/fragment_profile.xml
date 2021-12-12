@@ -144,41 +144,6 @@
         app:layout_constraintVertical_bias="0.651" />
 
     <TextView
-        android:id="@+id/editText3"
-        android:layout_width="371dp"
-        android:layout_height="48dp"
-
-
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/edt_style"
-        android:drawablePadding="10dp"
-        android:paddingTop="13dp"
-
-        android:text="Change Password"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="15sp"
-        app:background="@drawable/edt_style"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
-
-    <ImageButton
-        android:id="@+id/button_change_password"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="50dp"
-        android:src="@drawable/next_icon_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.76" />
-
-    <TextView
         android:id="@+id/editText2"
         android:layout_width="371dp"
         android:layout_height="48dp"
@@ -197,7 +162,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
+        app:layout_constraintVertical_bias="0.755" />
 
     <ImageButton
         android:id="@+id/button_change_MyLikes"
@@ -210,7 +175,42 @@
         app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.863" />
+        app:layout_constraintVertical_bias="0.757" />
+
+    <TextView
+        android:id="@+id/editText3"
+        android:layout_width="371dp"
+        android:layout_height="48dp"
+
+
+        android:background="@drawable/edt_style"
+        android:drawablePadding="10dp"
+        android:paddingTop="13dp"
+
+        android:text="Suggestions"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="15sp"
+        app:background="@drawable/edt_style"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.857" />
+
+    <ImageButton
+        android:id="@+id/button_change_Suggestions"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="48dp"
+        android:layout_height="50dp"
+        android:src="@drawable/next_icon_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.857" />
 
     <Button
         android:id="@+id/buttonLogOut2"

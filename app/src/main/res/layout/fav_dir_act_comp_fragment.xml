@@ -45,12 +45,13 @@
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Director name"
         android:inputType="text"
-        android:singleLine="true"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -70,12 +71,13 @@
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Director name"
         android:inputType="text"
-        android:singleLine="true"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -109,12 +111,13 @@
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Actor name"
         android:inputType="text"
-        android:singleLine="true"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -134,12 +137,13 @@
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Actor name"
         android:inputType="text"
-        android:singleLine="true"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -173,12 +177,13 @@
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Composer name"
         android:inputType="text"
-        android:singleLine="true"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -198,12 +203,13 @@
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Composer name"
         android:inputType="text"
-        android:singleLine="true"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"

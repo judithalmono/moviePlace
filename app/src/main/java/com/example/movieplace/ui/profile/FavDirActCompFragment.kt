@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.example.movieplace.R
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.Delete
@@ -104,11 +105,7 @@ class FavDirActCompFragment : Fragment() {
             }
             else favDirActCompviewModel.deleteComposer2(del)
 
-            Snackbar.make(
-                root.findViewById(R.id.FavDirActComp),
-                "Update successfully",
-                BaseTransientBottomBar.LENGTH_SHORT
-            ).show()
+            Toast.makeText(context, "Update successfully", Toast.LENGTH_SHORT).show()
         }
 
 
