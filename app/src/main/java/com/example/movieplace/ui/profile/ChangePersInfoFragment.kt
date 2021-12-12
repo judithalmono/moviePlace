@@ -39,7 +39,6 @@ class ChangePersInfoFragment : Fragment() {
     private lateinit var rwoman : RadioButton
     private lateinit var rother: RadioButton
     private lateinit var buttonSubmit : Button
-    private lateinit var pers_info_toolbar : Toolbar
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,15 +59,6 @@ class ChangePersInfoFragment : Fragment() {
         rwoman = root.findViewById(R.id.WomanSelect)
         rother = root.findViewById(R.id.OtherSelect)
         buttonSubmit = root.findViewById(R.id.buttonSubmit1)
-
-        /*pers = root.findViewById(R.id.changePersInfo)
-        root.setOnClickListener {
-            val view = this.currentFocus
-            if (view != null) {
-                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-                imm.hideSoftInputFromWindow(view.windowToken, 0)
-            }
-        }*/
 
         // Per ara només funciona manualment, i per l'usuari admin.
         val usr = "admin"

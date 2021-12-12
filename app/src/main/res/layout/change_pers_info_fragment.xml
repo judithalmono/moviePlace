@@ -8,7 +8,6 @@
     android:background="@drawable/background11"
     tools:context=".ui.profile.ChangePersInfoFragment">
 
-
     <TextView
         android:id="@+id/textTitol1"
         android:layout_width="wrap_content"

@@ -77,7 +77,7 @@ interface MoviesService {
     fun getPasswordUser(@Path("user") user: String): Call<User>
 
     /**
-     * Gets the password of the user
+     * Gets the info of the user
      *
      * @param user
      */
@@ -87,7 +87,7 @@ interface MoviesService {
 
 
     /**
-     * Gets the password of the user
+     * Sets the username of the user
      *
      * @param user
      */
@@ -97,7 +97,7 @@ interface MoviesService {
     fun setUsername(@Body user: Username): Call<ResponseBody>
 
     /**
-     * Gets the password of the user
+     * Sets the full name of the user
      *
      * @param user
      */
@@ -107,7 +107,7 @@ interface MoviesService {
     fun setFullName(@Body user: FullName): Call<ResponseBody>
 
     /**
-     * Gets the password of the user
+     * Sets the password of the user
      *
      * @param user
      */
@@ -116,7 +116,7 @@ interface MoviesService {
     fun setPassword(@Body user: Password): Call<ResponseBody>
 
     /**
-     * Gets the password of the user
+     * Sets the email of the user
      *
      * @param user
      */
@@ -125,7 +125,7 @@ interface MoviesService {
     fun setEmail(@Body user: Email): Call<ResponseBody>
 
     /**
-     * Gets the password of the user
+     * Sets the phone number of the user
      *
      * @param user
      */
@@ -134,7 +134,7 @@ interface MoviesService {
     fun setTelefon(@Body user: Phone): Call<ResponseBody>
 
     /**
-     * Gets the password of the user
+     * Sets the brirth date of the user
      *
      * @param user
      */
@@ -143,7 +143,7 @@ interface MoviesService {
     fun setBirth(@Body user: Birth): Call<ResponseBody>
 
     /**
-     * Gets the password of the user
+     * Sets the address of the user
      *
      * @param user
      */
@@ -152,7 +152,7 @@ interface MoviesService {
     fun setAddress(@Body user: Address): Call<ResponseBody>
 
     /**
-     * Gets the password of the user
+     * Sets the sex of the user
      *
      * @param user
      */
@@ -161,15 +161,22 @@ interface MoviesService {
     fun setSex(@Body user: Sex): Call<ResponseBody>
 
     /**
-     * Gets the password of the user
+     * Sets the photo of the user
      *
      * @param user
      */
-    /*
-    @Multipart
-    @POST("/updatePhoto")
-    fun setProfilePhoto(@Body user: Sex, @Part(value = "file\"; filename=\"photo.jpeg\" ") file: RequestBody): Call<ResponseBody>
-    */
+
+    @POST("/insertImg")
+    fun setProfilePhoto(@Body user: ProfilePhoto) : Call<ResponseBody>
+
+    /**
+     * Deletes the photo of the user
+     *
+     * @param user
+     */
+
+    @POST("/insertImg")
+    fun deleteProfilePhoto(@Body username: Delete) : Call<ResponseBody>
 
     /**
      * Update the genre of the user
@@ -177,8 +184,17 @@ interface MoviesService {
      * @param user
      */
 
-    @POST("/anadirGen")
-    fun setGenre(@Body user: NewGenre): Call<ResponseBody>
+    @POST("/anadirGen1")
+    fun setGenre1(@Body user: NewGenre): Call<ResponseBody>
+
+    /**
+     * Update the genre of the user
+     *
+     * @param user
+     */
+
+    @POST("/anadirGen2")
+    fun setGenre2(@Body user: NewGenre): Call<ResponseBody>
 
     /**
      * Update the directors of the user
@@ -186,8 +202,17 @@ interface MoviesService {
      * @param user
      */
 
-    @POST("/anadirDir")
-    fun setDirector(@Body user: NewDirector): Call<ResponseBody>
+    @POST("/anadirDir1")
+    fun setDirector1(@Body user: NewDirector): Call<ResponseBody>
+
+    /**
+     * Update the directors of the user
+     *
+     * @param user
+     */
+
+    @POST("/anadirDir2")
+    fun setDirector2(@Body user: NewDirector): Call<ResponseBody>
 
     /**
      * Update the actors of the user
@@ -195,8 +220,17 @@ interface MoviesService {
      * @param user
      */
 
-    @POST("/anadirActor")
-    fun setActor(@Body user: NewActor): Call<ResponseBody>
+    @POST("/anadirAct1")
+    fun setActor1(@Body user: NewActor): Call<ResponseBody>
+
+    /**
+     * Update the actors of the user
+     *
+     * @param user
+     */
+
+    @POST("/anadirAct2")
+    fun setActor2(@Body user: NewActor): Call<ResponseBody>
 
     /**
      * Update the composers of the user
@@ -204,7 +238,89 @@ interface MoviesService {
      * @param user
      */
 
-    @POST("/anadirComp")
-    fun setCompositor(@Body user: NewCompositor): Call<ResponseBody>
+    @POST("/anadirComp1")
+    fun setCompositor1(@Body user: NewCompositor): Call<ResponseBody>
+
+    /**
+     * Update the composers of the user
+     *
+     * @param user
+     */
+
+    @POST("/anadirComp2")
+    fun setCompositor2(@Body user: NewCompositor): Call<ResponseBody>
+
+    /**
+     * Deletes the genre1 of the user
+     *
+     * @param user
+     */
+
+    @POST("/delGen1")
+    fun deleteGenre1(@Body username: Delete) : Call<ResponseBody>
+
+    /**
+     * Deletes the genre2 of the user
+     *
+     * @param user
+     */
+
+    @POST("/delGen2")
+    fun deleteGenre2(@Body username: Delete) : Call<ResponseBody>
+
+    /**
+     * Deletes the director1 of the user
+     *
+     * @param user
+     */
+
+    @POST("/delDir1")
+    fun deleteDirector1(@Body username: Delete) : Call<ResponseBody>
+
+    /**
+     * Deletes the director2 of the user
+     *
+     * @param user
+     */
+
+    @POST("/delDir2")
+    fun deleteDirector2(@Body username: Delete) : Call<ResponseBody>
+
+    /**
+     * Deletes the actor1 of the user
+     *
+     * @param user
+     */
+
+    @POST("/delAct1")
+    fun deleteActor1(@Body username: Delete) : Call<ResponseBody>
+
+    /**
+     * Deletes the actor2 of the user
+     *
+     * @param user
+     */
+
+    @POST("/delAct2")
+    fun deleteActor2(@Body username: Delete) : Call<ResponseBody>
+
+    /**
+     * Deletes the composer1 of the user
+     *
+     * @param user
+     */
+
+    @POST("/delComp1")
+    fun deleteComposer1(@Body username: Delete) : Call<ResponseBody>
+
+    /**
+     * Deletes the composer2 of the user
+     *
+     * @param user
+     */
+
+    @POST("/delComp2")
+    fun deleteComposer2(@Body username: Delete) : Call<ResponseBody>
+
 
 }
