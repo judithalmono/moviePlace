@@ -41,30 +41,26 @@ class ForgotPassword : AppCompatActivity() {
         btnGetPassword.setOnClickListener {
             if (isValidEmail()) {
                 loading.visibility = View.VISIBLE
-                loginViewModel.recoverPassword(editTextEmail.text.toString())
+                loginViewModel.recoverPassword(editTextEmail.text.toString()).observe(
+                    this, {
+                        loading.visibility = GONE
+                        Log.d("IT", it)
+                        Toast.makeText(applicationContext, "Enters $it", Toast.LENGTH_LONG).show()
+                        if (it == "OK") {
+                            Toast.makeText(applicationContext, "Email sent. Please check your email inbox", Toast.LENGTH_LONG).show()
+                            startActivity(Intent(this, Login::class.java))
+                        } else if (it == "ERROR") {
+                            editTextEmail.setBackgroundResource(R.drawable.background_edt_wrong)
+                            Toast.makeText(this, "Email not found!", Toast.LENGTH_LONG).show()
+                        }
+                    }
+                )
 
             } else {
                 editTextEmail.setBackgroundResource(R.drawable.background_edt_wrong)
                 Toast.makeText(this, "Email not correct!", Toast.LENGTH_LONG).show()
             }
         }
-
-        loginViewModel.recoverResult.observe(
-            this@ForgotPassword,
-            Observer {
-                loading.visibility = GONE
-                val recoverResult = it ?: return@Observer
-                Log.d("IT", recoverResult)
-                Toast.makeText(applicationContext, "Enters $recoverResult", Toast.LENGTH_LONG).show()
-                if (recoverResult == "OK") {
-                    Toast.makeText(applicationContext, "Email sent. Please check your email inbox", Toast.LENGTH_LONG).show()
-                    startActivity(Intent(this, Login::class.java))
-                } else if (recoverResult == "ERROR") {
-                    editTextEmail.setBackgroundResource(R.drawable.background_edt_wrong)
-                    Toast.makeText(this, "Email not found!", Toast.LENGTH_LONG).show()
-                }
-            }
-        )
 
         btnToSignIn.setOnClickListener {
             loading.visibility = View.VISIBLE

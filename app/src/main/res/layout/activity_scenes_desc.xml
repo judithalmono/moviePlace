@@ -5,9 +5,11 @@
     android:id="@+id/scenes_desc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:foregroundTint="#FFEEEE"
     tools:context=".ui.scenes.ScenesDesc">
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,70 +19,101 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="25dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imgScene"
-                android:layout_width="355dp"
-                android:layout_height="180dp"
-                android:layout_marginBottom="15dp"
-                android:contentDescription="@string/scene_image"
-                android:src="@color/red2" />
-
-            <TextView
-                android:id="@+id/textDesc"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nanana nanan nanaanana nana nananaann anana nananana nanananan nana nan nan nananana nananana nananana nanaanan nanaanan nanaanan nanaanan nananaan nana nan nananaan ananaan nanananan nanan nananaan nanana nanan aan nan na nan nanan nanananana nanaanan nananan nanaanana nanaanan nanaan nanana nanan aaanan nanana nana anana nananan nana nanan"
-                android:textColor="#FF555555"
-                android:justificationMode="inter_word"
-                android:layout_marginBottom="15dp"
-                android:textSize="23sp" />
+                android:background="#FF111111"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textLocationDesc"
+                <ImageView
+                    android:id="@+id/imgScene"
+                    android:layout_width="match_parent"
+                    android:layout_height="225dp"
+                    android:layout_marginBottom="15dp"
+                    android:contentDescription="@string/scene_image"
+                    android:foreground="@drawable/fading_effect"
+                    android:src="@drawable/background1" />
+
+                <TextView
+                    android:id="@+id/textDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:justificationMode="inter_word"
+                    android:paddingHorizontal="25dp"
+                    android:text="Nanana nanan nanaanana nana nananaann anana nananana nanananan nana nan nan nananana nananana nananana nanaanan nanaanan nanaanan nanaanan nananaan nana nan nananaan ananaan nanananan nanan nananaan nanana nanan aan nan na nan nanan nanananana nanaanan nananan nanaanana nanaanan nanaan nanana nanan aaanan nanana nana anana nananan nana nanan"
+                    android:textColor="@color/white"
+                    android:textSize="23sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Plaça del Tibidabo, 08035 Barcelona"
-                android:textColor="@color/black"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:textSize="25sp" />
+                android:background="#FF111111"
+                android:orientation="vertical">
 
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/mapDesc"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginBottom="15dp"/>
+                <TextView
+                    android:id="@+id/textLocationDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:paddingHorizontal="25dp"
+                    android:text="Plaça del Tibidabo, 08035 Barcelona"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/textRate"
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/mapDesc"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="15dp"
+                    android:fadingEdge="vertical|horizontal"
+                    android:paddingHorizontal="25dp"
+                    android:paddingBottom="30dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"
-                android:text="Your rating"
-                android:textColor="@color/black"
-                android:textSize="23sp" />
+                android:background="#FF111111"
+                android:orientation="vertical">
 
-            <RatingBar
-                android:id="@+id/rateBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/textRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center"
+                    android:padding="25dp"
+                    android:text="YOUR RATING"
+                    android:textColor="@color/white"
+                    android:textSize="23sp" />
 
 
+                <RatingBar
+                    android:id="@+id/rateBar"
+                    android:layout_width="286dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#FF111111"
+                    android:paddingHorizontal="25dp"
+                    android:paddingBottom="25dp"
+                    android:progressBackgroundTint="#FFAAAAAA"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-
     </ScrollView>
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

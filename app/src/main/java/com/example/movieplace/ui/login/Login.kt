@@ -52,18 +52,11 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-//        if (!SharedPreferenceManager.getBooleanValue(Constants().PREF_IS_NOT_FIRST_TIME_OPENING_APP)) {
-//            Log.d("first time2", "2 is_first_time = "+ SharedPreferenceManager.getBooleanValue(Constants().PREF_IS_NOT_FIRST_TIME_OPENING_APP))
-//            val intent = Intent(this, OnboardingActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
-
-//        if (SharedPreferenceManager.getStringValue(Constants().PREF_EMAIL) != null) {
-//            val intent = Intent(this, Home::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
+        if (SharedPreferenceManager.getStringValue(Constants().PREF_EMAIL) != null) {
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         setUp()
         startObservers()
@@ -138,11 +131,20 @@ class Login : AppCompatActivity() {
                 val loginResult = it ?: return@Observer
                 Log.d("RESULT", loginResult.toString())
                 if (loginResult.error != null) {
-                    loading.visibility = View.GONE
+                    loading.visibility = GONE
                     showLoginFailed(loginResult.error)
                 }
                 if (loginResult.success != null) {
-                    updateUiWithUser(loginResult.success)
+                    val welcome = "WELCOME"
+                    loading.visibility = GONE
+                    val intent = Intent(this, Home::class.java)
+                    startActivity(intent)
+                    Toast.makeText(
+                        applicationContext,
+                        "$welcome $username",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    finish()
                 }
 
                 setResult(Activity.RESULT_OK)
@@ -152,37 +154,6 @@ class Login : AppCompatActivity() {
         )
     }
 
-    private fun updateUiWithUser(model: LoggedInUserView) {
-        model.data.observe(
-            this@Login,
-            {
-                loading.visibility = View.GONE
-                val welcome = getString(R.string.welcome)
-                when {
-                    it.errorLogin != null && it.errorLogin == R.string.login_failed_email -> {
-                        loading.visibility = GONE
-                        Toast.makeText(applicationContext, getString(R.string.login_failed_email), Toast.LENGTH_LONG).show()
-                    }
-                    it.errorLogin != null && it.errorLogin == R.string.login_failed_login -> {
-                        loading.visibility = GONE
-                        Toast.makeText(applicationContext, getString(R.string.login_failed_login), Toast.LENGTH_LONG).show()
-                    }
-                    it.errorLogin != null && it.errorLogin == R.string.login_failed_server -> loading.visibility = VISIBLE
-                    else -> {
-                        loading.visibility = GONE
-                        val intent = Intent(this, Home::class.java)
-                        startActivity(intent)
-                        Toast.makeText(
-                            applicationContext,
-                            "$welcome $username",
-                            Toast.LENGTH_LONG
-                        ).show()
-                        finish()
-                    }
-                }
-            }
-        )
-    }
 
     private fun showLoginFailed(@StringRes errorString: Int) {
         editTextPassword.setBackgroundResource(R.drawable.background_edt_wrong)
@@ -236,7 +207,8 @@ class Login : AppCompatActivity() {
                     EditorInfo.IME_ACTION_DONE ->
                         loginViewModel.login(
                             email,
-                            editTextPassword.text.toString()
+                            editTextPassword.text.toString(),
+                            this@Login
                         )
                 }
                 false
@@ -247,7 +219,8 @@ class Login : AppCompatActivity() {
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(
                     email,
-                    editTextPassword.text.toString()
+                    editTextPassword.text.toString(),
+                    this@Login
                 )
             }
         }

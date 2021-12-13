@@ -4,6 +4,6 @@ import androidx.lifecycle.LiveData
 import com.example.movieplace.data.model.LoggedInUser
 
 data class LoggedInUserView(
-    val data: LiveData<LoggedInUser>
+    val data: LoggedInUser
     // ... other data fields that may be accessible to the UI
 )

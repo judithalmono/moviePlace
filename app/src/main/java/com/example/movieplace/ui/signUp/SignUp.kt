@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.movieplace.R
-import com.example.movieplace.data.model.BasicUser
+import com.example.movieplace.data.Result
 import com.example.movieplace.ui.login.Login
 
 class SignUp : AppCompatActivity() {
@@ -173,22 +173,27 @@ class SignUp : AppCompatActivity() {
                 editTextEmail.text.toString(),
                 editTextUser.text.toString(),
                 editTextPassword.text.toString(),
-                editTextPassword2.text.toString()
+                editTextPassword2.text.toString(),
             )
         }
 
         editTextUser.afterTextChanged {
-//            signUpViewModel.existsUser(editTextUser.text.toString()).observe(
-//                this.
-//                {
-//
-//                }
-//            )
+            if (editTextUser.text.isNotBlank())
+                signUpViewModel.isUserNameValid(editTextUser.text.toString()).observe(
+                    this@SignUp, {
+                        if (it is Result.Success) {
+                            Log.d("ESTOY", editTextUser.text.toString())
+                            if (it.data)
+                                editTextUser.error = "User Taken"
+                        }
+                    }
+                )
+
             signUpViewModel.signupDataChanged(
                 editTextEmail.text.toString(),
                 editTextUser.text.toString(),
                 editTextPassword.text.toString(),
-                editTextPassword2.text.toString()
+                editTextPassword2.text.toString(),
             )
         }
 
@@ -197,7 +202,7 @@ class SignUp : AppCompatActivity() {
                     editTextEmail.text.toString(),
                     editTextUser.text.toString(),
                     editTextPassword.text.toString(),
-                    editTextPassword2.text.toString()
+                    editTextPassword2.text.toString(),
                 )
         }
 
@@ -207,7 +212,7 @@ class SignUp : AppCompatActivity() {
                     editTextEmail.text.toString(),
                     editTextUser.text.toString(),
                     editTextPassword.text.toString(),
-                    editTextPassword2.text.toString()
+                    editTextPassword2.text.toString(),
                 )
             }
 

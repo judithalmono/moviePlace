@@ -43,13 +43,8 @@ class LoginRepository(val dataSource: LoginDataSource) {
      * @param password is the password of the user
      * @return the result with a live data of the log in
      */
-    fun login(email: String, password: String): Result<LiveData<LoggedInUser>> {
-        val result = dataSource.login(email, password)
-        if (result is Result.Success) {
-            Log.d("LOGIN REPO", result.data.value.toString())
-            setLoggedInUser(result.data.value)
-        }
-        return result
+    fun login(email: String, password: String): LiveData<Result<LoggedInUser>> {
+        return dataSource.login(email, password)
     }
 
     /**

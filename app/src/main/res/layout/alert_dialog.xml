@@ -1,45 +1,52 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="150dp"
-    android:layout_height="wrap_content">
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:scaleType="center"
         android:background="@color/red2"
-        android:text="Filter"
+        android:contentDescription="@string/app_name"
         android:gravity="center_vertical|center"
-        android:textColor="@color/white"
-        android:contentDescription="@string/app_name" />
+        android:scaleType="center"
+        android:text="Filter"
+        android:textColor="@color/white" />
 
-    <Button
+    <TextView
         android:id="@+id/genreBtn"
         android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#FFFFBBB0"
+        android:gravity="center_vertical|center"
         android:text="Genre"
-        android:textSize="11sp"
         android:textColor="@color/black"
-        android:background="@color/cardview_dark_background"
-        android:layout_height="40dp" />
+        android:textSize="12sp" />
 
-    <Button
+    <TextView
         android:id="@+id/directorBtn"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|center"
+        android:text="Director"
         android:textColor="@color/black"
-        android:background="@color/cardview_dark_background"/>
+        android:textSize="12sp" />
 
-    <Button
+    <TextView
         android:id="@+id/actorBtn"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|center"
+        android:text="Actor"
         android:textColor="@color/black"
-        android:background="@color/cardview_dark_background"/>
+        android:textSize="12sp" />
 
-    <Button
-        android:id="@+id/composerBtn"
+    <TextView
+        android:id="@+id/dateBtn"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|center"
+        android:text="Release Year"
         android:textColor="@color/black"
-        android:background="@color/cardview_dark_background"/>
+        android:textSize="12sp" />
 </LinearLayout>

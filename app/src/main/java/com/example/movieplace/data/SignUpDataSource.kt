@@ -115,6 +115,7 @@ class SignUpDataSource {
         call.enqueue(object : Callback<Exist> {
             override fun onResponse(call: Call<Exist>, response: Response<Exist>) {
                 if (response.isSuccessful) {
+                    Log.d("DataSource", response.body().toString())
                     result.value = Result.Success(response.body()!!.exists)
                 } else {
                     result.value = Result.Error(IOException("Error getting info1"))

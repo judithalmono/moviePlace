@@ -41,6 +41,7 @@
         android:drawableStart="@drawable/lockwhite"
 
         android:drawablePadding="10dp"
+        android:paddingEnd="55dp"
         android:ems="10"
 
         android:hint="@string/confirmPassword"
@@ -65,6 +66,7 @@
 
         android:ems="10"
         android:hint="@string/password"
+        android:paddingEnd="55dp"
 
         android:inputType="textPassword"
         android:textColor="@color/white"

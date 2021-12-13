@@ -14,11 +14,6 @@ import java.io.IOException
 
 class LoginDataSource {
 
-    val user = LoggedInUser(null, null, R.string.login_failed_server)
-
-    var _loggedInUser = MutableLiveData<LoggedInUser>()
-    private val loggedInUser: LiveData<LoggedInUser> = _loggedInUser
-
     private val _recoverPassword = MutableLiveData<String>()
     private val recoverPassword: LiveData<String> = _recoverPassword
 
@@ -26,7 +21,11 @@ class LoginDataSource {
      * It makes the call to Firebase to do the login with email and password
      * @return the result, if the connection was successful or not
      */
-    fun login(email: String, password: String): Result<LiveData<LoggedInUser>> {
+    fun login(email: String, password: String): LiveData<Result<LoggedInUser>> {
+
+        var _loggedInUser = MutableLiveData<Result<LoggedInUser>>()
+        val loggedInUser: LiveData<Result<LoggedInUser>> = _loggedInUser
+
         try {
             FirebaseAuth.getInstance()
                 .signInWithEmailAndPassword(
@@ -36,26 +35,25 @@ class LoginDataSource {
                         val fUser = FirebaseAuth.getInstance().currentUser
                         if (!fUser!!.isEmailVerified) {
 
-                            _loggedInUser.value = LoggedInUser(
-                                null,
-                                null,
-                                R.string.login_failed_email
-                            )
+                            _loggedInUser.value = Result.Error(IOException("Login Failed"))
                         } else {
                             SharedPreferenceManager.setStringValue(
                                 Constants().PREF_UID,
                                 fUser.uid
                             )
-                            _loggedInUser.value = LoggedInUser(fUser.uid, fUser.email, null)
+                            _loggedInUser.value = Result.Success(LoggedInUser(fUser.uid, fUser.email))
                         }
                     } else {
-                        _loggedInUser.value = LoggedInUser(null, null, R.string.login_failed_login)
+                        Log.d("2", "no va")
+                        _loggedInUser.value = Result.Error(IOException("Login Failed"))
                     }
                 }
-            return Result.Success(loggedInUser)
+            Log.d("1", "no va")
+            return loggedInUser
         } catch (e: Throwable) {
             Log.w("LOGIN", "signInWithEmail:failed", e)
-            return Result.Error(IOException("Error logging in", e))
+            _loggedInUser.value = Result.Error(IOException("Login Failed"))
+            return loggedInUser
         }
     }
 

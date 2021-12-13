@@ -60,43 +60,5 @@ class SignUpRepository(val dataSource: SignUpDataSource) {
         return dataSource.existsUser(username)
     }
 
-//    fun signUpBack(email: String, username: String, uid: String, token: String, activity: AppCompatActivity) {
-//        dataSource.result.observe(
-//            activity,
-//            Observer {
-//                val resultDS = it ?: return@Observer
-//
-//                // _result.value = resultDS  //potser es pot substituir per això
-//                if (resultDS.error != null) {
-//                    _result.value = ResultSignUp(error = resultDS.error)
-//                }
-//                if (resultDS.success != null) {
-//                    _result.value = ResultSignUp(success = resultDS.success)
-//                }
-//                // aqui la activity fa mes coses q suposo q aqui no calen
-//                dataSource.result.removeObservers(activity)
-//            }
-//        )
-//        dataSource.signUpBack(username, password, email)
-//    }
-
-//    fun signUpBD(user: BasicUser): MutableLiveData<Result<String>> {
-//        val result = MutableLiveData<Result<String>>()
-//        val call: Call<String> = signUpService!!.signUp(user)
-//        call.enqueue(object : Callback<String> {
-//            override fun onResponse(call: Call<String>, response: Response<String>) {
-//                if (response.isSuccessful) {
-//                    result.value = Result.Success(response.body() as String)
-//                } else result.value = Result.Error(IOException("Error getting info 1"))
-//            }
-//
-//            override fun onFailure(call: Call<String>, t: Throwable) {
-//                // Error en la connexion
-//                Log.d("GET", t.toString())
-//                result.value = Result.Error(IOException("Error getting info 3"))
-//            }
-//        })
-//        return result
-//    }
 
 }

@@ -1,6 +1,6 @@
 package com.example.movieplace.data.model
 
-data class Genre(
-    val id: Int,
+data class ProductionCountryXX(
+    val iso_3166_1: String,
     val name: String
 )

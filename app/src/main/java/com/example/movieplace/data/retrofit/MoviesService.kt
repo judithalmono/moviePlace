@@ -23,7 +23,7 @@ interface MoviesService {
      * @param gen it's the genre of the movie
      */
 
-    @GET("/searchgenre/{gen}")
+    @GET("/searchGenre/{gen}")
     fun getMoviesByGenre(@Path("gen") gen: String): Call<List<Movie>>
 
     /**
@@ -32,7 +32,7 @@ interface MoviesService {
      * @param date it's the date of the movie
      */
 
-    @GET("/searchdate/{date}")
+    @GET("/searchDate/{date}")
     fun getMoviesByDate(@Path("date") date: String): Call<List<Movie>>
 
     /**
@@ -41,8 +41,12 @@ interface MoviesService {
      * @param dir it's the director of the movie
      */
 
-    @GET("/searchdirector/{dir}")
+    @GET("/searchDirector/{dir}")
     fun getMoviesByDirector(@Path("dir") dir: String): Call<List<Movie>>
+
+
+    @GET("/searchActor/{act}")
+    fun getMoviesByActor(@Path("act") actor: String): Call<List<Movie>>
 
     /**
      * Get the scenes of a movie by its id
@@ -60,14 +64,14 @@ interface MoviesService {
      * Sort movies by user ubication
      */
 
-    @GET("/sortUbi")
+    @GET("/sortRate")
     fun getTopMovies(): Call<List<Movie>>
 
     /**
      * Sort movies by users rate
      */
 
-    @GET("/sortRate")
+    @GET("/sortUbi")
     fun getRecommendMovies(): Call<List<Movie>>
 
     /**
@@ -209,5 +213,8 @@ interface MoviesService {
 
     @POST("/anadirComp")
     fun setCompositor(@Body user: NewCompositor): Call<ResponseBody>
+
+    @POST("/updateVote")
+    fun updateVote(@Body vote: Vote): Call<ResponseBody>
 
 }

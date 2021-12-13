@@ -6,12 +6,15 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import com.example.movieplace.ui.login.Login
+import com.spotify.android.appremote.api.Connector
+import com.spotify.android.appremote.api.SpotifyAppRemote
+import com.spotify.protocol.types.PlayerState
 
 class Main : AppCompatActivity() {
 
 //    private val CLIENT_ID = "0acce0e239094e678c135403cb8baaf7"
-//    private val REDIRECT_URI = "com.example.movieplace://callback"
-//    private var mSpotifyAppRemote: SpotifyAppRemote? = null
+//    private val REDIRECT_URI = "http://nattech.fib.upc.edu:40401"
+//    var mSpotifyAppRemote: SpotifyAppRemote? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +29,11 @@ class Main : AppCompatActivity() {
 
 //    override fun onStart() {
 //        super.onStart()
-//        val connectionParams = ConnectionParams.Builder(CLIENT_ID)
+//        val connectionParams = com.spotify.android.appremote.api.ConnectionParams.Builder(CLIENT_ID)
 //            .setRedirectUri(REDIRECT_URI)
 //            .showAuthView(true)
 //            .build()
+//
 //        SpotifyAppRemote.connect(this, connectionParams,
 //            object : Connector.ConnectionListener {
 //                override fun onConnected(spotifyAppRemote: SpotifyAppRemote) {
@@ -53,9 +57,9 @@ class Main : AppCompatActivity() {
 //        SpotifyAppRemote.disconnect(mSpotifyAppRemote)
 //    }
 //
-//    private fun connected() {
-//        // Play a playlist
-//        mSpotifyAppRemote!!.playerApi.play("spotify:playlist:37i9dQZF1DX2sUQwD7tbmL")
+//    fun connected() {
+////        // Play a playlist
+////        mSpotifyAppRemote!!.playerApi.play("spotify:playlist:37i9dQZF1DX2sUQwD7tbmL")
 //
 //        // Subscribe to PlayerState
 //        mSpotifyAppRemote!!.playerApi

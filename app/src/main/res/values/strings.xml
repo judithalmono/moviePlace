@@ -22,7 +22,7 @@
     <string name="personal_information">Personal Information</string>
     <string name="change_password">Change Password</string>
     <string name="my_likes">My likes</string>
-    <string name="search">Film, director, genre…</string>
+    <string name="search">Genre, director, actor, …</string>
     <string name="map">Map</string>
     <string name="scene_image">Scene Image</string>
     <string name="login_failed">Login Failed!</string>
@@ -44,4 +44,5 @@
     <string name="unknown_sign_up_error">Uknown Sign Up</string>
     <string name="emailConfirmationMessage">Confirmation Email</string>
     <string name="login_failed_server">Login Failed Server!</string>
+    <string name="title_filter">Filter</string>
 </resources>

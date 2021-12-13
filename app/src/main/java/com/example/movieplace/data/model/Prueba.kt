@@ -1,6 +1,6 @@
 package com.example.movieplace.data.model
 
-data class Movie(
+data class Prueba(
     val Album: String,
     val _id: String,
     val actors: List<String>,

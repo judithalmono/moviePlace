@@ -15,7 +15,7 @@ interface SignUpService {
     @POST("signUp")
     fun signUp( @Body user: BasicUser): Call<ResponseBody>
 
-    @GET("existUser/[{username}")
+    @GET("existUser/{username}")
     fun existsUser(@Path("username") username: String): Call<Exist>
 
 }

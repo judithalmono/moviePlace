@@ -50,7 +50,7 @@ class MyMovie2RecyclesViewAdapter (private val context: Context?) : RecyclerView
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = movies[position]
         val num = item.vote_average
-        val star = num/2
+        val star = num.toDouble()/2
         holder.rating.rating = star.toFloat()
         if (context != null) {
             Glide.with(context).load(item.img).centerCrop().into(holder.movieImage)
