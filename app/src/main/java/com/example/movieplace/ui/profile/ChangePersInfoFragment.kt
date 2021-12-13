@@ -9,10 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.Toolbar
+import android.widget.*
 import androidx.core.content.ContextCompat.getSystemService
 import com.example.movieplace.R
 import com.example.movieplace.data.Result
@@ -39,7 +36,6 @@ class ChangePersInfoFragment : Fragment() {
     private lateinit var rwoman : RadioButton
     private lateinit var rother: RadioButton
     private lateinit var buttonSubmit : Button
-    private lateinit var pers_info_toolbar : Toolbar
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,15 +56,6 @@ class ChangePersInfoFragment : Fragment() {
         rwoman = root.findViewById(R.id.WomanSelect)
         rother = root.findViewById(R.id.OtherSelect)
         buttonSubmit = root.findViewById(R.id.buttonSubmit1)
-
-        /*pers = root.findViewById(R.id.changePersInfo)
-        root.setOnClickListener {
-            val view = this.currentFocus
-            if (view != null) {
-                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-                imm.hideSoftInputFromWindow(view.windowToken, 0)
-            }
-        }*/
 
         // Per ara només funciona manualment, i per l'usuari admin.
         val usr = "admin"
@@ -95,31 +82,47 @@ class ChangePersInfoFragment : Fragment() {
 
         //If click the Submitted Button
         buttonSubmit.setOnClickListener {
-
-            val user = Username(usr, editTextUsername.text.toString())
-            changePersInfoViewModel.setUsername(user)
-            val f_n = FullName(usr, editTextFullName.text.toString())
-            changePersInfoViewModel.setFullName(f_n)
-            val email = Email(usr, editTextEmail.text.toString())
-            changePersInfoViewModel.setEmail(email)
-            val telf = Phone(usr, editTextPhone.text.toString())
-            changePersInfoViewModel.setTelefon(telf)
-            val birth = Birth(usr, editTextDateBirth.text.toString())
-            changePersInfoViewModel.setBirth(birth)
-            val add = Address(usr, editTextAddress.text.toString())
-            changePersInfoViewModel.setAddress(add)
-            var c_sex = ""
-            if (rman.isChecked) c_sex = "Man"
-            if (rwoman.isChecked) c_sex = "Woman"
-            if (rother.isChecked) c_sex = "Other"
-            val sex = Sex(usr, c_sex)
-            Log.d("hola", c_sex)
-            changePersInfoViewModel.setSex(sex)
-            Snackbar.make(
-                root.findViewById(R.id.changePersInfo),
-                "Update successfully",
-                BaseTransientBottomBar.LENGTH_SHORT
-            ).show()
+            if (editTextUsername.text.toString().isEmpty()) Toast.makeText(context, "Empty Username Field", Toast.LENGTH_SHORT).show()
+            else {
+                if (editTextFullName.text.toString().isEmpty()) Toast.makeText(context, "Empty Full Name Field", Toast.LENGTH_SHORT).show()
+                else {
+                    if (editTextEmail.text.toString().isEmpty()) Toast.makeText(context, "Empty Email Field", Toast.LENGTH_SHORT).show()
+                    else {
+                        if (editTextPhone.text.toString().isEmpty()) Toast.makeText(context, "Empty Phone Field", Toast.LENGTH_SHORT).show()
+                        else {
+                            if (editTextDateBirth.text.toString().isEmpty()) Toast.makeText(context, "Empty Birth Date Field", Toast.LENGTH_SHORT).show()
+                            else {
+                                if (editTextAddress.text.toString().isEmpty()) Toast.makeText(context, "Empty Address Field", Toast.LENGTH_SHORT).show()
+                                else {
+                                    if (!rman.isChecked and !rwoman.isChecked and !rother.isChecked) Toast.makeText(context, "Empty Sex Field", Toast.LENGTH_SHORT).show()
+                                    else {
+                                        val user = Username(usr, editTextUsername.text.toString())
+                                        changePersInfoViewModel.setUsername(user)
+                                        val f_n = FullName(usr, editTextFullName.text.toString())
+                                        changePersInfoViewModel.setFullName(f_n)
+                                        val email = Email(usr, editTextEmail.text.toString())
+                                        changePersInfoViewModel.setEmail(email)
+                                        val telf = Phone(usr, editTextPhone.text.toString())
+                                        changePersInfoViewModel.setTelefon(telf)
+                                        val birth = Birth(usr, editTextDateBirth.text.toString())
+                                        changePersInfoViewModel.setBirth(birth)
+                                        val add = Address(usr, editTextAddress.text.toString())
+                                        changePersInfoViewModel.setAddress(add)
+                                        var c_sex = ""
+                                        if (rman.isChecked) c_sex = "Man"
+                                        if (rwoman.isChecked) c_sex = "Woman"
+                                        if (rother.isChecked) c_sex = "Other"
+                                        val sex = Sex(usr, c_sex)
+                                        Log.d("hola", c_sex)
+                                        changePersInfoViewModel.setSex(sex)
+                                        Toast.makeText(context, "Update successfully", Toast.LENGTH_SHORT).show()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         return root

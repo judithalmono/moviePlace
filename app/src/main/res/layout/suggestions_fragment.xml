@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/ChangePassword"
+    android:id="@+id/SuggerationsPage"
     android:background="@drawable/background9"
-    tools:context=".ui.profile.ChangePasswordFragment">
-
+    tools:context=".ui.profile.SuggestionsFragment">
 
     <TextView
         android:id="@+id/password_change"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/change_password"
+        android:text="Suggerations"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -21,101 +20,79 @@
         android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.095" />
-
-    <EditText
-        android:id="@+id/editTextPassword"
-
-        android:layout_width="334dp"
-        android:layout_height="58dp"
-
-        android:background="@drawable/edt_style"
-        android:drawableStart="@drawable/lockwhite"
-
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="Current Password"
-        android:inputType="textPassword"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.202"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.036" />
 
     <TextView
-        android:id="@+id/textForgot"
-
-        android:layout_width="339dp"
-        android:layout_height="19dp"
-
-        android:gravity="end"
-        android:text="@string/forgot"
+        android:layout_width="377dp"
+        android:layout_height="57dp"
+        android:text="On this page you can add a comment on the application or make a suggestion on how we can improve it. Also, you can help us suggest new movies that we might put in our app."
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283" />
+        app:layout_constraintVertical_bias="0.12" />
 
     <EditText
-        android:id="@+id/editTextPassword2"
+        android:id="@+id/edit_your_name"
 
         android:layout_width="334dp"
         android:layout_height="58dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
-        android:drawableStart="@drawable/lockwhite"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="New Password"
-        android:inputType="textPassword"
+        android:hint="Your Name"
+        android:textSize="15dp"
+        android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.338"
+        app:layout_constraintVertical_bias="0.23"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextPassword3"
+        android:id="@+id/edit_your_comment"
 
-        android:layout_width="334dp"
-        android:layout_height="58dp"
+        android:layout_width="336dp"
+        android:layout_height="347dp"
 
-        android:background="@drawable/edt_style"
-        android:drawableStart="@drawable/lockwhite"
+        android:background="@drawable/comment_style"
+        android:gravity="top|start"
+        android:lines="18"
 
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
+        android:hint="Your comment or suggeration"
+        android:inputType="textMultiLine"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        android:textSize="15dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.447"
+        app:layout_constraintVertical_bias="0.684"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonSignIn"
+        android:id="@+id/buttonSubmitSuggerations"
 
-        android:layout_width="335dp"
-        android:layout_height="59dp"
+        android:layout_width="336dp"
+        android:layout_height="47dp"
 
         android:background="@drawable/btn_style"
         android:text="Submit"
@@ -124,9 +101,10 @@
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.922" />
+        app:layout_constraintVertical_bias="0.959" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

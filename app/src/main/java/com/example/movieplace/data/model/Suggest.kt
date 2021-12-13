@@ -1,6 +1,7 @@
 package com.example.movieplace.data.model
 
-data class ProfilePhoto(
+data class Suggest(
     val username: String,
-    val path: String
+    val id: Int,
+    val suggestion: String
 )
