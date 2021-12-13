@@ -9,6 +9,7 @@ import com.example.movieplace.data.model.*
 import com.example.movieplace.data.retrofit.MoviesClient
 import okhttp3.ResponseBody
 import retrofit2.Response
+import retrofit2.http.Body
 import java.io.IOException
 
 class MovieRepository {
@@ -900,6 +901,32 @@ class MovieRepository {
                 // Error en la connexion
                 Log.d("GET", "Error getting info")
                 result.value = Result.Error(IOException("deleteComposer2 Error getting info"))
+            }
+        })
+        return result
+    }
+
+    /**
+     * Sends the suggest of the user "user"
+     *
+     * @return the mutable livedata which will be updated with the result of the call
+     */
+
+    fun  setSuggest(user: Suggest): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.setSuggest(user)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "setSuggest response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("setSuggest Error getting info"))
             }
         })
         return result

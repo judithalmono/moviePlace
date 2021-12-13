@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.movieplace.MovieRepository
 import com.example.movieplace.data.Result
-import com.example.movieplace.data.model.ProfilePhoto
+import com.example.movieplace.data.model.Suggest
 
 class SuggestionsViewModel : ViewModel() {
     private var repository: MovieRepository = MovieRepository()
@@ -13,7 +13,7 @@ class SuggestionsViewModel : ViewModel() {
     /**
      * sets from the repository
      */
-    fun setProfilePhoto(user: ProfilePhoto) {
-        commentSetSuccessfully = repository.setProfilePhoto(user)
+    fun setSuggest(user: Suggest) {
+        commentSetSuccessfully = repository.setSuggest(user)
     }
 }

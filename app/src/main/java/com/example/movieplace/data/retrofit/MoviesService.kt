@@ -322,5 +322,13 @@ interface MoviesService {
     @POST("/delComp2")
     fun deleteComposer2(@Body username: Delete) : Call<ResponseBody>
 
+    /**
+     * Send a suggestion
+     *
+     * @param user
+     */
+
+    @POST("/suggest")
+    fun setSuggest(@Body user: Suggest): Call<ResponseBody>
 
 }

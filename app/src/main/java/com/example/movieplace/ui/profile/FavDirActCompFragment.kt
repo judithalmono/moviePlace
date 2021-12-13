@@ -71,7 +71,6 @@ class FavDirActCompFragment : Fragment() {
 
         //If click the Submitted Button
         buttonSubmit.setOnClickListener {
-            Log.d("Dir1", editTextDirector1.text.toString())
             val del = Delete(username)
 
             if (editTextDirector1.text.toString() != "") {

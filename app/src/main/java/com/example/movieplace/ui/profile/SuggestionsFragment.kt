@@ -10,9 +10,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.movieplace.R
+import com.example.movieplace.data.model.Suggest
 import com.example.movieplace.databinding.SuggestionsFragmentBinding
-import com.google.android.material.snackbar.BaseTransientBottomBar
-import com.google.android.material.snackbar.Snackbar
 
 class SuggestionsFragment : Fragment() {
 
@@ -24,6 +23,8 @@ class SuggestionsFragment : Fragment() {
     private lateinit var editTextName: EditText
     private lateinit var editTextComment: EditText
     private lateinit var buttonSubmit : Button
+
+    private var ident = (0..1000).random()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,8 +40,19 @@ class SuggestionsFragment : Fragment() {
         buttonSubmit = root.findViewById(R.id.buttonSubmitSuggerations)
 
         buttonSubmit.setOnClickListener() {
-            Toast.makeText(context, "Comment sent successfully", Toast.LENGTH_SHORT).show()
-
+            if (editTextName.text.toString().isEmpty()) {
+                Toast.makeText(context, "Empty Name Field", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                if (editTextComment.text.toString().isEmpty()) {
+                    Toast.makeText(context, "Empty Comment or Suggestion field", Toast.LENGTH_SHORT).show()
+                }
+                else {
+                    val sug = Suggest(editTextName.text.toString(), ident, editTextComment.text.toString())
+                    suggestionviewModel.setSuggest(sug)
+                    Toast.makeText(context, "Comment sent successfully", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
 
         return root
