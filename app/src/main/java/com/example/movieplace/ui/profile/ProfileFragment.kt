@@ -12,8 +12,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import com.bumptech.glide.Glide
 import com.example.movieplace.R
@@ -42,6 +44,7 @@ class ProfileFragment : Fragment() {
     private lateinit var intent: Intent
     private val CODIGO_GALLERY = 10
     private var imageUri : Uri? = null
+    private lateinit var buttonLogOut: Button
 
     // Per ara només funciona manualment, i per l'usuari admin.
     private val username = "admin"
@@ -62,7 +65,7 @@ class ProfileFragment : Fragment() {
         editTextFullName = root.findViewById(R.id.editTextFullName)
         editTextEmail = root.findViewById(R.id.editTextEmail)
         changeProfilePicButton = root.findViewById(R.id.button_change_ProfilePhoto)
-
+        buttonLogOut = root.findViewById(R.id.buttonLogOut2)
 
         profileViewModel.getInfoUser(username)
         profileViewModel.getInfoUser(username).observe(
@@ -72,8 +75,6 @@ class ProfileFragment : Fragment() {
                     editTextUsername.setText(it.data.username)
                     editTextFullName.setText(it.data.full_name)
                     editTextEmail.setText(it.data.email)
-                    /*Glide.with(this)
-                        .load(it.data.img).into(imageViewProfilePic)*/
                     val File = File(context?.filesDir, username)
                     if (File.exists()) imageViewProfilePic.setImageURI(Uri.fromFile(File))
                     else imageViewProfilePic.setImageURI(Uri.parse("android.resource://com.example.movieplace/drawable/userwhite"))
@@ -94,10 +95,9 @@ class ProfileFragment : Fragment() {
                 val File = File(context?.filesDir, username)
                 val bytes = context?.contentResolver?.openInputStream(imageUri!!)?.readBytes()!!
                 File.writeBytes(bytes)
+                Toast.makeText(context, "Profile Picture Saved ", Toast.LENGTH_SHORT).show()
             }
         }
-
-
 
         //Change Personal Information
         val button1 = root.findViewById<ImageButton>(R.id.button_change_PersInfo)
