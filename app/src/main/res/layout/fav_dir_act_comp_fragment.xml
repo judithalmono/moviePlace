@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/FavDirectors"
-    android:background="@drawable/background12"
-    tools:context=".ui.profile.FavDirectorsFragment">
-
+    android:id="@+id/FavDirActComp"
+    android:background="@drawable/background17"
+    tools:context=".ui.profile.FavDirActCompFragment">
 
     <TextView
-        android:id="@+id/textTitol1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Favorite directors"
+        android:id="@+id/textDirActComp"
+        android:layout_width="313dp"
+        android:layout_height="83dp"
+        android:text="Favorite director, actor and composer"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -22,7 +21,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098"
+        app:layout_constraintVertical_bias="0.049" />
+
+    <TextView
+        android:layout_width="269dp"
+        android:layout_height="22dp"
+        android:text="Choose your two favorite directors:"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:typeface="serif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.274"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.197"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -32,11 +45,13 @@
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Director name"
-        android:inputType="textPersonName"
+        android:inputType="text"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -44,10 +59,10 @@
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.204"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <EditText
         android:id="@+id/editDirector2"
@@ -56,11 +71,13 @@
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Director name"
-        android:inputType="textPersonName"
+        android:inputType="text"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -70,117 +87,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.295"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.334" />
 
-    <EditText
-        android:id="@+id/editDirector3"
-
-        android:layout_width="329dp"
-        android:layout_height="47dp"
-
-        android:background="@drawable/edt_style"
-
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="Director name"
-        android:inputType="textPersonName"
-
+    <TextView
+        android:layout_width="269dp"
+        android:layout_height="22dp"
+        android:text="Choose your two favorite actors:"
         android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="15sp"
-        app:backgroundTint="@null"
+        android:textSize="16sp"
+        android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.288"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.387"
+        app:layout_constraintVertical_bias="0.42"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editDirector4"
+        android:id="@+id/editActor1"
 
         android:layout_width="329dp"
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Director name"
-        android:inputType="textPersonName"
-
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="15sp"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editDirector5"
-
-        android:layout_width="329dp"
-        android:layout_height="47dp"
-
-        android:background="@drawable/edt_style"
-
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="Director name"
-        android:inputType="textPersonName"
-
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="15sp"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.574"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editDirector6"
-
-        android:layout_width="329dp"
-        android:layout_height="47dp"
-
-        android:background="@drawable/edt_style"
-
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="Director name"
-        android:inputType="textPersonName"
-
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="15sp"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.668"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editDirector7"
-
-        android:layout_width="329dp"
-        android:layout_height="47dp"
-
-        android:background="@drawable/edt_style"
-
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="Director name"
-        android:inputType="textPersonName"
+        android:hint="Actor name"
+        android:inputType="text"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -191,21 +128,22 @@
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.757"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.483" />
 
     <EditText
-        android:id="@+id/editDirector8"
+        android:id="@+id/editActor2"
 
         android:layout_width="329dp"
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Director name"
-        android:inputType="textPersonName"
+        android:hint="Actor name"
+        android:inputType="text"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -215,11 +153,77 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845"
+        app:layout_constraintVertical_bias="0.57" />
+
+    <TextView
+        android:layout_width="301dp"
+        android:layout_height="20dp"
+        android:text="Choose your two favorite composer:"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:typeface="serif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.649"
         tools:ignore="MissingConstraints" />
 
+    <EditText
+        android:id="@+id/editComposer1"
+
+        android:layout_width="329dp"
+        android:layout_height="47dp"
+
+        android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Composer name"
+        android:inputType="text"
+
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="15sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.719" />
+
+    <EditText
+        android:id="@+id/editComposer2"
+
+        android:layout_width="329dp"
+        android:layout_height="47dp"
+
+        android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Composer name"
+        android:inputType="text"
+
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="15sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.805" />
+
     <Button
-        android:id="@+id/buttonSubmitDirectors"
+        android:id="@+id/buttonSubmitDirActComp"
         android:background="@drawable/btn_style"
         android:text="Submit"
         android:textSize="15sp"

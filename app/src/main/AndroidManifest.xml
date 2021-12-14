@@ -18,6 +18,7 @@
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".common.MyApp"
@@ -29,17 +30,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoviePlace">
+      
         <activity
             android:name=".ForgotPassword"
             android:exported="false" />
+      
         <activity
             android:name=".ui.profile.FavGenres"
             android:exported="false"
             tools:ignore="Instantiatable" />
 
-        <!-- <activity -->
-        <!-- android:name=".ui.profile.FavoGenres" -->
-        <!-- android:exported="false" /> -->
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -50,9 +50,9 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" /> <!-- <activity -->
-        <!-- android:name=".ChangePassword" -->
-        <!-- android:exported="false" /> -->
+
+            android:value="@string/google_maps_key" /> 
+      
         <activity
             android:name=".Home"
             android:exported="false"

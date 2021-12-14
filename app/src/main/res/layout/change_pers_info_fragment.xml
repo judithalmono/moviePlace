@@ -8,7 +8,6 @@
     android:background="@drawable/background11"
     tools:context=".ui.profile.ChangePersInfoFragment">
 
-
     <TextView
         android:id="@+id/textTitol1"
         android:layout_width="wrap_content"
@@ -32,12 +31,13 @@
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/user"
         android:inputType="textPersonName"
-        android:singleLine="true"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -57,12 +57,13 @@
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/complete_name"
         android:inputType="textPersonName"
-        android:singleLine="true"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -82,12 +83,13 @@
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:singleLine="true"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -106,12 +108,13 @@
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Phone number"
         android:inputType="phone"
-        android:singleLine="true"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -130,12 +133,13 @@
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Date of birth"
         android:inputType="date"
-        android:singleLine="true"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -155,12 +159,13 @@
         android:layout_height="47dp"
 
         android:background="@drawable/edt_style"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
 
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Personal address"
         android:inputType="textPostalAddress"
-        android:singleLine="true"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"

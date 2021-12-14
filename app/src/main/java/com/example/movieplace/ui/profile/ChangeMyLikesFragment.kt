@@ -1,6 +1,5 @@
 package com.example.movieplace.ui.profile
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -38,30 +37,10 @@ class ChangeMyLikesFragment : Fragment() {
             transaction.commit()
         }
 
-        //Change Favourite Directors
-        val button2 = root.findViewById<ImageButton>(R.id.button_change_FavDir)
+        //Change Favourite Directors, Actors and Composer
+        val button2 = root.findViewById<ImageButton>(R.id.button_change_FavDirActComp)
         button2.setOnClickListener() {
-            val nuevoFragmento: Fragment = FavDirectorsFragment()
-            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-            transaction.replace(R.id.changeMyLikes, nuevoFragmento)
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
-
-        //Change Favourite Composers
-        val button3 = root.findViewById<ImageButton>(R.id.button_change_FavComp)
-        button3.setOnClickListener() {
-            val nuevoFragmento: Fragment = FavComposersFragment()
-            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-            transaction.replace(R.id.changeMyLikes, nuevoFragmento)
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
-
-        //Change Favourite Actors
-        val button4 = root.findViewById<ImageButton>(R.id.button_change_FavActors)
-        button4.setOnClickListener() {
-            val nuevoFragmento: Fragment = FavActorsFragment()
+            val nuevoFragmento: Fragment = FavDirActCompFragment()
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.changeMyLikes, nuevoFragmento)
             transaction.addToBackStack(null)

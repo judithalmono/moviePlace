@@ -6,10 +6,10 @@ import retrofit2.Callback
 import androidx.lifecycle.MutableLiveData
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.*
-import com.example.movieplace.data.model.User
 import com.example.movieplace.data.retrofit.MoviesClient
 import okhttp3.ResponseBody
 import retrofit2.Response
+import retrofit2.http.Body
 import java.io.IOException
 
 class MovieRepository {
@@ -519,18 +519,18 @@ class MovieRepository {
     }
 
     /**
-     * It sets the Fav Genres of the user "user"
+     * It sets the Profile Photo of the user "user"
      *
      * @return the mutable livedata which will be updated with the result of the call
      */
 
-    fun setGenre(user: NewGenre): MutableLiveData<Result<String>> {
+    fun setProfilePhoto(user: ProfilePhoto): MutableLiveData<Result<String>> {
         val result = MutableLiveData<Result<String>>()
-        val call: Call<ResponseBody> = moviesService!!.setGenre(user)
+        val call: Call<ResponseBody> = moviesService!!.setProfilePhoto(user)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
-                    Log.d("response", "setGenre response: is successful")
+                    Log.d("response", "setProfilePhoto response: is successful")
                     result.value = Result.Success(response.body().toString())
                 } else result.value = Result.Error(IOException("Error getting info"))
             }
@@ -538,7 +538,85 @@ class MovieRepository {
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 // Error en la connexion
                 Log.d("GET", "Error getting info")
-                result.value = Result.Error(IOException("setGenre Error getting info"))
+                result.value = Result.Error(IOException("setProfilePhoto Error getting info"))
+            }
+        })
+        return result
+    }
+
+    /**
+     * It deletes the Profile Photo of the user "user"
+     *
+     * @return the mutable livedata which will be updated with the result of the call
+     */
+
+    fun deleteProfilePhoto(username: Delete): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.deleteProfilePhoto(username)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "deleteProfilePhoto response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("deleteProfilePhoto Error getting info"))
+            }
+        })
+        return result
+    }
+
+    /**
+     * It sets the Fav Genres of the user "user"
+     *
+     * @return the mutable livedata which will be updated with the result of the call
+     */
+
+    fun setGenre1(user: NewGenre): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.setGenre1(user)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "setGenre1 response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("setGenre1 Error getting info"))
+            }
+        })
+        return result
+    }
+
+    /**
+     * It sets the Fav Genres of the user "user"
+     *
+     * @return the mutable livedata which will be updated with the result of the call
+     */
+
+    fun setGenre2(user: NewGenre): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.setGenre2(user)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "setGenre2 response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("setGenre2 Error getting info"))
             }
         })
         return result
@@ -550,13 +628,13 @@ class MovieRepository {
      * @return the mutable livedata which will be updated with the result of the call
      */
 
-    fun setDirector(user: NewDirector): MutableLiveData<Result<String>> {
+    fun setDirector1(user: NewDirector): MutableLiveData<Result<String>> {
         val result = MutableLiveData<Result<String>>()
-        val call: Call<ResponseBody> = moviesService!!.setDirector(user)
+        val call: Call<ResponseBody> = moviesService!!.setDirector1(user)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
-                    Log.d("response", "setDirector response: is successful")
+                    Log.d("response", "setDirector1 response: is successful")
                     result.value = Result.Success(response.body().toString())
                 } else result.value = Result.Error(IOException("Error getting info"))
             }
@@ -564,7 +642,33 @@ class MovieRepository {
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 // Error en la connexion
                 Log.d("GET", "Error getting info")
-                result.value = Result.Error(IOException("setDirector Error getting info"))
+                result.value = Result.Error(IOException("setDirector1 Error getting info"))
+            }
+        })
+        return result
+    }
+
+    /**
+     * It sets the Fav Directors of the user "user"
+     *
+     * @return the mutable livedata which will be updated with the result of the call
+     */
+
+    fun setDirector2(user: NewDirector): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.setDirector2(user)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "setDirector2 response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("setDirector2 Error getting info"))
             }
         })
         return result
@@ -576,13 +680,13 @@ class MovieRepository {
      * @return the mutable livedata which will be updated with the result of the call
      */
 
-    fun setActor(user: NewActor): MutableLiveData<Result<String>> {
+    fun setActor1(user: NewActor): MutableLiveData<Result<String>> {
         val result = MutableLiveData<Result<String>>()
-        val call: Call<ResponseBody> = moviesService!!.setActor(user)
+        val call: Call<ResponseBody> = moviesService!!.setActor1(user)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
-                    Log.d("response", "setActor response: is successful")
+                    Log.d("response", "setActor1 response: is successful")
                     result.value = Result.Success(response.body().toString())
                 } else result.value = Result.Error(IOException("Error getting info"))
             }
@@ -590,7 +694,33 @@ class MovieRepository {
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 // Error en la connexion
                 Log.d("GET", "Error getting info")
-                result.value = Result.Error(IOException("setActor Error getting info"))
+                result.value = Result.Error(IOException("setActor1 Error getting info"))
+            }
+        })
+        return result
+    }
+
+    /**
+     * It sets the Fav Actors of the user "user"
+     *
+     * @return the mutable livedata which will be updated with the result of the call
+     */
+
+    fun setActor2(user: NewActor): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.setActor2(user)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "setActor2 response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("setActor2 Error getting info"))
             }
         })
         return result
@@ -602,13 +732,13 @@ class MovieRepository {
      * @return the mutable livedata which will be updated with the result of the call
      */
 
-    fun setCompositor(user: NewCompositor): MutableLiveData<Result<String>> {
+    fun setCompositor1(user: NewCompositor): MutableLiveData<Result<String>> {
         val result = MutableLiveData<Result<String>>()
-        val call: Call<ResponseBody> = moviesService!!.setCompositor(user)
+        val call: Call<ResponseBody> = moviesService!!.setCompositor1(user)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
-                    Log.d("response", "setCompositor response: is successful")
+                    Log.d("response", "setCompositor1 response: is successful")
                     result.value = Result.Success(response.body().toString())
                 } else result.value = Result.Error(IOException("Error getting info"))
             }
@@ -616,7 +746,7 @@ class MovieRepository {
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 // Error en la connexion
                 Log.d("GET", "Error getting info")
-                result.value = Result.Error(IOException("setCompositor Error getting info"))
+                result.value = Result.Error(IOException("setCompositor1 Error getting info"))
             }
         })
         return result
@@ -629,7 +759,7 @@ class MovieRepository {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
                     Log.d("response", "updateVote response: is successful")
-                    result.value = Result.Success(response.body().toString())
+                                       result.value = Result.Success(response.body().toString())
                 } else result.value = Result.Error(IOException("Error getting info"))
             }
 
@@ -637,6 +767,222 @@ class MovieRepository {
                 // Error en la connexion
                 Log.d("GET", "Error getting info")
                 result.value = Result.Error(IOException("setCompositor Error getting info"))
+            }
+        })
+        return result
+    }
+    /**
+     * It sets the Fav Compositors of the user "user"
+     *
+     * @return the mutable livedata which will be updated with the result of the call
+     */
+
+    fun setCompositor2(user: NewCompositor): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.setCompositor2(user)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "setCompositor2 response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("setCompositor2 Error getting info"))
+            }
+        })
+        return result
+    }
+
+    /**
+     * It deletes the Profile Photo of the user "user"
+     *
+     * @return the mutable livedata which will be updated with the result of the call
+     */
+
+    fun deleteGenre1(username: Delete): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.deleteGenre1(username)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "deleteGenre1 response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("deleteGenre1 Error getting info"))
+            }
+        })
+        return result
+    }
+
+    fun deleteGenre2(username: Delete): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.deleteGenre2(username)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "deleteGenre2 response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("deleteGenre2 Error getting info"))
+            }
+        })
+        return result
+    }
+
+    fun deleteDirector1(username: Delete): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.deleteDirector1(username)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "deleteDirector1 response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("deleteDirector1 Error getting info"))
+            }
+        })
+        return result
+    }
+
+    fun deleteDirector2(username: Delete): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.deleteDirector2(username)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "deleteDirector2 response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("deleteDirector2 Error getting info"))
+            }
+        })
+        return result
+    }
+
+    fun deleteActor1(username: Delete): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.deleteActor1(username)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "deleteActor1 response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("deleteActor1 Error getting info"))
+            }
+        })
+        return result
+    }
+
+    fun deleteActor2(username: Delete): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.deleteActor2(username)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "deleteActor2 response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("deleteActor2 Error getting info"))
+            }
+        })
+        return result
+    }
+
+    fun deleteComposer1(username: Delete): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.deleteComposer1(username)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "deleteComposer1 response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("deleteComposer1 Error getting info"))
+            }
+        })
+        return result
+    }
+
+    fun deleteComposer2(username: Delete): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.deleteComposer2(username)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "deleteComposer2 response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("deleteComposer2 Error getting info"))
+            }
+        })
+        return result
+    }
+    /**
+     * Sends the suggest of the user "user"
+     *
+     * @return the mutable livedata which will be updated with the result of the call
+     */
+
+    fun  setSuggest(user: Suggest): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.setSuggest(user)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "setSuggest response: is successful")
+                    result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("setSuggest Error getting info"))
             }
         })
         return result

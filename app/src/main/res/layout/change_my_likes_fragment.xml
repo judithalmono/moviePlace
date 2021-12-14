@@ -22,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.181"
+        app:layout_constraintVertical_bias="0.228"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -43,10 +43,9 @@
         app:background="@drawable/edt_style"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376"
+        app:layout_constraintVertical_bias="0.472"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
@@ -61,7 +60,7 @@
         app:layout_constraintHorizontal_bias="0.589"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.374"
+        app:layout_constraintVertical_bias="0.471"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <TextView
@@ -73,7 +72,7 @@
         android:background="@drawable/edt_style"
         android:drawablePadding="10dp"
         android:paddingTop="13dp"
-        android:text="Favorite directors"
+        android:text="Favorite director, actor and composer"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -82,14 +81,14 @@
         app:background="@drawable/edt_style"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.471"
+        app:layout_constraintVertical_bias="0.598"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/button_change_FavDir"
+        android:id="@+id/button_change_FavDirActComp"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="48dp"
         android:layout_height="50dp"
@@ -100,86 +99,7 @@
         app:layout_constraintHorizontal_bias="0.589"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469"
+        app:layout_constraintVertical_bias="0.6"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/textFavComp"
-        android:layout_width="371dp"
-        android:layout_height="48dp"
-
-
-        android:background="@drawable/edt_style"
-        android:drawablePadding="10dp"
-        android:paddingTop="13dp"
-        android:text="Favorite composer"
-
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="15sp"
-
-        app:background="@drawable/edt_style"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/button_change_FavComp"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="324dp"
-        android:src="@drawable/next_icon_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.572"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/textFavActors"
-        android:layout_width="371dp"
-        android:layout_height="48dp"
-
-
-        android:background="@drawable/edt_style"
-        android:drawablePadding="10dp"
-        android:paddingTop="13dp"
-        android:text="Favorite actors"
-
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="15sp"
-
-        app:background="@drawable/edt_style"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.667"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/button_change_FavActors"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="324dp"
-        android:src="@drawable/next_icon_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.669"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
