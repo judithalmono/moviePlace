@@ -122,6 +122,25 @@ class MovieRepository {
         return result
     }
 
+    fun getMoviesByActor(actor: String): MutableLiveData<Result<List<Movie>>> {
+        val result = MutableLiveData<Result<List<Movie>>>()
+        val call: Call<List<Movie>> = moviesService!!.getMoviesByActor(actor)
+        call.enqueue(object : Callback<List<Movie>> {
+            override fun onResponse(call: Call<List<Movie>>, response: Response<List<Movie>>) {
+                if (response.isSuccessful) {
+                    result.value = Result.Success(response.body() as List<Movie>)
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<List<Movie>>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("Error getting info"))
+            }
+        })
+        return result
+    }
+
     /**
      * It gets all scenes of the movie with the id
      *
@@ -182,7 +201,7 @@ class MovieRepository {
 
             override fun onFailure(call: Call<List<Movie>>, t: Throwable) {
                 // Error en la connexion
-                Log.d("GET", "Error getting info 2")
+                Log.d("GET", t.toString())
                 result.value = Result.Error(IOException("Error getting info 3"))
             }
         })
@@ -206,6 +225,25 @@ class MovieRepository {
             }
 
             override fun onFailure(call: Call<List<Movie>>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info 2")
+                result.value = Result.Error(IOException("Error getting info 3"))
+            }
+        })
+        return result
+    }
+
+    fun getAllScenes(): MutableLiveData<Result<List<Scene>>> {
+        val result = MutableLiveData<Result<List<Scene>>>()
+        val call: Call<List<Scene>> = moviesService!!.getAllScenes()
+        call.enqueue(object : Callback<List<Scene>> {
+            override fun onResponse(call: Call<List<Scene>>, response: Response<List<Scene>>) {
+                if (response.isSuccessful) {
+                    result.value = Result.Success(response.body() as List<Scene>)
+                } else result.value = Result.Error(IOException("Error getting info 1"))
+            }
+
+            override fun onFailure(call: Call<List<Scene>>, t: Throwable) {
                 // Error en la connexion
                 Log.d("GET", "Error getting info 2")
                 result.value = Result.Error(IOException("Error getting info 3"))
@@ -714,6 +752,25 @@ class MovieRepository {
         return result
     }
 
+    fun updateVote(vote: Vote): MutableLiveData<Result<String>> {
+        val result = MutableLiveData<Result<String>>()
+        val call: Call<ResponseBody> = moviesService!!.updateVote(vote)
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Log.d("response", "updateVote response: is successful")
+                                       result.value = Result.Success(response.body().toString())
+                } else result.value = Result.Error(IOException("Error getting info"))
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Error en la connexion
+                Log.d("GET", "Error getting info")
+                result.value = Result.Error(IOException("setCompositor Error getting info"))
+            }
+        })
+        return result
+    }
     /**
      * It sets the Fav Compositors of the user "user"
      *
@@ -905,7 +962,6 @@ class MovieRepository {
         })
         return result
     }
-
     /**
      * Sends the suggest of the user "user"
      *
@@ -931,5 +987,4 @@ class MovieRepository {
         })
         return result
     }
-
 }

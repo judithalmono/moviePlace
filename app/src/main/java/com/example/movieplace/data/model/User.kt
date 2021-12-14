@@ -19,5 +19,6 @@ data class User(
     val personal_address: String,
     val phone: String,
     val sex: String,
+    val user_genres: List<String>,
     val username: String
 )

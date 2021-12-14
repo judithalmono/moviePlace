@@ -1,5 +1,8 @@
 package com.example.movieplace.ui.scenes
 
+import android.Manifest
+import android.content.ContentValues
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,8 +14,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.movieplace.R
 import com.example.movieplace.data.Result
 import android.util.Log
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import com.example.movieplace.data.model.Scene
+import com.spotify.protocol.types.PlayerState
 
 class ScenesList: Fragment() {
 
@@ -50,7 +56,7 @@ class ScenesList: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        scenesViewModel = ViewModelProvider(this).get(SceneViewModel::class.java)
+        scenesViewModel = ViewModelProvider(this)[SceneViewModel::class.java]
         scenesListAdapter = MyScenesRecyclesViewAdapter(context as ScenesActivity)
 
         val layout = view.findViewById<RecyclerView>(R.id.listScenes)
@@ -73,5 +79,7 @@ class ScenesList: Fragment() {
         )
 
     }
+
+
 
 }

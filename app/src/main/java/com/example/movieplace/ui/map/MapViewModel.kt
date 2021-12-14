@@ -9,12 +9,12 @@ import com.example.movieplace.data.model.Scene
 class MapViewModel : ViewModel() {
 
     private var repository: MovieRepository = MovieRepository()
-//    var scenes : MutableLiveData<Result<List<Scene>>> = repository.getAllScenes()
+    var scenes : MutableLiveData<Result<List<Scene>>> = repository.getAllScenes()
 
     /**
      * gets the movies from the repository
      */
-//    fun getAllScenes() : MutableLiveData<Result<List<Scene>>> {
-//        return scenes
-//    }
+    fun getAllScenes() : MutableLiveData<Result<List<Scene>>> {
+        return scenes
+    }
 }
