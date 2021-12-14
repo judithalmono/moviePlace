@@ -2,6 +2,8 @@ package com.example.movieplace.ui.profile
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -12,18 +14,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import com.bumptech.glide.Glide
 import com.example.movieplace.R
+import com.example.movieplace.common.Constants
+import com.example.movieplace.common.SharedPreferenceManager
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.ProfilePhoto
 import com.example.movieplace.databinding.FragmentProfileBinding
+import com.example.movieplace.ui.login.Login
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import de.hdodenhof.circleimageview.CircleImageView
 import java.io.File
+import android.content.DialogInterface
+
+import android.content.DialogInterface.OnShowListener
+import android.widget.*
 
 
 class ProfileFragment : Fragment() {
@@ -45,6 +53,8 @@ class ProfileFragment : Fragment() {
     private val CODIGO_GALLERY = 10
     private var imageUri : Uri? = null
     private lateinit var buttonLogOut: Button
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var customDialog: Dialog
 
     // Per ara només funciona manualment, i per l'usuari admin.
     private val username = "admin"
@@ -81,6 +91,8 @@ class ProfileFragment : Fragment() {
                 }
             }
         )
+
+        firebaseAuth = Firebase.auth
 
         //Escollir imatge de la galeria
         imageViewProfilePic.setOnClickListener {
@@ -130,6 +142,33 @@ class ProfileFragment : Fragment() {
 
             // Commit a la transacción
             transaction.commit()
+        }
+
+        customDialog = Dialog(requireActivity())
+        customDialog.setContentView(R.layout.logout_dialog)
+
+        val cancelBtn = customDialog.findViewById<TextView>(R.id.cancelBtn)
+        val okBtn = customDialog.findViewById<TextView>(R.id.okBtn)
+
+        buttonLogOut.setOnClickListener() {
+            okBtn.setOnClickListener {
+                firebaseAuth.signOut()
+                SharedPreferenceManager.deleteData()
+                SharedPreferenceManager.setBooleanValue(
+                    Constants().PREF_IS_NOT_FIRST_TIME_OPENING_APP,
+                    true
+                )
+                customDialog.dismiss()
+                requireActivity().run {
+                    startActivity(Intent(this, Login::class.java))
+                    finish()
+                }
+            }
+            cancelBtn.setOnClickListener {
+                customDialog.dismiss()
+            }
+
+            customDialog.show()
         }
 
         return root

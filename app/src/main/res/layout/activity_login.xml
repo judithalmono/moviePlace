@@ -45,17 +45,18 @@
 
         android:drawableStart="@drawable/lockwhite"
         android:drawablePadding="10dp"
-        android:paddingEnd="55dp"
         android:ems="10"
-
         android:hint="@string/password"
+
         android:inputType="textPassword"
+        android:paddingEnd="55dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/buttonLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUser" />
 
     <Button
         android:id="@+id/visibilityPassword"
@@ -106,15 +107,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_marginBottom="52dp"
+        android:layout_marginTop="21dp"
 
+        android:layout_marginBottom="52dp"
         android:gravity="center"
         android:text="@string/register"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
     <ProgressBar
         android:id="@+id/progressBar"
