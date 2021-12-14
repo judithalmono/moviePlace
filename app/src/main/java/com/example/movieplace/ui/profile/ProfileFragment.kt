@@ -31,6 +31,7 @@ import java.io.File
 import android.content.DialogInterface
 
 import android.content.DialogInterface.OnShowListener
+import android.util.Log
 import android.widget.*
 
 
@@ -44,7 +45,7 @@ class ProfileFragment : Fragment() {
 
     private lateinit var profileViewModel: ProfileViewModel
 
-    private lateinit var editTextUsername: EditText
+    private lateinit var editTextUsername: TextView
     private lateinit var editTextFullName: EditText
     private lateinit var editTextEmail: EditText
     private lateinit var imageViewProfilePic: CircleImageView
@@ -57,7 +58,7 @@ class ProfileFragment : Fragment() {
     private lateinit var customDialog: Dialog
 
     // Per ara només funciona manualment, i per l'usuari admin.
-    private val username = "admin"
+//    private val username = "admin"
 
     @SuppressLint("IntentReset")
     override fun onCreateView(
@@ -77,20 +78,28 @@ class ProfileFragment : Fragment() {
         changeProfilePicButton = root.findViewById(R.id.button_change_ProfilePhoto)
         buttonLogOut = root.findViewById(R.id.buttonLogOut2)
 
-        profileViewModel.getInfoUser(username)
-        profileViewModel.getInfoUser(username).observe(
-            viewLifecycleOwner,
-            {
-                if (it is Result.Success) {
-                    editTextUsername.setText(it.data.username)
-                    editTextFullName.setText(it.data.full_name)
-                    editTextEmail.setText(it.data.email)
-                    val File = File(context?.filesDir, username)
-                    if (File.exists()) imageViewProfilePic.setImageURI(Uri.fromFile(File))
-                    else imageViewProfilePic.setImageURI(Uri.parse("android.resource://com.example.movieplace/drawable/userwhite"))
+        val username = SharedPreferenceManager.getStringValue(Constants().PREF_USERNAME)
+
+        editTextUsername.text = username
+
+        if (username != null) {
+            profileViewModel.getInfoUser(username)
+        }
+        if (username != null) {
+            profileViewModel.getInfoUser(username).observe(
+                viewLifecycleOwner,
+                {
+                    if (it is Result.Success) {
+                        editTextUsername.text = it.data.username
+                        editTextFullName.setText(it.data.full_name)
+                        editTextEmail.setText(it.data.email)
+                        val File = File(context?.filesDir, username)
+                        if (File.exists()) imageViewProfilePic.setImageURI(Uri.fromFile(File))
+                        else imageViewProfilePic.setImageURI(Uri.parse("android.resource://com.example.movieplace/drawable/userwhite"))
+                    }
                 }
-            }
-        )
+            )
+        }
 
         firebaseAuth = Firebase.auth
 

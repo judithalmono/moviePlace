@@ -34,8 +34,7 @@
                     android:layout_height="225dp"
                     android:layout_marginBottom="15dp"
                     android:contentDescription="@string/scene_image"
-                    android:foreground="@drawable/fading_effect"
-                    android:src="@drawable/background1" />
+                    android:foreground="@drawable/fading_effect" />
 
                 <TextView
                     android:id="@+id/textDesc"

@@ -43,6 +43,7 @@ class Login : AppCompatActivity() {
     private lateinit var username: String
 
 
+
     /**
      * It is executed when the activity is launched for first time or created again following
      * activities lifecycle.
@@ -52,11 +53,11 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        if (SharedPreferenceManager.getStringValue(Constants().PREF_EMAIL) != null) {
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
-            finish()
-        }
+//        if (SharedPreferenceManager.getStringValue(Constants().PREF_EMAIL) != null) {
+//            val intent = Intent(this, Home::class.java)
+//            startActivity(intent)
+//            finish()
+//        }
 
         setUp()
         startObservers()
@@ -135,6 +136,7 @@ class Login : AppCompatActivity() {
                     showLoginFailed(loginResult.error)
                 }
                 if (loginResult.success != null) {
+                    SharedPreferenceManager.setStringValue(Constants().PREF_USERNAME, username)
                     val welcome = "WELCOME"
                     loading.visibility = GONE
                     val intent = Intent(this, Home::class.java)
@@ -168,8 +170,8 @@ class Login : AppCompatActivity() {
         }
         editTextUser.setOnFocusChangeListener { _, hasFocus ->
             if (!hasFocus){
-                Log.d("SE VA", "el foco")
                 username = editTextUser.text.toString()
+                Log.d("Username", ".")
                 loginViewModel.getEmail(editTextUser.text.toString()).observe(
                     this, {
                         if (it is Result.Success) {

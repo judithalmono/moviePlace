@@ -11,6 +11,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.movieplace.R
+import com.example.movieplace.common.Constants
+import com.example.movieplace.common.SharedPreferenceManager
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.Delete
 import com.example.movieplace.data.model.NewActor
@@ -54,55 +56,73 @@ class FavDirActCompFragment : Fragment() {
         editTextComposer2 = root.findViewById(R.id.editComposer2)
         buttonSubmit = root.findViewById(R.id.buttonSubmitDirActComp)
 
-        favDirActCompviewModel.getInfoUser(username)
-        favDirActCompviewModel.getInfoUser(username).observe(
-            viewLifecycleOwner,
-            {
-                if (it is Result.Success) {
-                    editTextDirector1.setText(it.data.director_pref)
-                    editTextDirector2.setText(it.data.director_2)
-                    editTextActor1.setText(it.data.actor_pref)
-                    editTextActor2.setText(it.data.actor_2)
-                    editTextComposer1.setText(it.data.compositor_pref)
-                    editTextComposer2.setText(it.data.compositor_2)
+        val username = SharedPreferenceManager.getStringValue(Constants().PREF_USERNAME)
+
+        if (username != null) {
+            favDirActCompviewModel.getInfoUser(username)
+        }
+        if (username != null) {
+            favDirActCompviewModel.getInfoUser(username).observe(
+                viewLifecycleOwner,
+                {
+                    if (it is Result.Success) {
+                        editTextDirector1.setText(it.data.director_pref)
+                        editTextDirector2.setText(it.data.director_2)
+                        editTextActor1.setText(it.data.actor_pref)
+                        editTextActor2.setText(it.data.actor_2)
+                        editTextComposer1.setText(it.data.compositor_pref)
+                        editTextComposer2.setText(it.data.compositor_2)
+                    }
                 }
-            }
-        )
+            )
+        }
 
         //If click the Submitted Button
         buttonSubmit.setOnClickListener {
-            val del = Delete(username)
+            val del = username?.let { it1 -> Delete(it1) }
 
             if (editTextDirector1.text.toString() != "") {
-                val user = NewDirector(username, editTextDirector1.text.toString())
-                favDirActCompviewModel.setDirector1(user)
+                val user = username?.let { it1 -> NewDirector(it1, editTextDirector1.text.toString()) }
+                if (user != null) {
+                    favDirActCompviewModel.setDirector1(user)
+                }
             }
-            else favDirActCompviewModel.deleteDirector1(del)
+            else del?.let { it1 -> favDirActCompviewModel.deleteDirector1(it1) }
             if (editTextDirector2.text.toString() != "") {
-                val user = NewDirector(username, editTextDirector2.text.toString())
-                favDirActCompviewModel.setDirector2(user)
+                val user = username?.let { it1 -> NewDirector(it1, editTextDirector2.text.toString()) }
+                if (user != null) {
+                    favDirActCompviewModel.setDirector2(user)
+                }
             }
-            else favDirActCompviewModel.deleteDirector2(del)
+            else del?.let { it1 -> favDirActCompviewModel.deleteDirector2(it1) }
             if (editTextActor1.text.toString() != "") {
-                val user = NewActor(username, editTextActor1.text.toString())
-                favDirActCompviewModel.setActor1(user)
+                val user = username?.let { it1 -> NewActor(it1, editTextActor1.text.toString()) }
+                if (user != null) {
+                    favDirActCompviewModel.setActor1(user)
+                }
             }
-            else favDirActCompviewModel.deleteActor1(del)
+            else del?.let { it1 -> favDirActCompviewModel.deleteActor1(it1) }
             if (editTextActor2.text.toString() != "") {
-                val user = NewActor(username, editTextActor2.text.toString())
-                favDirActCompviewModel.setActor2(user)
+                val user = username?.let { it1 -> NewActor(it1, editTextActor2.text.toString()) }
+                if (user != null) {
+                    favDirActCompviewModel.setActor2(user)
+                }
             }
-            else favDirActCompviewModel.deleteActor2(del)
+            else del?.let { it1 -> favDirActCompviewModel.deleteActor2(it1) }
             if (editTextComposer1.text.toString() != "") {
-                val user = NewCompositor(username, editTextComposer1.text.toString())
-                favDirActCompviewModel.setCompositor1(user)
+                val user = username?.let { it1 -> NewCompositor(it1, editTextComposer1.text.toString()) }
+                if (user != null) {
+                    favDirActCompviewModel.setCompositor1(user)
+                }
             }
-            else favDirActCompviewModel.deleteComposer1(del)
+            else del?.let { it1 -> favDirActCompviewModel.deleteComposer1(it1) }
             if (editTextComposer2.text.toString() != "") {
-                val user = NewCompositor(username, editTextComposer2.text.toString())
-                favDirActCompviewModel.setCompositor2(user)
+                val user = username?.let { it1 -> NewCompositor(it1, editTextComposer2.text.toString()) }
+                if (user != null) {
+                    favDirActCompviewModel.setCompositor2(user)
+                }
             }
-            else favDirActCompviewModel.deleteComposer2(del)
+            else del?.let { it1 -> favDirActCompviewModel.deleteComposer2(it1) }
 
             Toast.makeText(context, "Update successfully", Toast.LENGTH_SHORT).show()
         }

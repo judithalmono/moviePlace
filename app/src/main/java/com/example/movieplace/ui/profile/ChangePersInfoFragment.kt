@@ -12,6 +12,8 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.core.content.ContextCompat.getSystemService
 import com.example.movieplace.R
+import com.example.movieplace.common.Constants
+import com.example.movieplace.common.SharedPreferenceManager
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.*
 import com.example.movieplace.databinding.ChangePersInfoFragmentBinding
@@ -58,27 +60,31 @@ class ChangePersInfoFragment : Fragment() {
         buttonSubmit = root.findViewById(R.id.buttonSubmit1)
 
         // Per ara només funciona manualment, i per l'usuari admin.
-        val usr = "admin"
+        val usr = SharedPreferenceManager.getStringValue(Constants().PREF_USERNAME)
 
-        changePersInfoViewModel.getInfoUser(usr)
-        changePersInfoViewModel.getInfoUser(usr).observe(
-            viewLifecycleOwner,
-            {
-                if (it is Result.Success) {
-                    editTextUsername.setText(it.data.username)
-                    editTextFullName.setText(it.data.full_name)
-                    editTextEmail.setText(it.data.email)
-                    editTextPhone.setText(it.data.phone)
-                    editTextDateBirth.setText(it.data.date_birth)
-                    editTextAddress.setText(it.data.personal_address)
-                    when (it.data.sex) {
-                        "Man" -> rman.isChecked = true
-                        "Woman" -> rwoman.isChecked = true
-                        "Other" -> rother.isChecked = true
+        if (usr != null) {
+            changePersInfoViewModel.getInfoUser(usr)
+        }
+        if (usr != null) {
+            changePersInfoViewModel.getInfoUser(usr).observe(
+                viewLifecycleOwner,
+                {
+                    if (it is Result.Success) {
+                        editTextUsername.setText(it.data.username)
+                        editTextFullName.setText(it.data.full_name)
+                        editTextEmail.setText(it.data.email)
+                        editTextPhone.setText(it.data.phone)
+                        editTextDateBirth.setText(it.data.date_birth)
+                        editTextAddress.setText(it.data.personal_address)
+                        when (it.data.sex) {
+                            "Man" -> rman.isChecked = true
+                            "Woman" -> rwoman.isChecked = true
+                            "Other" -> rother.isChecked = true
+                        }
                     }
                 }
-            }
-        )
+            )
+        }
 
         //If click the Submitted Button
         buttonSubmit.setOnClickListener {
@@ -96,25 +102,39 @@ class ChangePersInfoFragment : Fragment() {
                                 else {
                                     if (!rman.isChecked and !rwoman.isChecked and !rother.isChecked) Toast.makeText(context, "Empty Sex Field", Toast.LENGTH_SHORT).show()
                                     else {
-                                        val user = Username(usr, editTextUsername.text.toString())
-                                        changePersInfoViewModel.setUsername(user)
-                                        val f_n = FullName(usr, editTextFullName.text.toString())
-                                        changePersInfoViewModel.setFullName(f_n)
-                                        val email = Email(usr, editTextEmail.text.toString())
-                                        changePersInfoViewModel.setEmail(email)
-                                        val telf = Phone(usr, editTextPhone.text.toString())
-                                        changePersInfoViewModel.setTelefon(telf)
-                                        val birth = Birth(usr, editTextDateBirth.text.toString())
-                                        changePersInfoViewModel.setBirth(birth)
-                                        val add = Address(usr, editTextAddress.text.toString())
-                                        changePersInfoViewModel.setAddress(add)
+                                        val user = usr?.let { it1 -> Username(it1, editTextUsername.text.toString()) }
+                                        if (user != null) {
+                                            changePersInfoViewModel.setUsername(user)
+                                        }
+                                        val f_n = usr?.let { it1 -> FullName(it1, editTextFullName.text.toString()) }
+                                        if (f_n != null) {
+                                            changePersInfoViewModel.setFullName(f_n)
+                                        }
+                                        val email = usr?.let { it1 -> Email(it1, editTextEmail.text.toString()) }
+                                        if (email != null) {
+                                            changePersInfoViewModel.setEmail(email)
+                                        }
+                                        val telf = usr?.let { it1 -> Phone(it1, editTextPhone.text.toString()) }
+                                        if (telf != null) {
+                                            changePersInfoViewModel.setTelefon(telf)
+                                        }
+                                        val birth = usr?.let { it1 -> Birth(it1, editTextDateBirth.text.toString()) }
+                                        if (birth != null) {
+                                            changePersInfoViewModel.setBirth(birth)
+                                        }
+                                        val add = usr?.let { it1 -> Address(it1, editTextAddress.text.toString()) }
+                                        if (add != null) {
+                                            changePersInfoViewModel.setAddress(add)
+                                        }
                                         var c_sex = ""
                                         if (rman.isChecked) c_sex = "Man"
                                         if (rwoman.isChecked) c_sex = "Woman"
                                         if (rother.isChecked) c_sex = "Other"
-                                        val sex = Sex(usr, c_sex)
+                                        val sex = usr?.let { it1 -> Sex(it1, c_sex) }
                                         Log.d("hola", c_sex)
-                                        changePersInfoViewModel.setSex(sex)
+                                        if (sex != null) {
+                                            changePersInfoViewModel.setSex(sex)
+                                        }
                                         Toast.makeText(context, "Update successfully", Toast.LENGTH_SHORT).show()
                                     }
                                 }

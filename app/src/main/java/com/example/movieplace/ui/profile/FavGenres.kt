@@ -12,6 +12,8 @@ import android.widget.RadioButton
 import android.widget.Toast
 import android.widget.ToggleButton
 import com.example.movieplace.R
+import com.example.movieplace.common.Constants
+import com.example.movieplace.common.SharedPreferenceManager
 import com.example.movieplace.data.Result
 import com.example.movieplace.data.model.*
 import com.example.movieplace.databinding.ChangeMyLikesFragmentBinding
@@ -72,45 +74,51 @@ class FavGenres : Fragment() {
         var genre1 = ""
         var genre2 = ""
 
-        favGenresviewModel.getInfoUser(username)
-        favGenresviewModel.getInfoUser(username).observe(
-            viewLifecycleOwner,
-            {
-                if (it is Result.Success) {
-                    genre1 = it.data.genre_pref
-                    when (genre1) {
-                        "accio" -> raction.isChecked = true
-                        "adventure" -> radventure.isChecked = true
-                        "comedy" -> rcomedy.isChecked = true
-                        "crime_mystery" -> rcrime_mysery.isChecked = true
-                        "drama" -> rdrama.isChecked = true
-                        "fantasy" -> rfantasy.isChecked = true
-                        "historical" -> rhistorical.isChecked = true
-                        "horror" -> rhorror.isChecked = true
-                        "romance" -> rromance.isChecked = true
-                        "fiction" -> rscfiction.isChecked = true
-                        "thriller" -> rthriller.isChecked = true
-                        "western" -> rwestern.isChecked = true
-                    }
+        val username = SharedPreferenceManager.getStringValue(Constants().PREF_USERNAME)
 
-                    genre2 = it.data.genre_2
-                    when (genre2) {
-                        "accio" -> raction.isChecked = true
-                        "adventure" -> radventure.isChecked = true
-                        "comedy" -> rcomedy.isChecked = true
-                        "crime_mystery" -> rcrime_mysery.isChecked = true
-                        "drama" -> rdrama.isChecked = true
-                        "fantasy" -> rfantasy.isChecked = true
-                        "historical" -> rhistorical.isChecked = true
-                        "horror" -> rhorror.isChecked = true
-                        "romance" -> rromance.isChecked = true
-                        "fiction" -> rscfiction.isChecked = true
-                        "thriller" -> rthriller.isChecked = true
-                        "western" -> rwestern.isChecked = true
+        if (username != null) {
+            favGenresviewModel.getInfoUser(username)
+        }
+        if (username != null) {
+            favGenresviewModel.getInfoUser(username).observe(
+                viewLifecycleOwner,
+                {
+                    if (it is Result.Success) {
+                        genre1 = it.data.genre_pref
+                        when (genre1) {
+                            "accio" -> raction.isChecked = true
+                            "adventure" -> radventure.isChecked = true
+                            "comedy" -> rcomedy.isChecked = true
+                            "crime_mystery" -> rcrime_mysery.isChecked = true
+                            "drama" -> rdrama.isChecked = true
+                            "fantasy" -> rfantasy.isChecked = true
+                            "historical" -> rhistorical.isChecked = true
+                            "horror" -> rhorror.isChecked = true
+                            "romance" -> rromance.isChecked = true
+                            "fiction" -> rscfiction.isChecked = true
+                            "thriller" -> rthriller.isChecked = true
+                            "western" -> rwestern.isChecked = true
+                        }
+
+                        genre2 = it.data.genre_2
+                        when (genre2) {
+                            "accio" -> raction.isChecked = true
+                            "adventure" -> radventure.isChecked = true
+                            "comedy" -> rcomedy.isChecked = true
+                            "crime_mystery" -> rcrime_mysery.isChecked = true
+                            "drama" -> rdrama.isChecked = true
+                            "fantasy" -> rfantasy.isChecked = true
+                            "historical" -> rhistorical.isChecked = true
+                            "horror" -> rhorror.isChecked = true
+                            "romance" -> rromance.isChecked = true
+                            "fiction" -> rscfiction.isChecked = true
+                            "thriller" -> rthriller.isChecked = true
+                            "western" -> rwestern.isChecked = true
+                        }
                     }
                 }
-            }
-        )
+            )
+        }
 
         var foundGenre1 = false
         var foundGenre2 = false
@@ -119,227 +127,277 @@ class FavGenres : Fragment() {
         //If click the Submitted Button
         buttonSubmit.setOnClickListener {
 
-            val del = Delete(username)
+            val del = username?.let { it1 -> Delete(it1) }
 
             if (raction.isChecked) {
                 if (!foundGenre1 && numGen <= 2) {
-                    val act = NewGenre(username, "accio")
-                    favGenresviewModel.setGenre1(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "accio") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre1(act)
+                    }
                     foundGenre1 = true
                     ++numGen
                 }
                 else if (!foundGenre2 && numGen <= 2) {
-                    val act = NewGenre(username, "accio")
-                    favGenresviewModel.setGenre2(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "accio") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre2(act)
+                    }
                     foundGenre2 = true
                     ++numGen
                 }
 
             }
             else {
-                if (genre1 == "accio") favGenresviewModel.deleteGenre1(del)
-                if (genre2 == "accio") favGenresviewModel.deleteGenre2(del)
+                if (genre1 == "accio") del?.let { it1 -> favGenresviewModel.deleteGenre1(it1) }
+                if (genre2 == "accio") del?.let { it1 -> favGenresviewModel.deleteGenre2(it1) }
             }
             if (radventure.isChecked) {
                 if (!foundGenre1 && numGen <= 2) {
-                    val act = NewGenre(username, "adventure")
-                    favGenresviewModel.setGenre1(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "adventure") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre1(act)
+                    }
                     foundGenre1 = true
                     ++numGen
                 }
                 else if (!foundGenre2 && numGen <= 2) {
                     Log.d("Genre2", foundGenre2.toString() )
-                    val act = NewGenre(username, "adventure")
-                    favGenresviewModel.setGenre2(act)
-                    Log.d("Set", act.genre)
+                    val act = username?.let { it1 -> NewGenre(it1, "adventure") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre2(act)
+                    }
+                    if (act != null) {
+                        Log.d("Set", act.genre)
+                    }
                     foundGenre2 = true
                     ++numGen
                     Log.d("Genre2", foundGenre2.toString() )
                 }
             }
             else {
-                if (genre1 == "adventure") favGenresviewModel.deleteGenre1(del)
-                if (genre2 == "adventure") favGenresviewModel.deleteGenre2(del)
+                if (genre1 == "adventure") del?.let { it1 -> favGenresviewModel.deleteGenre1(it1) }
+                if (genre2 == "adventure") del?.let { it1 -> favGenresviewModel.deleteGenre2(it1) }
             }
             if (rcomedy.isChecked) {
                 if (!foundGenre1 && numGen <= 2) {
-                    val act = NewGenre(username, "comedy")
-                    favGenresviewModel.setGenre1(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "comedy") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre1(act)
+                    }
                     foundGenre1 = true
                     ++numGen
                 }
                 else if (!foundGenre2 && numGen <= 2) {
-                    val act = NewGenre(username, "comedy")
-                    favGenresviewModel.setGenre2(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "comedy") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre2(act)
+                    }
                     foundGenre2 = true
                     ++numGen
                 }
             }
             else {
-                if (genre1 == "comedy") favGenresviewModel.deleteGenre1(del)
-                if (genre2 == "comedy") favGenresviewModel.deleteGenre2(del)
+                if (genre1 == "comedy") del?.let { it1 -> favGenresviewModel.deleteGenre1(it1) }
+                if (genre2 == "comedy") del?.let { it1 -> favGenresviewModel.deleteGenre2(it1) }
             }
             if (rcrime_mysery.isChecked) {
                 if (!foundGenre1 && numGen <= 2) {
-                    val act = NewGenre(username, "crime_mystery")
-                    favGenresviewModel.setGenre1(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "crime_mystery") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre1(act)
+                    }
                     foundGenre1 = true
                     ++numGen
                 }
                 else if (!foundGenre2 && numGen <= 2) {
-                    val act = NewGenre(username, "crime_mystery")
-                    favGenresviewModel.setGenre2(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "crime_mystery") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre2(act)
+                    }
                     foundGenre2 = true
                     ++numGen
                 }
             }
             else {
-                if (genre1 == "crime_mystery") favGenresviewModel.deleteGenre1(del)
-                if (genre2 == "crime_mystery") favGenresviewModel.deleteGenre2(del)
+                if (genre1 == "crime_mystery") del?.let { it1 -> favGenresviewModel.deleteGenre1(it1) }
+                if (genre2 == "crime_mystery") del?.let { it1 -> favGenresviewModel.deleteGenre2(it1) }
             }
             if (rdrama.isChecked) {
                 if (!foundGenre1 && numGen <= 2) {
-                    val act = NewGenre(username, "drama")
-                    favGenresviewModel.setGenre1(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "drama") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre1(act)
+                    }
                     foundGenre1 = true
                     ++numGen
                 }
                 else if (!foundGenre2 && numGen <= 2) {
-                    val act = NewGenre(username, "drama")
-                    favGenresviewModel.setGenre2(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "drama") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre2(act)
+                    }
                     foundGenre2 = true
                     ++numGen
                 }
             }
             else {
-                if (genre1 == "drama") favGenresviewModel.deleteGenre1(del)
-                if (genre2 == "drama") favGenresviewModel.deleteGenre2(del)
+                if (genre1 == "drama") del?.let { it1 -> favGenresviewModel.deleteGenre1(it1) }
+                if (genre2 == "drama") del?.let { it1 -> favGenresviewModel.deleteGenre2(it1) }
             }
             if (rfantasy.isChecked) {
                 if (!foundGenre1 && numGen <= 2) {
-                    val act = NewGenre(username, "fantasy")
-                    favGenresviewModel.setGenre1(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "fantasy") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre1(act)
+                    }
                     foundGenre1 = true
                     ++numGen
                 }
                 else if (!foundGenre2 && numGen <= 2) {
-                    val act = NewGenre(username, "fantasy")
-                    favGenresviewModel.setGenre2(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "fantasy") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre2(act)
+                    }
                     foundGenre2 = true
                     ++numGen
                 }
             }
             else {
-                if (genre1 == "fantasy") favGenresviewModel.deleteGenre1(del)
-                if (genre2 == "fantasy") favGenresviewModel.deleteGenre2(del)
+                if (genre1 == "fantasy") del?.let { it1 -> favGenresviewModel.deleteGenre1(it1) }
+                if (genre2 == "fantasy") del?.let { it1 -> favGenresviewModel.deleteGenre2(it1) }
             }
             if (rhistorical.isChecked) {
                 if (!foundGenre1 && numGen <= 2) {
-                    val act = NewGenre(username, "historical")
-                    favGenresviewModel.setGenre1(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "historical") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre1(act)
+                    }
                     foundGenre1 = true
                     ++numGen
                 }
                 else if (!foundGenre2 && numGen <= 2) {
-                    val act = NewGenre(username, "historical")
-                    favGenresviewModel.setGenre2(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "historical") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre2(act)
+                    }
                     foundGenre2 = true
                     ++numGen
                 }
             }
             else {
-                if (genre1 == "historical") favGenresviewModel.deleteGenre1(del)
-                if (genre2 == "historical") favGenresviewModel.deleteGenre2(del)
+                if (genre1 == "historical") del?.let { it1 -> favGenresviewModel.deleteGenre1(it1) }
+                if (genre2 == "historical") del?.let { it1 -> favGenresviewModel.deleteGenre2(it1) }
             }
             if (rhorror.isChecked) {
                 if (!foundGenre1 && numGen <= 2) {
-                    val act = NewGenre(username, "horror")
-                    favGenresviewModel.setGenre1(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "horror") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre1(act)
+                    }
                     foundGenre1 = true
                     ++numGen
                 }
                 else if (!foundGenre2 && numGen <= 2) {
-                    val act = NewGenre(username, "horror")
-                    favGenresviewModel.setGenre2(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "horror") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre2(act)
+                    }
                     foundGenre2 = true
                     ++numGen
                 }
             }
             else {
-                if (genre1 == "horror") favGenresviewModel.deleteGenre1(del)
-                if (genre2 == "horror") favGenresviewModel.deleteGenre2(del)
+                if (genre1 == "horror") del?.let { it1 -> favGenresviewModel.deleteGenre1(it1) }
+                if (genre2 == "horror") del?.let { it1 -> favGenresviewModel.deleteGenre2(it1) }
             }
             if (rromance.isChecked) {
                 if (!foundGenre1 && numGen <= 2) {
-                    val act = NewGenre(username, "romance")
-                    favGenresviewModel.setGenre1(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "romance") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre1(act)
+                    }
                     foundGenre1 = true
                     ++numGen
                 }
                 else if (!foundGenre2 && numGen <= 2) {
-                    val act = NewGenre(username, "romance")
-                    favGenresviewModel.setGenre2(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "romance") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre2(act)
+                    }
                     foundGenre2 = true
                     ++numGen
                 }
             }
             else {
-                if (genre1 == "romance") favGenresviewModel.deleteGenre1(del)
-                if (genre2 == "romance") favGenresviewModel.deleteGenre2(del)
+                if (genre1 == "romance") del?.let { it1 -> favGenresviewModel.deleteGenre1(it1) }
+                if (genre2 == "romance") del?.let { it1 -> favGenresviewModel.deleteGenre2(it1) }
             }
             if (rscfiction.isChecked) {
                 if (!foundGenre1 && numGen <= 2) {
-                    val act = NewGenre(username, "fiction")
-                    favGenresviewModel.setGenre1(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "fiction") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre1(act)
+                    }
                     foundGenre1 = true
                     ++numGen
                 }
                 else if (!foundGenre2 && numGen <= 2) {
-                    val act = NewGenre(username, "fiction")
-                    favGenresviewModel.setGenre2(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "fiction") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre2(act)
+                    }
                     foundGenre2 = true
                     ++numGen
                 }
             }
             else {
-                if (genre1 == "fiction") favGenresviewModel.deleteGenre1(del)
-                if (genre2 == "fiction") favGenresviewModel.deleteGenre2(del)
+                if (genre1 == "fiction") del?.let { it1 -> favGenresviewModel.deleteGenre1(it1) }
+                if (genre2 == "fiction") del?.let { it1 -> favGenresviewModel.deleteGenre2(it1) }
             }
             if (rthriller.isChecked) {
                 if (!foundGenre1 && numGen <= 2) {
-                    val act = NewGenre(username, "thriller")
-                    favGenresviewModel.setGenre1(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "thriller") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre1(act)
+                    }
                     foundGenre1 = true
                     ++numGen
                 }
                 else if (!foundGenre2 && numGen <= 2) {
-                    val act = NewGenre(username, "thriller")
-                    favGenresviewModel.setGenre2(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "thriller") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre2(act)
+                    }
                     foundGenre2 = true
                     ++numGen
                 }
             }
             else {
-                if (genre1 == "thriller") favGenresviewModel.deleteGenre1(del)
-                if (genre2 == "thriller") favGenresviewModel.deleteGenre2(del)
+                if (genre1 == "thriller") del?.let { it1 -> favGenresviewModel.deleteGenre1(it1) }
+                if (genre2 == "thriller") del?.let { it1 -> favGenresviewModel.deleteGenre2(it1) }
             }
             if (rwestern.isChecked) {
                 if (!foundGenre1 && numGen <= 2) {
-                    val act = NewGenre(username, "western")
-                    favGenresviewModel.setGenre1(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "western") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre1(act)
+                    }
                     foundGenre1 = true
                     ++numGen
                 }
                 else if (!foundGenre2 && numGen <= 2) {
-                    val act = NewGenre(username, "western")
-                    favGenresviewModel.setGenre2(act)
+                    val act = username?.let { it1 -> NewGenre(it1, "western") }
+                    if (act != null) {
+                        favGenresviewModel.setGenre2(act)
+                    }
                     foundGenre2 = true
                     ++numGen
                 }
             }
             else {
-                if (genre1 == "western") favGenresviewModel.deleteGenre1(del)
-                if (genre2 == "western") favGenresviewModel.deleteGenre2(del)
+                if (genre1 == "western") del?.let { it1 -> favGenresviewModel.deleteGenre1(it1) }
+                if (genre2 == "western") del?.let { it1 -> favGenresviewModel.deleteGenre2(it1) }
             }
 
             Toast.makeText(context, "Update successfully", Toast.LENGTH_SHORT).show()
